@@ -3201,78 +3201,151 @@
                 <div class="blue-text">
                     This ability is your overall health, fortitude, and resistance to harm, illness, and fatigue.
                 </div>
+
+                <div class="focuses">
+                    <div>
+                        <input type="checkbox" name="attr_focus_running" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Constitution(Running)|||@{constitution}|||@{focus_running_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Running
+                                </button>
+
+                                <button type="action" name="act_select_focus_running" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Moving quickly in both short sprints and long-distance hauls.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_running_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_running_total" class="invisible" value="@{focus_running} * (@{focus_running} + 1 + @{focus_running_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_stamina" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Constitution(Stamina)|||@{constitution}|||@{focus_stamina_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Stamina
+                                </button>
+
+                                <button type="action" name="act_select_focus_stamina" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Enduring fatigue, disease, and privation.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_stamina_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_stamina_total" class="invisible" value="@{focus_stamina} * (@{focus_stamina} + 1 + @{focus_stamina_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_swimming" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Constitution(Swimming)|||@{constitution}|||@{focus_swimming_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Swimming
+                                </button>
+
+                                <button type="action" name="act_select_focus_swimming" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Moving across water and staying afloat.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_swimming_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_swimming_total" class="invisible" value="@{focus_swimming} * (@{focus_swimming} + 1 + @{focus_swimming_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_tolerance" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Constitution(Tolerance)|||@{constitution}|||@{focus_tolerance_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Tolerance
+                                </button>
+
+                                <button type="action" name="act_select_focus_tolerance" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Withstanding the effects of potentially toxic substances, imbibed for recreation or unwitting exposure.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_tolerance_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_tolerance_total" class="invisible" value="@{focus_tolerance} * (@{focus_tolerance} + 1 + @{focus_tolerance_improved})" disabled="true" />
+                    </div>
+                </div>
+
                 <div class="focuses hidden-if-unchecked">
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Constitution(Running)|||@{constitution}|||@{focus_running_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Running
-                        </button>
-                        <input type="checkbox" id="focus_running" class="unhide-content invisible" value="2" name="attr_focus_running">
-                        <label for="focus_running" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_running" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Moving quickly in both short sprints and long-distance hauls.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_runningi" class="unhide-content invisible" value="1" name="attr_focus_running_improved">
-                                <label for="focus_runningi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_runningi" class="hidden-if-unchecked white-text">Improved</label>
+                    <label class="black-bar white-text improve-label">More Focuses</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_running" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_running" class="white-text btn-invisible">
+                                    Running
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Moving quickly in both short sprints and long-distance hauls.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_running_total" class="invisible" value="@{focus_running}+@{focus_running_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Constitution(Stamina)|||@{constitution}|||@{focus_stamina_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Stamina
-                        </button>
-                        <input type="checkbox" id="focus_stamina" class="unhide-content invisible" value="2" name="attr_focus_stamina">
-                        <label for="focus_stamina" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_stamina" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Enduring fatigue, disease, and privation.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_staminai" class="unhide-content invisible" value="1" name="attr_focus_stamina_improved">
-                                <label for="focus_staminai" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_staminai" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_swimming" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_swimming" class="white-text btn-invisible">
+                                    Swimming
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Moving across water and staying afloat.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_stamina_total" class="invisible" value="@{focus_stamina}+@{focus_stamina_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Constitution(Swimming)|||@{constitution}|||@{focus_swimming_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Swimming
-                        </button>
-                        <input type="checkbox" id="focus_swimming" class="unhide-content invisible" value="2" name="attr_focus_swimming">
-                        <label for="focus_swimming" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_swimming" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Moving across water and staying afloat.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_swimmingi" class="unhide-content invisible" value="1" name="attr_focus_swimming_improved">
-                                <label for="focus_swimmingi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_swimmingi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_stamina" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_stamina" class="white-text btn-invisible">
+                                    Stamina
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Enduring disease, fatigue, and privation
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_swimming_total" class="invisible" value="@{focus_swimming}+@{focus_swimming_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Constitution(Tolerance)|||@{constitution}|||@{focus_tolerance_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Tolerance
-                        </button>
-                        <input type="checkbox" id="focus_tolerance" class="unhide-content invisible" value="2" name="attr_focus_tolerance">
-                        <label for="focus_tolerance" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_tolerance" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Withstanding the effects of potentially toxic substances, imbibed for recreation or unwitting exposure.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_tolerancei" class="unhide-content invisible" value="1" name="attr_focus_tolerance_improved">
-                                <label for="focus_tolerancei" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_tolerancei" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_tolerance" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_tolerance" class="white-text btn-invisible">
+                                    Tolerance
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Withstanding the effects of potentially toxic substances, imbibed for recreation or unwitting exposure.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_tolerance_total" class="invisible" value="@{focus_tolerance}+@{focus_tolerance_improved}" disabled="true" />
                     </div>
                 </div>
             </div>
@@ -3288,150 +3361,291 @@
                 <div class="blue-text">
                     This ability covers deftness, agility, and reaction time, affecting how quickly and gracefully you move.
                 </div>
+
+                <div class="focuses">
+                    <div>
+                        <input type="checkbox" name="attr_focus_acrobatics" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Dexterity(Acrobatics)|||@{dexterity}|||@{focus_acrobatics_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Acrobatics
+                                </button>
+
+                                <button type="action" name="act_select_focus_acrobatics" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Executing gymnastic, balancing, and tumbling maneuvers.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_acrobatics_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_acrobatics_total" class="invisible" value="@{focus_acrobatics} * (@{focus_acrobatics} + 1 + @{focus_acrobatics_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_crafting" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Dexterity(Crafting)|||@{dexterity}|||@{focus_crafting_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Crafting
+                                </button>
+
+                                <button type="action" name="act_select_focus_crafting" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Making things with manual skills, including the various fine and plastic arts. Examples of specific Crafting focuses include Carpentry, Carving, Drawing, Glass-blowing, Leather-working, Painting, Origami, Sculpting, and so forth, but feel free to come up with your own.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_crafting_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_crafting_total" class="invisible" value="@{focus_crafting} * (@{focus_crafting} + 1 + @{focus_crafting_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_driving" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Dexterity(Driving)|||@{dexterity}|||@{focus_driving_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Driving
+                                </button>
+
+                                <button type="action" name="act_select_focus_driving" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Handling surface vehicles like cars, trucks, or motorized carts, to name a few.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_driving_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_driving_total" class="invisible" value="@{focus_driving} * (@{focus_driving} + 1 + @{focus_driving_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_freefall" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Dexterity(Free-Fall)|||@{dexterity}|||@{focus_freefall_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Free-Fall
+                                </button>
+
+                                <button type="action" name="act_select_focus_freefall" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Maneuvering and moving while in free-fall, usually in microgravity.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_freefall_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_freefall_total" class="invisible" value="@{focus_freefall} * (@{focus_freefall} + 1 + @{focus_freefall_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_initiative" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Dexterity(Initiative)|||@{dexterity}|||@{focus_initiative_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Initiative
+                                </button>
+
+                                <button type="action" name="act_select_focus_initiative" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Reacting quickly under pressure.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_initiative_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_initiative_total" class="invisible" value="@{focus_initiative} * (@{focus_initiative} + 1 + @{focus_initiative_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_piloting" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Dexterity(Piloting)|||@{dexterity}|||@{focus_piloting_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Piloting
+                                </button>
+
+                                <button type="action" name="act_select_focus_piloting" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Operating vehicles that move in three dimensions like aircraft, drones, and spaceships.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_piloting_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_piloting_total" class="invisible" value="@{focus_piloting} * (@{focus_piloting} + 1 + @{focus_piloting_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_sleight_of_hand" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Dexterity(Sleight of Hand)|||@{dexterity}|||@{focus_sleight_of_hand_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Sleight of Hand
+                                </button>
+
+                                <button type="action" name="act_select_focus_sleight_of_hand" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Using sleight of hand and deft movements to trick others, hide things, or pick pockets.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_sleight_of_hand_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_sleight_of_hand_total" class="invisible" value="@{focus_sleight_of_hand} * (@{focus_sleight_of_hand} + 1 + @{focus_sleight_of_hand_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_stealth" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Dexterity(Stealth)|||@{dexterity}|||@{focus_stealth_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Stealth
+                                </button>
+
+                                <button type="action" name="act_select_focus_stealth" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Moving around without being noticed.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_stealth_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_stealth_total" class="invisible" value="@{focus_stealth} * (@{focus_stealth} + 1 + @{focus_stealth_improved})" disabled="true" />
+                    </div>
+                </div>
+
                 <div class="focuses hidden-if-unchecked">
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Dexterity(Acrobatics)|||@{dexterity}|||@{focus_acrobatics_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Acrobatics
-                        </button>
-                        <input type="checkbox" id="focus_acrobatics" class="unhide-content invisible" value="2" name="attr_focus_acrobatics">
-                        <label for="focus_acrobatics" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_acrobatics" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Executing gymnastic, balancing, and tumbling maneuvers.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_acrobaticsi" class="unhide-content invisible" value="1" name="attr_focus_acrobatics_improved">
-                                <label for="focus_acrobaticsi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_acrobaticsi" class="hidden-if-unchecked white-text">Improved</label>
+                    <label class="black-bar white-text improve-label">More Focuses</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_acrobatics" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_acrobatics" class="white-text btn-invisible">
+                                    Acrobatics
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Executing gymnastic, balancing, and tumbling maneuvers.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_acrobatics_total" class="invisible" value="@{focus_acrobatics}+@{focus_acrobatics_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Dexterity(Crafting)|||@{dexterity}|||@{focus_crafting_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Crafting
-                        </button>
-                        <input type="checkbox" id="focus_crafting" class="unhide-content invisible" value="2" name="attr_focus_crafting">
-                        <label for="focus_crafting" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_crafting" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Making things with manual skills, including the various fine and plastic arts. Examples of specific Crafting focuses include Carpentry, Carving, Drawing, Glass-blowing, Leather-working, Painting, Origami, Sculpting, and so forth, but feel free to come up with your own.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_craftingi" class="unhide-content invisible" value="1" name="attr_focus_crafting_improved">
-                                <label for="focus_craftingi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_craftingi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_crafting" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_crafting" class="white-text btn-invisible">
+                                    Crafting
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Making things with manual skills, including the various fine and plastic arts. Examples of specific Crafting focuses include Carpentry, Carving, Drawing, Glass-blowing, Leather-working, Painting, Origami, Sculpting, and so forth, but feel free to come up with your own.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_crafting_total" class="invisible" value="@{focus_crafting}+@{focus_crafting_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Dexterity(Driving)|||@{dexterity}|||@{focus_driving_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Driving
-                        </button>
-                        <input type="checkbox" id="focus_driving" class="unhide-content invisible" value="2" name="attr_focus_driving">
-                        <label for="focus_driving" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_driving" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Handling surface vehicles like cars, trucks, or motorized carts, to name a few.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_drivingi" class="unhide-content invisible" value="1" name="attr_focus_driving_improved">
-                                <label for="focus_drivingi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_drivingi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_driving" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_driving" class="white-text btn-invisible">
+                                    Driving
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Handling surface vehicles like cars, trucks, or motorized carts, to name a few.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_driving_total" class="invisible" value="@{focus_driving}+@{focus_driving_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Dexterity(Free-Fall)|||@{dexterity}|||@{focus_freefall_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Free-Fall
-                        </button>
-                        <input type="checkbox" id="focus_freefall" class="unhide-content invisible" value="2" name="attr_focus_freefall">
-                        <label for="focus_freefall" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_freefall" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Maneuvering and moving while in free-fall, usually in microgravity.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_freefalli" class="unhide-content invisible" value="1" name="attr_focus_freefall_improved">
-                                <label for="focus_freefalli" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_freefalli" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_freefall" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_freefall" class="white-text btn-invisible">
+                                    Free-Fall
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Maneuvering and moving while in free-fall, usually in microgravity.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_freefall_total" class="invisible" value="@{focus_freefall}+@{focus_freefall_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Dexterity(Initiative)|||@{dexterity}|||@{focus_initiative_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Initiative
-                        </button>
-                        <input type="checkbox" id="focus_initiative" class="unhide-content invisible" value="2" name="attr_focus_initiative">
-                        <label for="focus_initiative" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_initiative" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Reacting quickly under pressure.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_initiativei" class="unhide-content invisible" value="1" name="attr_focus_initiative_improved">
-                                <label for="focus_initiativei" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_initiativei" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_initiative" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_initiative" class="white-text btn-invisible">
+                                    Initiative
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Reacting quickly under pressure.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_initiative_total" class="invisible" value="@{focus_initiative}+@{focus_initiative_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Dexterity(Piloting)|||@{dexterity}|||@{focus_piloting_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Piloting
-                        </button>
-                        <input type="checkbox" id="focus_piloting" class="unhide-content invisible" value="2" name="attr_focus_piloting">
-                        <label for="focus_piloting" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_piloting" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Operating vehicles that move in three dimensions like aircraft, drones, and spaceships.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_pilotingi" class="unhide-content invisible" value="1" name="attr_focus_piloting_improved">
-                                <label for="focus_pilotingi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_pilotingi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_piloting" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_piloting" class="white-text btn-invisible">
+                                    Piloting
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Operating vehicles that move in three dimensions like aircraft, drones, and spaceships.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_piloting_total" class="invisible" value="@{focus_piloting}+@{focus_piloting_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Dexterity(Sleight of Hand)|||@{dexterity}|||@{focus_sleight_of_hand_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Sleight of Hand
-                        </button>
-                        <input type="checkbox" id="focus_sleight_of_hand" class="unhide-content invisible" value="2" name="attr_focus_sleight_of_hand">
-                        <label for="focus_sleight_of_hand" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_sleight_of_hand" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Using sleight of hand and deft movements to trick others, hide things, or pick pockets.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_sleight_of_handi" class="unhide-content invisible" value="1" name="attr_focus_sleight_of_hand_improved">
-                                <label for="focus_sleight_of_handi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_sleight_of_handi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_sleight_of_hand" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_sleight_of_hand" class="white-text btn-invisible">
+                                    Sleight of Hand
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Using sleight of hand and deft movements to trick others, hide things, or pick pockets.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_sleight_of_hand_total" class="invisible" value="@{focus_sleight_of_hand}+@{focus_sleight_of_hand_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Dexterity(Stealth)|||@{dexterity}|||@{focus_stealth_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Stealth
-                        </button>
-                        <input type="checkbox" id="focus_stealth" class="unhide-content invisible" value="2" name="attr_focus_stealth">
-                        <label for="focus_stealth" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_stealth" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Moving around without being noticed.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_stealthi" class="unhide-content invisible" value="1" name="attr_focus_stealth_improved">
-                                <label for="focus_stealthi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_stealthi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_stealth" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_stealth" class="white-text btn-invisible">
+                                    Stealth
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Moving around without being noticed.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_stealth_total" class="invisible" value="@{focus_stealth}+@{focus_stealth_improved}" disabled="true" />
                     </div>
                 </div>
             </div>
@@ -3447,78 +3661,151 @@
                 <div class="blue-text">
                     This ability is your capability in close combat, ranging from a brawl to wielding weapons.
                 </div>
+
+                <div class="focuses">
+                    <div>
+                        <input type="checkbox" name="attr_focus_brawling" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Fighting(Brawling)|||@{fighting}|||@{focus_brawling_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Brawling
+                                </button>
+
+                                <button type="action" name="act_select_focus_brawling" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Proficiency in fighting unarmed, from bare-knuckle boxing to various styles of martial arts.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_brawling_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_brawling_total" class="invisible" value="@{focus_brawling} * (@{focus_brawling} + 1 + @{focus_brawling_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_grappling" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Fighting(Grappling)|||@{fighting}|||@{focus_grappling_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Grappling
+                                </button>
+
+                                <button type="action" name="act_select_focus_grappling" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Proficiency in unarmed techniques intended to immobilize and restrain.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_grappling_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_grappling_total" class="invisible" value="@{focus_grappling} * (@{focus_grappling} + 1 + @{focus_grappling_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_heavy_weapons" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Fighting(Heavy Weapons)|||@{fighting}|||@{focus_heavy_weapons_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Heavy Weapons
+                                </button>
+
+                                <button type="action" name="act_select_focus_heavy_weapons" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Proficiency with large or heavy close combat weapons like axes, clubs, hammers, and large swords, to name a few.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_heavy_weapons_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_heavy_weapons_total" class="invisible" value="@{focus_heavy_weapons} * (@{focus_heavy_weapons} + 1 + @{focus_heavy_weapons_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_light_weapons" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Fighting(Light Weapons)|||@{fighting}|||@{focus_light_weapons_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Light Weapons
+                                </button>
+
+                                <button type="action" name="act_select_focus_light_weapons" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Proficiency with light close combat weapons like batons, knives, light staffs, and swords, among others.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_light_weapons_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_light_weapons_total" class="invisible" value="@{focus_light_weapons} * (@{focus_light_weapons} + 1 + @{focus_light_weapons_improved})" disabled="true" />
+                    </div>
+                </div>
+
                 <div class="focuses hidden-if-unchecked">
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Fighting(Brawling)|||@{fighting}|||@{focus_brawling_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Brawling
-                        </button>
-                        <input type="checkbox" id="focus_brawling" class="unhide-content invisible" value="2" name="attr_focus_brawling">
-                        <label for="focus_brawling" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_brawling" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Proficiency in fighting unarmed, from bare-knuckle boxing to various styles of martial arts.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_brawlingi" class="unhide-content invisible" value="1" name="attr_focus_brawling_improved">
-                                <label for="focus_brawlingi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_brawlingi" class="hidden-if-unchecked white-text">Improved</label>
+                    <label class="black-bar white-text improve-label">More Focuses</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_brawling" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_brawling" class="white-text btn-invisible">
+                                    Brawling
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Proficiency in fighting unarmed, from bare-knuckle boxing to various styles of martial arts.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_brawling_total" class="invisible" value="@{focus_brawling}+@{focus_brawling_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Fighting(Grappling)|||@{fighting}|||@{focus_grappling_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Grappling
-                        </button>
-                        <input type="checkbox" id="focus_grappling" class="unhide-content invisible" value="2" name="attr_focus_grappling">
-                        <label for="focus_grappling" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_grappling" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Proficiency in unarmed techniques intended to immobilize and restrain.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_grapplingi" class="unhide-content invisible" value="1" name="attr_focus_grappling_improved">
-                                <label for="focus_grapplingi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_grapplingi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_grappling" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_grappling" class="white-text btn-invisible">
+                                    Grappling
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Proficiency in unarmed techniques intended to immobilize and restrain.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_grappling_total" class="invisible" value="@{focus_grappling}+@{focus_grappling_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Fighting(Heavy Weapons)|||@{fighting}|||@{focus_heavy_weapons_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Heavy Weapons
-                        </button>
-                        <input type="checkbox" id="focus_heavy_weapons" class="unhide-content invisible" value="2" name="attr_focus_heavy_weapons">
-                        <label for="focus_heavy_weapons" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_heavy_weapons" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Proficiency with large or heavy close combat weapons like axes, clubs, hammers, and large swords, to name a few.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_heavy_weaponsi" class="unhide-content invisible" value="1" name="attr_focus_heavy_weapons_improved">
-                                <label for="focus_heavy_weaponsi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_heavy_weaponsi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_heavy_weapons" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_heavy_weapons" class="white-text btn-invisible">
+                                    Heavy Weapons
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Proficiency with large or heavy close combat weapons like axes, clubs, hammers, and large swords, to name a few.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_heavy_weapons_total" class="invisible" value="@{focus_heavy_weapons}+@{focus_heavy_weapons_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Fighting(Light Weapons)|||@{fighting}|||@{focus_light_weapons_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Light Weapons
-                        </button>
-                        <input type="checkbox" id="focus_light_weapons" class="unhide-content invisible" value="2" name="attr_focus_light_weapons">
-                        <label for="focus_light_weapons" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_light_weapons" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Proficiency with light close combat weapons like batons, knives, light staffs, and swords, among others.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_light_weaponsi" class="unhide-content invisible" value="1" name="attr_focus_light_weapons_improved">
-                                <label for="focus_light_weaponsi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_light_weaponsi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_light_weapons" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_light_weapons" class="white-text btn-invisible">
+                                    Light Weapons
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Proficiency with light close combat weapons like batons, knives, light staffs, and swords, among others.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_light_weapons_total" class="invisible" value="@{focus_light_weapons}+@{focus_light_weapons_improved}" disabled="true" />
                     </div>
                 </div>
             </div>
@@ -3534,276 +3821,536 @@
                 <div class="blue-text">
                     This ability measures your reasoning, memory, problem-solving, and overall knowledge.
                 </div>
+
+                <div class="focuses">
+                    <div>
+                        <input type="checkbox" name="attr_focus_art" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Art)|||@{intelligence}|||@{focus_art_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Art
+                                </button>
+
+                                <button type="action" name="act_select_focus_art" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Knowledge of artistic movements, styles, artists, and works in any of the fine arts. Making art uses the Crafting focus.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_art_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_art_total" class="invisible" value="@{focus_art} * (@{focus_art} + 1 + @{focus_art_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_business" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Business)|||@{intelligence}|||@{focus_business_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Business
+                                </button>
+
+                                <button type="action" name="act_select_focus_business" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Knowledge of running a business as well as of the business and corporate world.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_business_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_business_total" class="invisible" value="@{focus_business} * (@{focus_business} + 1 + @{focus_business_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_cryptography" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Cryptography)|||@{intelligence}|||@{focus_cryptography_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Cryptography
+                                </button>
+
+                                <button type="action" name="act_select_focus_cryptography" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Creating and deciphering codes and ciphers.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_cryptography_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_cryptography_total" class="invisible" value="@{focus_cryptography} * (@{focus_cryptography} + 1 + @{focus_cryptography_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_current_affairs" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Current Affairs)|||@{intelligence}|||@{focus_current_affairs_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Current Affairs
+                                </button>
+
+                                <button type="action" name="act_select_focus_current_affairs" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Knowledge of politics, newsworthy events, and popular culture.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_current_affairs_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_current_affairs_total" class="invisible" value="@{focus_current_affairs} * (@{focus_current_affairs} + 1 + @{focus_current_affairs_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_demolitions" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Demolitions)|||@{intelligence}|||@{focus_demolitions_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Demolitions
+                                </button>
+
+                                <button type="action" name="act_select_focus_demolitions" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Identifying, using, and safely handling explosives, as well as understanding their effects and detonation methods.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_demolitions_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_demolitions_total" class="invisible" value="@{focus_demolitions} * (@{focus_demolitions} + 1 + @{focus_demolitions_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_engineering" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Engineering)|||@{intelligence}|||@{focus_engineering_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Engineering
+                                </button>
+
+                                <button type="action" name="act_select_focus_engineering" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Making, repairing, and maintaining technological items as well as knowledge of the principles and practicalities of their design and development.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_engineering_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_engineering_total" class="invisible" value="@{focus_engineering} * (@{focus_engineering} + 1 + @{focus_engineering_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_evaluation" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Evaluation)|||@{intelligence}|||@{focus_evaluation_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Evaluation
+                                </button>
+
+                                <button type="action" name="act_select_focus_evaluation" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Knowledge of the value of goods, works of art, and other valuables.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_evaluation_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_evaluation_total" class="invisible" value="@{focus_evaluation} * (@{focus_evaluation} + 1 + @{focus_evaluation_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_law" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Law)|||@{intelligence}|||@{focus_law_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Law
+                                </button>
+
+                                <button type="action" name="act_select_focus_law" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Knowledge of codes, regulations, and different legal proceedings of all levels of the judiciary and law enforcement.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_law_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_law_total" class="invisible" value="@{focus_law} * (@{focus_law} + 1 + @{focus_law_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_medicine" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Medicine)|||@{intelligence}|||@{focus_medicine_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Medicine
+                                </button>
+
+                                <button type="action" name="act_select_focus_medicine" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Tending to the sick and injured, and understanding medical and anatomical knowledge.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_medicine_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_medicine_total" class="invisible" value="@{focus_medicine} * (@{focus_medicine} + 1 + @{focus_medicine_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_navigation" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Navigation)|||@{intelligence}|||@{focus_navigation_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Navigation
+                                </button>
+
+                                <button type="action" name="act_select_focus_navigation" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Planning and following a route from one place to another, interpreting maps and cartographic data, and figuring out where you are.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_navigation_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_navigation_total" class="invisible" value="@{focus_navigation} * (@{focus_navigation} + 1 + @{focus_navigation_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_research" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Research)|||@{intelligence}|||@{focus_research_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Research
+                                </button>
+
+                                <button type="action" name="act_select_focus_research" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Conducting a systematic search for information, usually using records, archives, and books.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_research_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_research_total" class="invisible" value="@{focus_research} * (@{focus_research} + 1 + @{focus_research_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_science" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Science)|||@{intelligence}|||@{focus_science_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Science
+                                </button>
+
+                                <button type="action" name="act_select_focus_science" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Knowledge of an organized field of study and the ability to understand things related to it. Examples of Science focuses include Anthropology, Astronomy, Botany, Biology, Chemistry, Economics, Genetics, History, Planetary or “Earth” Sciences, Physics, Psychology, and Theology, but you can choose another scientific field, if you wish.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_science_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_science_total" class="invisible" value="@{focus_science} * (@{focus_science} + 1 + @{focus_science_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_security" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Security)|||@{intelligence}|||@{focus_security_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Security
+                                </button>
+
+                                <button type="action" name="act_select_focus_security" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Knowledge of different security devices, systems, protocols, and personnel.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_security_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_security_total" class="invisible" value="@{focus_security} * (@{focus_security} + 1 + @{focus_security_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_tactics" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Tactics)|||@{intelligence}|||@{focus_tactics_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Tactics
+                                </button>
+
+                                <button type="action" name="act_select_focus_tactics" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Knowledge of strategy, tactics, and famous applications thereof.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_tactics_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_tactics_total" class="invisible" value="@{focus_tactics} * (@{focus_tactics} + 1 + @{focus_tactics_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_technology" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Technology)|||@{intelligence}|||@{focus_technology_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Technology
+                                </button>
+
+                                <button type="action" name="act_select_focus_technology" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Knowledge of the design and operation of technology, particularly computers, which are incorporated into nearly all technological items in The Expanse.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_technology_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_technology_total" class="invisible" value="@{focus_technology} * (@{focus_technology} + 1 + @{focus_technology_improved})" disabled="true" />
+                    </div>
+                </div>
+
                 <div class="focuses hidden-if-unchecked">
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Art)|||@{intelligence}|||@{focus_art_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Art
-                        </button>
-                        <input type="checkbox" id="focus_art" class="unhide-content invisible" value="2" name="attr_focus_art">
-                        <label for="focus_art" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_art" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Knowledge of artistic movements, styles, artists, and works in any of the fine arts. Making art uses the Crafting focus.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_arti" class="unhide-content invisible" value="1" name="attr_focus_art_improved">
-                                <label for="focus_arti" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_arti" class="hidden-if-unchecked white-text">Improved</label>
+                    <label class="black-bar white-text improve-label">More Focuses</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_art" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_art" class="white-text btn-invisible">
+                                    Art
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Knowledge of artistic movements, styles, artists, and works in any of the fine arts. Making art uses the Crafting focus.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_art_total" class="invisible" value="@{focus_art}+@{focus_art_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Business)|||@{intelligence}|||@{focus_business_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Business
-                        </button>
-                        <input type="checkbox" id="focus_business" class="unhide-content invisible" value="2" name="attr_focus_business">
-                        <label for="focus_business" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_business" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Knowledge of running a business as well as of the business and corporate world.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_businessi" class="unhide-content invisible" value="1" name="attr_focus_business_improved">
-                                <label for="focus_businessi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_businessi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_business" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_business" class="white-text btn-invisible">
+                                    Business
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Knowledge of running a business as well as of the business and corporate world.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_business_total" class="invisible" value="@{focus_business}+@{focus_business_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Cryptography)|||@{intelligence}|||@{focus_cryptography_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Cryptography
-                        </button>
-                        <input type="checkbox" id="focus_cryptography" class="unhide-content invisible" value="2" name="attr_focus_cryptography">
-                        <label for="focus_cryptography" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_cryptography" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Creating and deciphering codes and ciphers.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_cryptographyi" class="unhide-content invisible" value="1" name="attr_focus_cryptography_improved">
-                                <label for="focus_cryptographyi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_cryptographyi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_cryptography" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_cryptography" class="white-text btn-invisible">
+                                    Cryptography
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Creating and deciphering codes and ciphers.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_cryptography_total" class="invisible" value="@{focus_cryptography}+@{focus_cryptography_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Current Affairs)|||@{intelligence}|||@{focus_current_affairs_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Current Affairs
-                        </button>
-                        <input type="checkbox" id="focus_current_affairs" class="unhide-content invisible" value="2" name="attr_focus_current_affairs">
-                        <label for="focus_current_affairs" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_current_affairs" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Knowledge of politics, newsworthy events, and popular culture.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_current_affairsi" class="unhide-content invisible" value="1" name="attr_focus_current_affairs_improved">
-                                <label for="focus_current_affairsi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_current_affairsi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_current_affairs" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_current_affairs" class="white-text btn-invisible">
+                                    Current Affairs
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Knowledge of politics, newsworthy events, and popular culture.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_current_affairs_total" class="invisible" value="@{focus_current_affairs}+@{focus_current_affairs_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Demolitions)|||@{intelligence}|||@{focus_demolitions_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Demolitions
-                        </button>
-                        <input type="checkbox" id="focus_demolitions" class="unhide-content invisible" value="2" name="attr_focus_demolitions">
-                        <label for="focus_demolitions" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_demolitions" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Identifying, using, and safely handling explosives, as well as understanding their effects and detonation methods.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_demolitionsi" class="unhide-content invisible" value="1" name="attr_focus_demolitions_improved">
-                                <label for="focus_demolitionsi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_demolitionsi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_demolitions" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_demolitions" class="white-text btn-invisible">
+                                    Demolitions
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Identifying, using, and safely handling explosives, as well as understanding their effects and detonation methods.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_demolitions_total" class="invisible" value="@{focus_demolitions}+@{focus_demolitions_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Engineering)|||@{intelligence}|||@{focus_engineering_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Engineering
-                        </button>
-                        <input type="checkbox" id="focus_engineering" class="unhide-content invisible" value="2" name="attr_focus_engineering">
-                        <label for="focus_engineering" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_engineering" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Making, repairing, and maintaining technological items as well as knowledge of the principles and practicalities of their design and development.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_engineeringi" class="unhide-content invisible" value="1" name="attr_focus_engineering_improved">
-                                <label for="focus_engineeringi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_engineeringi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_engineering" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_engineering" class="white-text btn-invisible">
+                                    Engineering
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Making, repairing, and maintaining technological items as well as knowledge of the principles and practicalities of their design and development.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_engineering_total" class="invisible" value="@{focus_engineering}+@{focus_engineering_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Evaluation)|||@{intelligence}|||@{focus_evaluation_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Evaluation
-                        </button>
-                        <input type="checkbox" id="focus_evaluation" class="unhide-content invisible" value="2" name="attr_focus_evaluation">
-                        <label for="focus_evaluation" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_evaluation" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Knowledge of the value of goods, works of art, and other valuables.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_evaluationi" class="unhide-content invisible" value="1" name="attr_focus_evaluation_improved">
-                                <label for="focus_evaluationi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_evaluationi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_evaluation" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_evaluation" class="white-text btn-invisible">
+                                    Evaluation
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Knowledge of the value of goods, works of art, and other valuables.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_evaluation_total" class="invisible" value="@{focus_evaluation}+@{focus_evaluation_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Law)|||@{intelligence}|||@{focus_law_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Law
-                        </button>
-                        <input type="checkbox" id="focus_law" class="unhide-content invisible" value="2" name="attr_focus_law">
-                        <label for="focus_law" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_law" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Knowledge of codes, regulations, and different legal proceedings of all levels of the judiciary and law enforcement.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_lawi" class="unhide-content invisible" value="1" name="attr_focus_law_improved">
-                                <label for="focus_lawi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_lawi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_law" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_law" class="white-text btn-invisible">
+                                    Law
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Knowledge of codes, regulations, and different legal proceedings of all levels of the judiciary and law enforcement.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_law_total" class="invisible" value="@{focus_law}+@{focus_law_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Medicine)|||@{intelligence}|||@{focus_medicine_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Medicine
-                        </button>
-                        <input type="checkbox" id="focus_medicine" class="unhide-content invisible" value="2" name="attr_focus_medicine">
-                        <label for="focus_medicine" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_medicine" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Tending to the sick and injured, and understanding medical and anatomical knowledge.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_medicinei" class="unhide-content invisible" value="1" name="attr_focus_medicine_improved">
-                                <label for="focus_medicinei" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_medicinei" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_medicine" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_medicine" class="white-text btn-invisible">
+                                    Medicine
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Tending to the sick and injured, and understanding medical and anatomical knowledge.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_medicine_total" class="invisible" value="@{focus_medicine}+@{focus_medicine_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Navigation)|||@{intelligence}|||@{focus_navigation_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Navigation
-                        </button>
-                        <input type="checkbox" id="focus_navigation" class="unhide-content invisible" value="2" name="attr_focus_navigation">
-                        <label for="focus_navigation" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_navigation" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Planning and following a route from one place to another, interpreting maps and cartographic data, and figuring out where you are.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_navigationi" class="unhide-content invisible" value="1" name="attr_focus_navigation_improved">
-                                <label for="focus_navigationi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_navigationi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_navigation" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_navigation" class="white-text btn-invisible">
+                                    Navigation
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Planning and following a route from one place to another, interpreting maps and cartographic data, and figuring out where you are.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_navigation_total" class="invisible" value="@{focus_navigation}+@{focus_navigation_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Research)|||@{intelligence}|||@{focus_research_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Research
-                        </button>
-                        <input type="checkbox" id="focus_research" class="unhide-content invisible" value="2" name="attr_focus_research">
-                        <label for="focus_research" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_research" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Conducting a systematic search for information, usually using records, archives, and books.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_researchi" class="unhide-content invisible" value="1" name="attr_focus_research_improved">
-                                <label for="focus_researchi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_researchi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_research" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_research" class="white-text btn-invisible">
+                                    Research
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Conducting a systematic search for information, usually using records, archives, and books.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_research_total" class="invisible" value="@{focus_research}+@{focus_research_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Science)|||@{intelligence}|||@{focus_science_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Science
-                        </button>
-                        <input type="checkbox" id="focus_science" class="unhide-content invisible" value="2" name="attr_focus_science">
-                        <label for="focus_science" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_science" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Knowledge of an organized field of study and the ability to understand things related to it. Examples of Science focuses include Anthropology, Astronomy, Botany, Biology, Chemistry, Economics, Genetics, History, Planetary or “Earth” Sciences, Physics, Psychology, and Theology, but you can choose another scientific field, if you wish.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_sciencei" class="unhide-content invisible" value="1" name="attr_focus_science_improved">
-                                <label for="focus_sciencei" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_sciencei" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_science" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_science" class="white-text btn-invisible">
+                                    Science
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Knowledge of an organized field of study and the ability to understand things related to it. Examples of Science focuses include Anthropology, Astronomy, Botany, Biology, Chemistry, Economics, Genetics, History, Planetary or “Earth” Sciences, Physics, Psychology, and Theology, but you can choose another scientific field, if you wish.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_science_total" class="invisible" value="@{focus_science}+@{focus_science_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Security)|||@{intelligence}|||@{focus_security_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Security
-                        </button>
-                        <input type="checkbox" id="focus_security" class="unhide-content invisible" value="2" name="attr_focus_security">
-                        <label for="focus_security" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_security" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Knowledge of different security devices, systems, protocols, and personnel.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_securityi" class="unhide-content invisible" value="1" name="attr_focus_security_improved">
-                                <label for="focus_securityi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_securityi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_security" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_security" class="white-text btn-invisible">
+                                    Security
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Knowledge of different security devices, systems, protocols, and personnel.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_security_total" class="invisible" value="@{focus_security}+@{focus_security_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Tactics)|||@{intelligence}|||@{focus_tactics_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Tactics
-                        </button>
-                        <input type="checkbox" id="focus_tactics" class="unhide-content invisible" value="2" name="attr_focus_tactics">
-                        <label for="focus_tactics" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_tactics" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Knowledge of strategy, tactics, and famous applications thereof.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_tacticsi" class="unhide-content invisible" value="1" name="attr_focus_tactics_improved">
-                                <label for="focus_tacticsi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_tacticsi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_tactics" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_tactics" class="white-text btn-invisible">
+                                    Tactics
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Knowledge of strategy, tactics, and famous applications thereof.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_tactics_total" class="invisible" value="@{focus_tactics}+@{focus_tactics_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Intelligence(Technology)|||@{intelligence}|||@{focus_technology_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Technology
-                        </button>
-                        <input type="checkbox" id="focus_technology" class="unhide-content invisible" value="2" name="attr_focus_technology">
-                        <label for="focus_technology" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_technology" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Knowledge of the design and operation of technology, particularly computers, which are incorporated into nearly all technological items in The Expanse.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_technologyi" class="unhide-content invisible" value="1" name="attr_focus_technology_improved">
-                                <label for="focus_technologyi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_technologyi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_technology" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_technology" class="white-text btn-invisible">
+                                    Technology
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Knowledge of the design and operation of technology, particularly computers, which are incorporated into nearly all technological items in The Expanse.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_technology_total" class="invisible" value="@{focus_technology}+@{focus_technology_improved}" disabled="true" />
                     </div>
                 </div>
             </div>
@@ -4834,6 +5381,7 @@
             }
         })
     })
+
     on("clicked:select_focus_bargaining", () => {
         getAttrs(['focus_bargaining'], (values) => {
             if (values.focus_bargaining) {
@@ -4843,6 +5391,7 @@
             }
         })
     })
+
     on("clicked:select_focus_deception", () => {
         getAttrs(['focus_deception'], (values) => {
             if (values.focus_deception) {
@@ -4852,6 +5401,7 @@
             }
         })
     })
+
     on("clicked:select_focus_disguise", () => {
         getAttrs(['focus_disguise'], (values) => {
             if (values.focus_disguise) {
@@ -4861,6 +5411,7 @@
             }
         })
     })
+
     on("clicked:select_focus_etiquette", () => {
         getAttrs(['focus_etiquette'], (values) => {
             if (values.focus_etiquette) {
@@ -4870,6 +5421,7 @@
             }
         })
     })
+
     on("clicked:select_focus_expression", () => {
         getAttrs(['focus_expression'], (values) => {
             if (values.focus_expression) {
@@ -4879,6 +5431,7 @@
             }
         })
     })
+
     on("clicked:select_focus_gambling", () => {
         getAttrs(['focus_gambling'], (values) => {
             if (values.focus_gambling) {
@@ -4888,6 +5441,7 @@
             }
         })
     })
+
     on("clicked:select_focus_investigation", () => {
         getAttrs(['focus_investigation'], (values) => {
             if (values.focus_investigation) {
@@ -4897,6 +5451,7 @@
             }
         })
     })
+
     on("clicked:select_focus_leadership", () => {
         getAttrs(['focus_leadership'], (values) => {
             if (values.focus_leadership) {
@@ -4906,6 +5461,7 @@
             }
         })
     })
+
     on("clicked:select_focus_performing", () => {
         getAttrs(['focus_performing'], (values) => {
             if (values.focus_performing) {
@@ -4915,6 +5471,7 @@
             }
         })
     })
+
     on("clicked:select_focus_persuasion", () => {
         getAttrs(['focus_persuasion'], (values) => {
             if (values.focus_persuasion) {
@@ -4924,12 +5481,323 @@
             }
         })
     })
+
     on("clicked:select_focus_seduction", () => {
         getAttrs(['focus_seduction'], (values) => {
             if (values.focus_seduction) {
                 setAttrs({focus_seduction: 0}, {silent: true})
             } else {
                 setAttrs({focus_seduction: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_running", () => {
+        getAttrs(['focus_running'], (values) => {
+            if (values.focus_running) {
+                setAttrs({focus_running: 0}, {silent: true})
+            } else {
+                setAttrs({focus_running: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_stamina", () => {
+        getAttrs(['focus_stamina'], (values) => {
+            if (values.focus_stamina) {
+                setAttrs({focus_stamina: 0}, {silent: true})
+            } else {
+                setAttrs({focus_stamina: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_swimming", () => {
+        getAttrs(['focus_swimming'], (values) => {
+            if (values.focus_swimming) {
+                setAttrs({focus_swimming: 0}, {silent: true})
+            } else {
+                setAttrs({focus_swimming: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_tolerance", () => {
+        getAttrs(['focus_tolerance'], (values) => {
+            if (values.focus_tolerance) {
+                setAttrs({focus_tolerance: 0}, {silent: true})
+            } else {
+                setAttrs({focus_tolerance: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_acrobatics", () => {
+        getAttrs(['focus_acrobatics'], (values) => {
+            if (values.focus_acrobatics) {
+                setAttrs({focus_acrobatics: 0}, {silent: true})
+            } else {
+                setAttrs({focus_acrobatics: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_crafting", () => {
+        getAttrs(['focus_crafting'], (values) => {
+            if (values.focus_crafting) {
+                setAttrs({focus_crafting: 0}, {silent: true})
+            } else {
+                setAttrs({focus_crafting: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_driving", () => {
+        getAttrs(['focus_driving'], (values) => {
+            if (values.focus_driving) {
+                setAttrs({focus_driving: 0}, {silent: true})
+            } else {
+                setAttrs({focus_driving: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_freefall", () => {
+        getAttrs(['focus_freefall'], (values) => {
+            if (values.focus_freefall) {
+                setAttrs({focus_freefall: 0}, {silent: true})
+            } else {
+                setAttrs({focus_freefall: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_initiative", () => {
+        getAttrs(['focus_initiative'], (values) => {
+            if (values.focus_initiative) {
+                setAttrs({focus_initiative: 0}, {silent: true})
+            } else {
+                setAttrs({focus_initiative: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_piloting", () => {
+        getAttrs(['focus_piloting'], (values) => {
+            if (values.focus_piloting) {
+                setAttrs({focus_piloting: 0}, {silent: true})
+            } else {
+                setAttrs({focus_piloting: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_sleight_of_hand", () => {
+        getAttrs(['focus_sleight_of_hand'], (values) => {
+            if (values.focus_sleight_of_hand) {
+                setAttrs({focus_sleight_of_hand: 0}, {silent: true})
+            } else {
+                setAttrs({focus_sleight_of_hand: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_stealth", () => {
+        getAttrs(['focus_stealth'], (values) => {
+            if (values.focus_stealth) {
+                setAttrs({focus_stealth: 0}, {silent: true})
+            } else {
+                setAttrs({focus_stealth: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_brawling", () => {
+        getAttrs(['focus_brawling'], (values) => {
+            if (values.focus_brawling) {
+                setAttrs({focus_brawling: 0}, {silent: true})
+            } else {
+                setAttrs({focus_brawling: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_grappling", () => {
+        getAttrs(['focus_grappling'], (values) => {
+            if (values.focus_grappling) {
+                setAttrs({focus_grappling: 0}, {silent: true})
+            } else {
+                setAttrs({focus_grappling: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_heavy_weapons", () => {
+        getAttrs(['focus_heavy_weapons'], (values) => {
+            if (values.focus_heavy_weapons) {
+                setAttrs({focus_heavy_weapons: 0}, {silent: true})
+            } else {
+                setAttrs({focus_heavy_weapons: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_light_weapons", () => {
+        getAttrs(['focus_light_weapons'], (values) => {
+            if (values.focus_light_weapons) {
+                setAttrs({focus_light_weapons: 0}, {silent: true})
+            } else {
+                setAttrs({focus_light_weapons: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_art", () => {
+        getAttrs(['focus_art'], (values) => {
+            if (values.focus_art) {
+                setAttrs({focus_art: 0}, {silent: true})
+            } else {
+                setAttrs({focus_art: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_business", () => {
+        getAttrs(['focus_business'], (values) => {
+            if (values.focus_business) {
+                setAttrs({focus_business: 0}, {silent: true})
+            } else {
+                setAttrs({focus_business: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_cryptography", () => {
+        getAttrs(['focus_cryptography'], (values) => {
+            if (values.focus_cryptography) {
+                setAttrs({focus_cryptography: 0}, {silent: true})
+            } else {
+                setAttrs({focus_cryptography: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_current_affairs", () => {
+        getAttrs(['focus_current_affairs'], (values) => {
+            if (values.focus_current_affairs) {
+                setAttrs({focus_current_affairs: 0}, {silent: true})
+            } else {
+                setAttrs({focus_current_affairs: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_demolitions", () => {
+        getAttrs(['focus_demolitions'], (values) => {
+            if (values.focus_demolitions) {
+                setAttrs({focus_demolitions: 0}, {silent: true})
+            } else {
+                setAttrs({focus_demolitions: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_engineering", () => {
+        getAttrs(['focus_engineering'], (values) => {
+            if (values.focus_engineering) {
+                setAttrs({focus_engineering: 0}, {silent: true})
+            } else {
+                setAttrs({focus_engineering: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_evaluation", () => {
+        getAttrs(['focus_evaluation'], (values) => {
+            if (values.focus_evaluation) {
+                setAttrs({focus_evaluation: 0}, {silent: true})
+            } else {
+                setAttrs({focus_evaluation: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_law", () => {
+        getAttrs(['focus_law'], (values) => {
+            if (values.focus_law) {
+                setAttrs({focus_law: 0}, {silent: true})
+            } else {
+                setAttrs({focus_law: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_medicine", () => {
+        getAttrs(['focus_medicine'], (values) => {
+            if (values.focus_medicine) {
+                setAttrs({focus_medicine: 0}, {silent: true})
+            } else {
+                setAttrs({focus_medicine: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_navigation", () => {
+        getAttrs(['focus_navigation'], (values) => {
+            if (values.focus_navigation) {
+                setAttrs({focus_navigation: 0}, {silent: true})
+            } else {
+                setAttrs({focus_navigation: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_research", () => {
+        getAttrs(['focus_research'], (values) => {
+            if (values.focus_research) {
+                setAttrs({focus_research: 0}, {silent: true})
+            } else {
+                setAttrs({focus_research: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_science", () => {
+        getAttrs(['focus_science'], (values) => {
+            if (values.focus_science) {
+                setAttrs({focus_science: 0}, {silent: true})
+            } else {
+                setAttrs({focus_science: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_security", () => {
+        getAttrs(['focus_security'], (values) => {
+            if (values.focus_security) {
+                setAttrs({focus_security: 0}, {silent: true})
+            } else {
+                setAttrs({focus_security: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_tactics", () => {
+        getAttrs(['focus_tactics'], (values) => {
+            if (values.focus_tactics) {
+                setAttrs({focus_tactics: 0}, {silent: true})
+            } else {
+                setAttrs({focus_tactics: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_focus_technology", () => {
+        getAttrs(['focus_technology'], (values) => {
+            if (values.focus_technology) {
+                setAttrs({focus_technology: 0}, {silent: true})
+            } else {
+                setAttrs({focus_technology: 1}, {silent: true})
             }
         })
     })
