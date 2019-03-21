@@ -404,7 +404,7 @@
                             </div>
                         </div>
 
-                        <fieldset class="repeating_expertise">
+                        <fieldset class="`repeating_`expertise">
                             <div>
                                 <p>Chosen Focus:</p>
                                 <select name="attr_talent_expertise_focus" style="width: 100%;">
@@ -765,7 +765,7 @@
                             <div class="hidden-if-unchecked">
                                 <p><strong>Novice</strong> You can attempt a test using an Intelligence focus somehow related to the test at hand rather than the called for ability, but with a –1 penalty. For example, using Intelligence (Business) instead of Communication (Persuasion) to convince a corporate middle-manager to agree with you. If this would be a tangential investigation focus, you do not suffer the +2 increase in TN.</p>
                                 <p><strong>Expert</strong> You leverage every bit of information. You can perform the Breakthrough exploration stunt for 2 SP.</p>
-                                <p><strong>Master</strong> When you succeed at an ability test with a knowledge focus, you gain a +1 bonus to the result of each Drama Die on tests using related focuses for the duration of the encounter. For example, an Intelligence (Law) test can benefit Communication (Performance) tests in a courtroom, or an Intelligence (Medicine) test can benefit a Perception (Intuition) test in a diagnosis.</p>
+                                <p><strong>Master</strong> When you succeed at an ability test with a knowledge focus, you gain a +1 bonus to the result of each Drama Die on tests using related focuses for the duration of the encounter. For example, an Intelligence (Law) test can benefit Communication (Persuasion) tests in a courtroom, or an Intelligence (Medicine) test can benefit a Perception (Intuition) test in a diagnosis.</p>
                             </div>
                         </div>
 
@@ -826,7 +826,7 @@
                     </div>
                 </div>
                 <div>
-                    <input type="checkbox" name="attr_talent_linguistics" class="unhide-content invisible" value="1" checked/>
+                    <input type="checkbox" name="attr_talent_linguistics" class="unhide-content invisible" value="1" />
                     <div class="hidden-if-unchecked dynamic-content">
                         <div class="black-bar">
                             <button type="action" name="act_select_talent_linguistics" class="white-text btn-invisible">Linguistics</button>
@@ -865,6 +865,518 @@
                         </div>
                     </div>
                 </div>
+                <div>
+                    <input type="checkbox" name="attr_talent_maker" class="unhide-content invisible" value="1" />
+                    <div class="hidden-if-unchecked dynamic-content">
+                        <div class="black-bar">
+                            <button type="action" name="act_select_talent_maker" class="white-text btn-invisible">Maker</button>
+                        </div>
+                        <div class="justify">
+                            <p>Make-it-yourself is your motto and you use manufacturing focuses to do just that. Use Dexterity (Craft) for most handcrafted and artistic items and Intelligence (Engineering) for most technological items. The GM may approve other manufacturing focuses as appropriate for certain items.</p>
+                            <p><strong>Requirements</strong> Any manufacturing focus (see above)</p>
+                            <input type="checkbox" class="unhide-content styled-sibling" />
+                            <span>&plusmn; Show More</span>
+                            <div class="hidden-if-unchecked">
+                                <p><strong>Novice</strong> You can use a manufacturing focus to make any item with the appropriate tools and access to a workshop.</p>
+                                <p><strong>Expert</strong> Your workmanship is reliable and steady. If you fail a test with a manufacturing focus, you can re-roll it, but must keep the results of the second roll.</p>
+                                <p><strong>Master</strong> When you perform an advanced test with a manufacturing focus, you gain a +1 bonus to the result of each Drama Die for the purpose of reaching the success threshold.</p>
+                            </div>
+                            <p>Chosen Focus:</p>
+                            <input type="text" name="attr_talent_maker_focus" />
+                        </div>
+
+                        <div class="dynamic-subsection justify">
+                            <span>
+                                <input type="checkbox" name="attr_talent_maker_novice" class="styled-sibling" value="1" checked/>
+                                <span>&plusmn; Novice</span>
+                            </span>
+                            &nbsp;
+                            <span>
+                                <input type="checkbox" name="attr_talent_maker_expert" class="styled-sibling" value="1" />
+                                <span>&plusmn; Expert</span>
+                            </span>
+                            <div>
+                                <input type="checkbox" name="attr_talent_maker_master" class="styled-sibling" value="1" />
+                                <span>&plusmn; Master</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="attr_talent_medic" class="unhide-content invisible" value="1" />
+                    <div class="hidden-if-unchecked dynamic-content">
+                        <div class="black-bar">
+                            <button type="action" name="act_select_talent_medic" class="white-text btn-invisible">Medic</button>
+                        </div>
+                        <div class="justify">
+                            <p>You can treat certain conditions in the field.</p>
+                            <p><strong>Requirements</strong> Intelligence 1 or higher</p>
+                            <input type="checkbox" class="unhide-content styled-sibling" />
+                            <span>&plusmn; Show More</span>
+                            <div class="hidden-if-unchecked">
+                                <p><strong>Novice</strong> Your treatment allows a patient to add your Intelligence (and Medicine focus, if any) to a test to avoid or overcome a medical hazard, or grants the patient a new test to overcome that hazard, if there is one. This includes saving a patient from dying and reviving an unconscious character.</p>
+                                <p><strong>Expert</strong> If you treat a patient, you can alleviate the effects of the exhausted, fatigued, injured, or wounded conditions. This takes an advanced TN 11 Intelligence (Medicine) test (threshold 5) with each roll taking one minute. If you succeed, the patient ignores the effects of those conditions for 1d6 hours. The conditions are still present, however, and the effects return when the duration ends or if any of the conditions worsen, such as an injured character becoming wounded, for example.</p>
+                                <p><strong>Master</strong> You can quickly treat wounds to prevent them from becoming serious. If you treat a wounded condition within an hour of it occurring, you can make a basic TN 13 Intelligence (Medicine) test. Success downgrades the wounded condition to injured.</p>
+                            </div>
+                        </div>
+
+                        <div class="dynamic-subsection justify">
+                            <span>
+                                <input type="checkbox" name="attr_talent_medic_novice" class="styled-sibling" value="1" checked/>
+                                <span>&plusmn; Novice</span>
+                            </span>
+                            &nbsp;
+                            <span>
+                                <input type="checkbox" name="attr_talent_medic_expert" class="styled-sibling" value="1" />
+                                <span>&plusmn; Expert</span>
+                            </span>
+                            <div>
+                                <input type="checkbox" name="attr_talent_medic_master" class="styled-sibling" value="1" />
+                                <span>&plusmn; Master</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="attr_talent_misdirection" class="unhide-content invisible" value="1" />
+                    <div class="hidden-if-unchecked dynamic-content">
+                        <div class="black-bar">
+                            <button type="action" name="act_select_talent_misdirection" class="white-text btn-invisible">Misdirection</button>
+                        </div>
+                        <div class="justify">
+                            <p>You can sow confusion among friends and foes alike.</p>
+                            <p><strong>Requirements</strong> Communication (Deception) focus</p>
+                            <input type="checkbox" class="unhide-content styled-sibling" />
+                            <span>&plusmn; Show More</span>
+                            <div class="hidden-if-unchecked">
+                                <p><strong>Novice</strong> As a major action, you can make a Communication (Deception) test opposed by an opponent’s Willpower (Self-Discipline); if you succeed, your opponent cannot perform stunts until the end of your next turn.</p>
+                                <p><strong>Expert</strong> Your targets become too focused on you to do anything else. When you use the Over Here! exploration stunt, the bonus your allies gain is +2 instead of +1, and you gain a +1 bonus yourself.</p>
+                                <p><strong>Master</strong> When you use a Communication focus in combat and roll doubles, you gain +1 SP.</p>
+                            </div>
+                        </div>
+
+                        <div class="dynamic-subsection justify">
+                            <span>
+                                <input type="checkbox" name="attr_talent_misdirection_novice" class="styled-sibling" value="1" checked/>
+                                <span>&plusmn; Novice</span>
+                            </span>
+                            &nbsp;
+                            <span>
+                                <input type="checkbox" name="attr_talent_misdirection_expert" class="styled-sibling" value="1" />
+                                <span>&plusmn; Expert</span>
+                            </span>
+                            <div>
+                                <input type="checkbox" name="attr_talent_misdirection_master" class="styled-sibling" value="1" />
+                                <span>&plusmn; Master</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="attr_talent_observation" class="unhide-content invisible" value="1" />
+                    <div class="hidden-if-unchecked dynamic-content">
+                        <div class="black-bar">
+                            <button type="action" name="act_select_talent_observation" class="white-text btn-invisible">Observation</button>
+                        </div>
+                        <div class="justify">
+                            <p>You have an eye for detail.</p>
+                            <p><strong>Requirements</strong> Perception 2 or higher</p>
+                            <input type="checkbox" class="unhide-content styled-sibling" />
+                            <span>&plusmn; Show More</span>
+                            <div class="hidden-if-unchecked">
+                                <p><strong>Novice</strong> You notice things others do not. Choose a Perception focus. If you fail a Perception test with your chosen focus, you can re-roll it but must keep the result of the second roll.</p>
+                                <p><strong>Expert</strong> Analysis of your observation often leads to insight. On a successful Perception test, you can spend 2 SP to make a second, immediate Perception test with the same TN but with a different focus than the first, and gain additional information (if any) from a successful test with the second focus. This includes additional information when you uncover the clue within a lead.</p>
+                                <p><strong>Master</strong> Nothing escapes your scrutiny. On a successful Perception test, you can spend 2 SP and gain a +2 bonus to all Perception tests involving the same object or subject as the first test for the duration of the encounter.</p>
+                            </div>
+                            <p>Chosen Focus:</p>
+                            <select name="attr_talent_observation_focus" style="width: 100%;">
+                                <option></option>
+                                <option value="empathy">PER (Empathy)</option>
+                                <option value="hearing">PER (Hearing)</option>
+                                <option value="intuition">PER (Intuition)</option>
+                                <option value="searching">PER (Searching)</option>
+                                <option value="seeing">PER (Seeing)</option>
+                                <option value="smelling">PER (Smelling)</option>
+                                <option value="survival">PER (Survival)</option>
+                                <option value="tasting">PER (Tasting)</option>
+                                <option value="touching">PER (Touching)</option>
+                                <option value="tracking">PER (Tracking)</option>
+                            <option value="technology">INT (Technology)</option>
+                            </select>
+                        </div>
+
+                        <div class="dynamic-subsection justify">
+                            <span>
+                                <input type="checkbox" name="attr_talent_observation_novice" class="styled-sibling" value="1" checked/>
+                                <span>&plusmn; Novice</span>
+                            </span>
+                            &nbsp;
+                            <span>
+                                <input type="checkbox" name="attr_talent_observation_expert" class="styled-sibling" value="1" />
+                                <span>&plusmn; Expert</span>
+                            </span>
+                            <div>
+                                <input type="checkbox" name="attr_talent_observation_master" class="styled-sibling" value="1" />
+                                <span>&plusmn; Master</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="attr_talent_oratory" class="unhide-content invisible" value="1" />
+                    <div class="hidden-if-unchecked dynamic-content">
+                        <div class="black-bar">
+                            <button type="action" name="act_select_talent_oratory" class="white-text btn-invisible">Oratory</button>
+                        </div>
+                        <div class="justify">
+                            <p>You are a skilled public speaker who can sway others with your words.</p>
+                            <p><strong>Requirements</strong> Communication (Persuasion) focus</p>
+                            <input type="checkbox" class="unhide-content styled-sibling" />
+                            <span>&plusmn; Show More</span>
+                            <div class="hidden-if-unchecked">
+                                <p><strong>Novice</strong> You know how to work a crowd. If you fail a Communication (Persuasion) test when trying to convince a group (not an individual), you can re-roll it, but must keep the results of the second roll.</p>
+                                <p><strong>Expert</strong> Each time you perform the Sway the Crowd social stunt, you affect three additional people instead of one.</p>
+                                <p><strong>Master</strong> You can agitate a crowd. If you make a successful Communication (Persuasion) test when addressing a group and the result of your Drama Die is 5 or 6, you rouse them to immediate action. You can’t necessarily control what they do, though you can try to do so with Communication (Leadership) tests, but they take your words to heart and act on them regardless.</p>
+                            </div>
+                        </div>
+
+                        <div class="dynamic-subsection justify">
+                            <span>
+                                <input type="checkbox" name="attr_talent_oratory_novice" class="styled-sibling" value="1" checked/>
+                                <span>&plusmn; Novice</span>
+                            </span>
+                            &nbsp;
+                            <span>
+                                <input type="checkbox" name="attr_talent_oratory_expert" class="styled-sibling" value="1" />
+                                <span>&plusmn; Expert</span>
+                            </span>
+                            <div>
+                                <input type="checkbox" name="attr_talent_oratory_master" class="styled-sibling" value="1" />
+                                <span>&plusmn; Master</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="attr_talent_overwhelm" class="unhide-content invisible" value="1" />
+                    <div class="hidden-if-unchecked dynamic-content">
+                        <div class="black-bar">
+                            <button type="action" name="act_select_talent_overwhelm" class="white-text btn-invisible">Overwhelm</button>
+                        </div>
+                        <div class="justify">
+                            <p>In hand-to-hand combat, you are relentless and overwhelming.</p>
+                            <p><strong>Requirements</strong> Fighting 2 or higher</p>
+                            <input type="checkbox" class="unhide-content styled-sibling" />
+                            <span>&plusmn; Show More</span>
+                            <div class="hidden-if-unchecked">
+                                <p><strong>Novice</strong> When you make a close combat attack, you can take up to a –3 penalty on your attack roll to receive a corresponding bonus to your damage roll.</p>
+                                <p><strong>Expert</strong> Your expertise makes you dangerous. When you succeed with a close combat attack, you can add your focus bonus for that attack to your damage total.</p>
+                                <p><strong>Master</strong> You break opponent’s defenses with brutal or relentless attacks. If you spend 3 SP after a successful attack, your target must make an opposed Strength (Might) test against your attack roll; if they fail, they suffer a –2 penalty to Defense until the end of your next turn.</p>
+                            </div>
+                        </div>
+
+                        <div class="dynamic-subsection justify">
+                            <span>
+                                <input type="checkbox" name="attr_talent_overwhelm_novice" class="styled-sibling" value="1" checked/>
+                                <span>&plusmn; Novice</span>
+                            </span>
+                            &nbsp;
+                            <span>
+                                <input type="checkbox" name="attr_talent_overwhelm_expert" class="styled-sibling" value="1" />
+                                <span>&plusmn; Expert</span>
+                            </span>
+                            <div>
+                                <input type="checkbox" name="attr_talent_overwhelm_master" class="styled-sibling" value="1" />
+                                <span>&plusmn; Master</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="attr_talent_performance" class="unhide-content invisible" value="1" />
+                    <div class="hidden-if-unchecked dynamic-content">
+                        <div class="black-bar">
+                            <button type="action" name="act_select_talent_performance" class="white-text btn-invisible">Performance</button>
+                        </div>
+                        <div class="justify">
+                            <p>You have a talent for the performing arts.</p>
+                            <p><strong>Requirements</strong> Communication (Performing) focus</p>
+                            <input type="checkbox" class="unhide-content styled-sibling" />
+                            <span>&plusmn; Show More</span>
+                            <div class="hidden-if-unchecked">
+                                <p><strong>Novice</strong> Choose a form of performance art, such as playing a musical instrument, singing, acting, dancing, miming, stand-up comedy, juggling, or any other art performed in front of an audience. You are an accomplished performer in your chosen art. In addition, you may perform the From the Heart and Sway the Crowd stunts for 1 SP less than their normal cost.</p>
+                                <p><strong>Expert</strong> You can add an additional form of performance. You get a feel for a room and adapt accordingly. If you have at least 15 minutes to observe a crowd before performing or speaking in front of them, you gain a +1 bonus to any Communication-based tests to persuade or entertain them. You can also choose a number of individuals in the crowd equal to your Perception (minimum 1); at the end of the 15 minutes of observation you know their initial attitudes toward you, and you know if they changed by the end of your performance and, if so, by how much.</p>
+                                <p><strong>Master</strong> You can add an additional form of performance to your repertoire. When performing, you exude confidence and style. You may perform the With a Flourish stunt while performing in front of an audience for 3 SP, and its effects last until the end of the day.</p>
+                            </div>
+                            <fieldset class="repeating_performance">
+                                <input type="text" name="attr_talent_performance_niche" />
+                            </fieldset>
+
+                        </div>
+
+                        <div class="dynamic-subsection justify">
+                            <span>
+                                <input type="checkbox" name="attr_talent_performance_novice" class="styled-sibling" value="1" checked/>
+                                <span>&plusmn; Novice</span>
+                            </span>
+                            &nbsp;
+                            <span>
+                                <input type="checkbox" name="attr_talent_performance_expert" class="styled-sibling" value="1" />
+                                <span>&plusmn; Expert</span>
+                            </span>
+                            <div>
+                                <input type="checkbox" name="attr_talent_performance_master" class="styled-sibling" value="1" />
+                                <span>&plusmn; Master</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="attr_talent_pilot" class="unhide-content invisible" value="1" />
+                    <div class="hidden-if-unchecked dynamic-content">
+                        <div class="black-bar">
+                            <button type="action" name="act_select_talent_pilot" class="white-text btn-invisible">Pilot</button>
+                        </div>
+                        <div class="justify">
+                            <p>Any vehicle under your control becomes like an extension of yourself.</p>
+                            <p><strong>Requirements</strong> Dexterity (Driving or Piloting) focus</p>
+                            <input type="checkbox" class="unhide-content styled-sibling" />
+                            <span>&plusmn; Show More</span>
+                            <div class="hidden-if-unchecked">
+                                <p><strong>Novice</strong> You are quick to get things going. Starting up a vehicle is a free action for you, and you can perform Dexterity (Driving or Piloting) tests as a minor action.</p>
+                                <p><strong>Expert</strong> You push the performance of your means of transportation. When you control a vehicle, it gains a +2 bonus to tests involving its speed.</p>
+                                <p><strong>Master</strong> If you fail an ability test to control a vehicle, you can re-roll it, but must keep the results of the second roll. In addition, while you are at the controls, your vehicle gains a +2 bonus to Defense as long as it is moving.</p>
+                            </div>
+                        </div>
+
+                        <div class="dynamic-subsection justify">
+                            <span>
+                                <input type="checkbox" name="attr_talent_pilot_novice" class="styled-sibling" value="1" checked/>
+                                <span>&plusmn; Novice</span>
+                            </span>
+                            &nbsp;
+                            <span>
+                                <input type="checkbox" name="attr_talent_pilot_expert" class="styled-sibling" value="1" />
+                                <span>&plusmn; Expert</span>
+                            </span>
+                            <div>
+                                <input type="checkbox" name="attr_talent_pilot_master" class="styled-sibling" value="1" />
+                                <span>&plusmn; Master</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="attr_talent_pinpoint" class="unhide-content invisible" value="1" />
+                    <div class="hidden-if-unchecked dynamic-content">
+                        <div class="black-bar">
+                            <button type="action" name="act_select_talent_pinpoint" class="white-text btn-invisible">Pinpoint</button>
+                        </div>
+                        <div class="justify">
+                            <p>If you can see it, you can hit it. Hard.</p>
+                            <p><strong>Requirements</strong> Accuracy or Fighting 1 or higher, and Dexterity 1 or higher</p>
+                            <input type="checkbox" class="unhide-content styled-sibling" />
+                            <span>&plusmn; Show More</span>
+                            <div class="hidden-if-unchecked">
+                                <p><strong>Novice</strong> You strike where it hurts the most. Once per round, you can add 1d6 to the damage of a successful attack if your Dexterity is greater than your target’s.</p>
+                                <p><strong>Expert</strong> Your instinct is as sharp as your eyes. When you take the Aim action, the attack bonus you gain is +2 instead of +1.</p>
+                                <p><strong>Master</strong> You can perform the Called Shot action stunt for 3 SP. You can also use it with any weapon, not just guns.</p>
+                            </div>
+                        </div>
+
+                        <div class="dynamic-subsection justify">
+                            <span>
+                                <input type="checkbox" name="attr_talent_pinpoint_novice" class="styled-sibling" value="1" checked/>
+                                <span>&plusmn; Novice</span>
+                            </span>
+                            &nbsp;
+                            <span>
+                                <input type="checkbox" name="attr_talent_pinpoint_expert" class="styled-sibling" value="1" />
+                                <span>&plusmn; Expert</span>
+                            </span>
+                            <div>
+                                <input type="checkbox" name="attr_talent_pinpoint_master" class="styled-sibling" value="1" />
+                                <span>&plusmn; Master</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="attr_talent_pistol" class="unhide-content invisible" value="1" />
+                    <div class="hidden-if-unchecked dynamic-content">
+                        <div class="black-bar">
+                            <button type="action" name="act_select_talent_pistol" class="white-text btn-invisible">Pistol</button>
+                        </div>
+                        <div class="justify">
+                            <p>Between the quick and the dead, you prefer the former.</p>
+                            <p><strong>Requirements</strong> Accuracy (Pistols) focus</p>
+                            <input type="checkbox" class="unhide-content styled-sibling" />
+                            <span>&plusmn; Show More</span>
+                            <div class="hidden-if-unchecked">
+                                <p><strong>Novice</strong> You are deadlier close-up. You gain a +1 bonus to damage with pistols against targets within 6 meters.</p>
+                                <p><strong>Expert</strong> If you have a pistol in your hand, or draw or grab one as your first available action, you can roll initiative with an Accuracy (Pistols) test instead of a Dexterity (Initiative) test. You can also generate stunt points with this test, unlike a normal initiative roll, and spend them on general combat or gun stunts.</p>
+                                <p><strong>Master</strong> When hitting a target with a shot from a pistol, you can add your Dexterity to the damage total.</p>
+                            </div>
+                        </div>
+
+                        <div class="dynamic-subsection justify">
+                            <span>
+                                <input type="checkbox" name="attr_talent_pistol_novice" class="styled-sibling" value="1" checked/>
+                                <span>&plusmn; Novice</span>
+                            </span>
+                            &nbsp;
+                            <span>
+                                <input type="checkbox" name="attr_talent_pistol_expert" class="styled-sibling" value="1" />
+                                <span>&plusmn; Expert</span>
+                            </span>
+                            <div>
+                                <input type="checkbox" name="attr_talent_pistol_master" class="styled-sibling" value="1" />
+                                <span>&plusmn; Master</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="attr_talent_protector" class="unhide-content invisible" value="1" />
+                    <div class="hidden-if-unchecked dynamic-content">
+                        <div class="black-bar">
+                            <button type="action" name="act_select_talent_protector" class="white-text btn-invisible">Protector</button>
+                        </div>
+                        <div class="justify">
+                            <p>You are the shield that protects your friends.</p>
+                            <p><strong>Requirements</strong> Perception and Willpower 1 or higher</p>
+                            <input type="checkbox" class="unhide-content styled-sibling" />
+                            <span>&plusmn; Show More</span>
+                            <div class="hidden-if-unchecked">
+                                <p><strong>Novice</strong> Your desire to protect others lends you speed. When you perform the Blockade action stunt, you can move up to 6 meters instead of 3.</p>
+                                <p><strong>Expert</strong> You react quickly to put yourself in harm’s way. When you perform the Guardian Angel action stunt, the amount of damage you take instead of your ally is equal to the number of SP spent +2.</p>
+                                <p><strong>Master</strong> You become the shadow of those who would hurt others. If you are standing next to an opponent and that opponent moves within 2 meters of one of your allies, you can move adjacent to the opponent before they finish their turn, even if it would surpass your Speed. Your Speed is 0 on your next turn.</p>
+                            </div>
+                        </div>
+
+                        <div class="dynamic-subsection justify">
+                            <span>
+                                <input type="checkbox" name="attr_talent_protector_novice" class="styled-sibling" value="1" checked/>
+                                <span>&plusmn; Novice</span>
+                            </span>
+                            &nbsp;
+                            <span>
+                                <input type="checkbox" name="attr_talent_protector_expert" class="styled-sibling" value="1" />
+                                <span>&plusmn; Expert</span>
+                            </span>
+                            <div>
+                                <input type="checkbox" name="attr_talent_protector_master" class="styled-sibling" value="1" />
+                                <span>&plusmn; Master</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="attr_talent_quick_reflexes" class="unhide-content invisible" value="1" />
+                    <div class="hidden-if-unchecked dynamic-content">
+                        <div class="black-bar">
+                            <button type="action" name="act_select_talent_quick_reflexes" class="white-text btn-invisible">Quick Reflexes</button>
+                        </div>
+                        <div class="justify">
+                            <p>You react to threats instantly and instinctually.</p>
+                            <p><strong>Requirements</strong> Dexterity 2 or higher</p>
+                            <input type="checkbox" class="unhide-content styled-sibling" />
+                            <span>&plusmn; Show More</span>
+                            <div class="hidden-if-unchecked">
+                                <p><strong>Novice</strong> You can prepare for action in an instant. Once per round on your turn you can use Ready as a free action.</p>
+                                <p><strong>Expert</strong> You can go prone or stand up as a free action rather than as part of a Move action.</p>
+                                <p><strong>Master</strong> It is hard to get the drop on you. You may re-roll your initiative roll at the start of a combat encounter, but must keep the results of the second roll.</p>
+                            </div>
+                        </div>
+
+                        <div class="dynamic-subsection justify">
+                            <span>
+                                <input type="checkbox" name="attr_talent_quick_reflexes_novice" class="styled-sibling" value="1" checked/>
+                                <span>&plusmn; Novice</span>
+                            </span>
+                            &nbsp;
+                            <span>
+                                <input type="checkbox" name="attr_talent_quick_reflexes_expert" class="styled-sibling" value="1" />
+                                <span>&plusmn; Expert</span>
+                            </span>
+                            <div>
+                                <input type="checkbox" name="attr_talent_quick_reflexes_master" class="styled-sibling" value="1" />
+                                <span>&plusmn; Master</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="attr_talent_rifle" class="unhide-content invisible" value="1" />
+                    <div class="hidden-if-unchecked dynamic-content">
+                        <div class="black-bar">
+                            <button type="action" name="act_select_talent_rifle" class="white-text btn-invisible">Rifle</button>
+                        </div>
+                        <div class="justify">
+                            <p>A rifle is far more dangerous in your hands.</p>
+                            <p><strong>Requirements</strong> Accuracy (Rifles) focus</p>
+                            <input type="checkbox" class="unhide-content styled-sibling" />
+                            <span>&plusmn; Show More</span>
+                            <div class="hidden-if-unchecked">
+                                <p><strong>Novice</strong> You can assume a highly ready stance; as long as you are not moving more than half your normal speed, you can make an attack with a loaded rifle you are holding as a reaction before rolling initiative, even if surprised. This attack uses up your major action for the round, which means that you only have a minor action available during your next turn.</p>
+                                <p><strong>Expert</strong> You trust in your weapon’s power to punch through cover. The attack roll modifier for a target behind light cover does not apply to your attacks with a rifle. This includes the penalty from the Human Shield action stunt.</p>
+                                <p><strong>Master</strong> Penalties to the attack roll due to range do not apply to your attacks with a rifle.</p>
+                            </div>
+                        </div>
+
+                        <div class="dynamic-subsection justify">
+                            <span>
+                                <input type="checkbox" name="attr_talent_rifle_novice" class="styled-sibling" value="1" checked/>
+                                <span>&plusmn; Novice</span>
+                            </span>
+                            &nbsp;
+                            <span>
+                                <input type="checkbox" name="attr_talent_rifle_expert" class="styled-sibling" value="1" />
+                                <span>&plusmn; Expert</span>
+                            </span>
+                            <div>
+                                <input type="checkbox" name="attr_talent_rifle_master" class="styled-sibling" value="1" />
+                                <span>&plusmn; Master</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="attr_talent_scouting" class="unhide-content invisible" value="1" />
+                    <div class="hidden-if-unchecked dynamic-content">
+                        <div class="black-bar">
+                            <button type="action" name="act_select_talent_scouting" class="white-text btn-invisible">Scouting</button>
+                        </div>
+                        <div class="justify">
+                            <p>You are skilled in reconnaissance and infiltration.</p>
+                            <p><strong>Requirements</strong> Dexterity 2 or higher</p>
+                            <input type="checkbox" class="unhide-content styled-sibling" />
+                            <span>&plusmn; Show More</span>
+                            <div class="hidden-if-unchecked">
+                                <p><strong>Novice</strong> If you fail a Dexterity (Stealth) test, you can re-roll it, but must keep the results of the second roll.</p>
+                                <p><strong>Expert</strong> You know how to get the drop on opponents. You can perform the Seize the Initiative stunt for 2 SP.</p>
+                                <p><strong>Master</strong> You are a skilled observer. If you fail a Perception (Seeing) test, you can re-roll it, but must keep the results of the second roll.</p>
+                            </div>
+                        </div>
+
+                        <div class="dynamic-subsection justify">
+                            <span>
+                                <input type="checkbox" name="attr_talent_scouting_novice" class="styled-sibling" value="1" checked/>
+                                <span>&plusmn; Novice</span>
+                            </span>
+                            &nbsp;
+                            <span>
+                                <input type="checkbox" name="attr_talent_scouting_expert" class="styled-sibling" value="1" />
+                                <span>&plusmn; Expert</span>
+                            </span>
+                            <div>
+                                <input type="checkbox" name="attr_talent_scouting_master" class="styled-sibling" value="1" />
+                                <span>&plusmn; Master</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <input type="checkbox" id="show_all_talents" class="unhide-content invisible" />
             <label for="show_all_talents" class="black-bar white-text hover-glow">Show All &#177;</label>
@@ -1098,8 +1610,8 @@
                     <input type="checkbox" name="attr_talent_fringer" class="unhide-content invisible" value="1" />
                     <div class="hidden-if-checked dynamic-content">
                         <div class="black-bar">
-                            <input type="checkbox" class="unhide-content invisible" name="attr_enable_talent_grappling" value="1" />
-                            <button type="action" name="act_select_talent_fringer" class="white-text btn-invisible">Fringer</button>
+                            <input type="checkbox" class="unhide-content invisible" name="attr_enable_talent_fringer" value="1" />
+                            <button type="action" name="act_select_talent_fringer" class="hidden-if-unchecked white-text btn-invisible">Fringer</button>
                             <label class="hidden-if-checked white-text">Fringer</label>
                         </div>
                         <div class="tiny-text blue-text aliceblue-bg justify">
@@ -1236,7 +1748,7 @@
                             <div class="hidden-if-unchecked">
                                 <p><strong>Novice</strong> You can attempt a test using an Intelligence focus somehow related to the test at hand rather than the called for ability, but with a –1 penalty. For example, using Intelligence (Business) instead of Communication (Persuasion) to convince a corporate middle-manager to agree with you. If this would be a tangential investigation focus, you do not suffer the +2 increase in TN.</p>
                                 <p><strong>Expert</strong> You leverage every bit of information. You can perform the Breakthrough exploration stunt for 2 SP.</p>
-                                <p><strong>Master</strong> When you succeed at an ability test with a knowledge focus, you gain a +1 bonus to the result of each Drama Die on tests using related focuses for the duration of the encounter. For example, an Intelligence (Law) test can benefit Communication (Performance) tests in a courtroom, or an Intelligence (Medicine) test can benefit a Perception (Intuition) test in a diagnosis.</p>
+                                <p><strong>Master</strong> When you succeed at an ability test with a knowledge focus, you gain a +1 bonus to the result of each Drama Die on tests using related focuses for the duration of the encounter. For example, an Intelligence (Law) test can benefit Communication (Persuasion) tests in a courtroom, or an Intelligence (Medicine) test can benefit a Perception (Intuition) test in a diagnosis.</p>
                             </div>
                         </div>
                     </div>
@@ -1279,6 +1791,298 @@
                                 <p><strong>Novice</strong> You learn an additional language.</p>
                                 <p><strong>Expert</strong> You learn two additional languages for a total of three plus your native language(s). You can also imitate a specific dialect with a successful Communication (Performance) test.</p>
                                 <p><strong>Master</strong> You learn three additional languages for a total of six plus your native language(s). You can also pick any one additional language you know and speak it like a native -- that is, without any trace of an accent.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="attr_talent_maker" class="unhide-content invisible" value="1" />
+                    <div class="hidden-if-checked dynamic-content">
+                        <div class="black-bar">
+                            <button type="action" name="act_select_talent_maker" class="hidden-if-unchecked white-text btn-invisible">Maker</button>
+                        </div>
+                        <div class="tiny-text blue-text aliceblue-bg justify">
+                            <p>Make-it-yourself is your motto and you use manufacturing focuses to do just that. Use Dexterity (Craft) for most handcrafted and artistic items and Intelligence (Engineering) for most technological items. The GM may approve other manufacturing focuses as appropriate for certain items.</p>
+                            <p><strong>Requirements</strong> Any manufacturing focus (see above)</p>
+                            <input type="checkbox" class="unhide-content styled-sibling" />
+                            <span>&plusmn; Show More</span>
+                            <div class="hidden-if-unchecked">
+                                <p><strong>Novice</strong> You can use a manufacturing focus to make any item with the appropriate tools and access to a workshop.</p>
+                                <p><strong>Expert</strong> Your workmanship is reliable and steady. If you fail a test with a manufacturing focus, you can re-roll it, but must keep the results of the second roll.</p>
+                                <p><strong>Master</strong> When you perform an advanced test with a manufacturing focus, you gain a +1 bonus to the result of each Drama Die for the purpose of reaching the success threshold.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="attr_talent_medic" class="unhide-content invisible" value="1" />
+                    <div class="hidden-if-checked dynamic-content">
+                        <div class="black-bar">
+                            <input type="checkbox" class="unhide-content invisible" name="attr_enable_talent_medic" value="1" />
+                            <button type="action" name="act_select_talent_medic" class="hidden-if-unchecked white-text btn-invisible">Medic</button>
+                            <label class="hidden-if-checked white-text">Medic</label>
+                        </div>
+                        <div class="tiny-text blue-text aliceblue-bg justify">
+                            <p>You can treat certain conditions in the field.</p>
+                            <p><strong>Requirements</strong> Intelligence 1 or higher</p>
+                            <input type="checkbox" class="unhide-content styled-sibling" />
+                            <span>&plusmn; Show More</span>
+                            <div class="hidden-if-unchecked">
+                                <p><strong>Novice</strong> Your treatment allows a patient to add your Intelligence (and Medicine focus, if any) to a test to avoid or overcome a medical hazard, or grants the patient a new test to overcome that hazard, if there is one. This includes saving a patient from dying and reviving an unconscious character.</p>
+                                <p><strong>Expert</strong> If you treat a patient, you can alleviate the effects of the exhausted, fatigued, injured, or wounded conditions. This takes an advanced TN 11 Intelligence (Medicine) test (threshold 5) with each roll taking one minute. If you succeed, the patient ignores the effects of those conditions for 1d6 hours. The conditions are still present, however, and the effects return when the duration ends or if any of the conditions worsen, such as an injured character becoming wounded, for example.</p>
+                                <p><strong>Master</strong> You can quickly treat wounds to prevent them from becoming serious. If you treat a wounded condition within an hour of it occurring, you can make a basic TN 13 Intelligence (Medicine) test. Success downgrades the wounded condition to injured.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="attr_talent_misdirection" class="unhide-content invisible" value="1" />
+                    <div class="hidden-if-checked dynamic-content">
+                        <div class="black-bar">
+                            <input type="checkbox" class="unhide-content invisible" name="attr_enable_talent_misdirection" value="1" />
+                            <button type="action" name="act_select_talent_misdirection" class="hidden-if-unchecked white-text btn-invisible">Misdirection</button>
+                            <label class="hidden-if-checked white-text">Misdirection</label>
+                        </div>
+                        <div class="tiny-text blue-text aliceblue-bg justify">
+                            <p>You can sow confusion among friends and foes alike.</p>
+                            <p><strong>Requirements</strong> Communication (Deception) focus</p>
+                            <input type="checkbox" class="unhide-content styled-sibling" />
+                            <span>&plusmn; Show More</span>
+                            <div class="hidden-if-unchecked">
+                                <p><strong>Novice</strong> As a major action, you can make a Communication (Deception) test opposed by an opponent’s Willpower (Self-Discipline); if you succeed, your opponent cannot perform stunts until the end of your next turn.</p>
+                                <p><strong>Expert</strong> Your targets become too focused on you to do anything else. When you use the Over Here! exploration stunt, the bonus your allies gain is +2 instead of +1, and you gain a +1 bonus yourself.</p>
+                                <p><strong>Master</strong> When you use a Communication focus in combat and roll doubles, you gain +1 SP.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="attr_talent_observation" class="unhide-content invisible" value="1" />
+                    <div class="hidden-if-checked dynamic-content">
+                        <div class="black-bar">
+                            <input type="checkbox" class="unhide-content invisible" name="attr_enable_talent_observation" value="1" />
+                            <button type="action" name="act_select_talent_observation" class="hidden-if-unchecked white-text btn-invisible">Observation</button>
+                            <label class="hidden-if-checked white-text">Observation</label>
+                        </div>
+                        <div class="tiny-text blue-text aliceblue-bg justify">
+                            <p>You have an eye for detail.</p>
+                            <p><strong>Requirements</strong> Perception 2 or higher</p>
+                            <input type="checkbox" class="unhide-content styled-sibling" />
+                            <span>&plusmn; Show More</span>
+                            <div class="hidden-if-unchecked">
+                                <p><strong>Novice</strong> You notice things others do not. Choose a Perception focus. If you fail a Perception test with your chosen focus, you can re-roll it but must keep the result of the second roll.</p>
+                                <p><strong>Expert</strong> Analysis of your observation often leads to insight. On a successful Perception test, you can spend 2 SP to make a second, immediate Perception test with the same TN but with a different focus than the first, and gain additional information (if any) from a successful test with the second focus. This includes additional information when you uncover the clue within a lead.</p>
+                                <p><strong>Master</strong> Nothing escapes your scrutiny. On a successful Perception test, you can spend 2 SP and gain a +2 bonus to all Perception tests involving the same object or subject as the first test for the duration of the encounter.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="attr_talent_oratory" class="unhide-content invisible" value="1" />
+                    <div class="hidden-if-checked dynamic-content">
+                        <div class="black-bar">
+                            <input type="checkbox" class="unhide-content invisible" name="attr_enable_talent_oratory" value="1" />
+                            <button type="action" name="act_select_talent_oratory" class="hidden-if-unchecked white-text btn-invisible">Oratory</button>
+                            <label class="hidden-if-checked white-text">Oratory</label>
+                        </div>
+                        <div class="tiny-text blue-text aliceblue-bg justify">
+                            <p>You are a skilled public speaker who can sway others with your words.</p>
+                            <p><strong>Requirements</strong> Communication (Persuasion) focus</p>
+                            <input type="checkbox" class="unhide-content styled-sibling" />
+                            <span>&plusmn; Show More</span>
+                            <div class="hidden-if-unchecked">
+                                <p><strong>Novice</strong> You know how to work a crowd. If you fail a Communication (Persuasion) test when trying to convince a group (not an individual), you can re-roll it, but must keep the results of the second roll.</p>
+                                <p><strong>Expert</strong> Each time you perform the Sway the Crowd social stunt, you affect three additional people instead of one.</p>
+                                <p><strong>Master</strong> You can agitate a crowd. If you make a successful Communication (Persuasion) test when addressing a group and the result of your Drama Die is 5 or 6, you rouse them to immediate action. You can’t necessarily control what they do, though you can try to do so with Communication (Leadership) tests, but they take your words to heart and act on them regardless.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="attr_talent_overwhelm" class="unhide-content invisible" value="1" />
+                    <div class="hidden-if-checked dynamic-content">
+                        <div class="black-bar">
+                            <input type="checkbox" class="unhide-content invisible" name="attr_enable_talent_overwhelm" value="1" />
+                            <button type="action" name="act_select_talent_overwhelm" class="hidden-if-unchecked white-text btn-invisible">Overwhelm</button>
+                            <label class="hidden-if-checked white-text">Overwhelm</label>
+                        </div>
+                        <div class="tiny-text blue-text aliceblue-bg justify">
+                            <p>In hand-to-hand combat, you are relentless and overwhelming.</p>
+                            <p><strong>Requirements</strong> Fighting 2 or higher</p>
+                            <input type="checkbox" class="unhide-content styled-sibling" />
+                            <span>&plusmn; Show More</span>
+                            <div class="hidden-if-unchecked">
+                                <p><strong>Novice</strong> When you make a close combat attack, you can take up to a –3 penalty on your attack roll to receive a corresponding bonus to your damage roll.</p>
+                                <p><strong>Expert</strong> Your expertise makes you dangerous. When you succeed with a close combat attack, you can add your focus bonus for that attack to your damage total.</p>
+                                <p><strong>Master</strong> You break opponent’s defenses with brutal or relentless attacks. If you spend 3 SP after a successful attack, your target must make an opposed Strength (Might) test against your attack roll; if they fail, they suffer a –2 penalty to Defense until the end of your next turn.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="attr_talent_performance" class="unhide-content invisible" value="1" />
+                    <div class="hidden-if-checked dynamic-content">
+                        <div class="black-bar">
+                            <input type="checkbox" class="unhide-content invisible" name="attr_enable_talent_performance" value="1" />
+                            <button type="action" name="act_select_talent_performance" class="hidden-if-unchecked white-text btn-invisible">Performance</button>
+                            <label class="hidden-if-checked white-text">Performance</label>
+                        </div>
+                        <div class="tiny-text blue-text aliceblue-bg justify">
+                            <p>You have a talent for the performing arts.</p>
+                            <p><strong>Requirements</strong> Communication (Performing) focus</p>
+                            <input type="checkbox" class="unhide-content styled-sibling" />
+                            <span>&plusmn; Show More</span>
+                            <div class="hidden-if-unchecked">
+                                <p><strong>Novice</strong> Choose a form of performance art, such as playing a musical instrument, singing, acting, dancing, miming, stand-up comedy, juggling, or any other art performed in front of an audience. You are an accomplished performer in your chosen art. In addition, you may perform the From the Heart and Sway the Crowd stunts for 1 SP less than their normal cost.</p>
+                                <p><strong>Expert</strong> You can add an additional form of performance. You get a feel for a room and adapt accordingly. If you have at least 15 minutes to observe a crowd before performing or speaking in front of them, you gain a +1 bonus to any Communication-based tests to persuade or entertain them. You can also choose a number of individuals in the crowd equal to your Perception (minimum 1); at the end of the 15 minutes of observation you know their initial attitudes toward you, and you know if they changed by the end of your performance and, if so, by how much.</p>
+                                <p><strong>Master</strong> You can add an additional form of performance to your repertoire. When performing, you exude confidence and style. You may perform the With a Flourish stunt while performing in front of an audience for 3 SP, and its effects last until the end of the day.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="attr_talent_pilot" class="unhide-content invisible" value="1" />
+                    <div class="hidden-if-checked dynamic-content">
+                        <div class="black-bar">
+                            <input type="checkbox" class="unhide-content invisible" name="attr_enable_talent_pilot" value="1" />
+                            <button type="action" name="act_select_talent_pilot" class="hidden-if-unchecked white-text btn-invisible">Pilot</button>
+                            <label class="hidden-if-checked white-text">Pilot</label>
+                        </div>
+                        <div class="tiny-text blue-text aliceblue-bg justify">
+                            <p>Any vehicle under your control becomes like an extension of yourself.</p>
+                            <p><strong>Requirements</strong> Dexterity (Driving or Piloting) focus</p>
+                            <input type="checkbox" class="unhide-content styled-sibling" />
+                            <span>&plusmn; Show More</span>
+                            <div class="hidden-if-unchecked">
+                                <p><strong>Novice</strong> You are quick to get things going. Starting up a vehicle is a free action for you, and you can perform Dexterity (Driving or Piloting) tests as a minor action.</p>
+                                <p><strong>Expert</strong> You push the performance of your means of transportation. When you control a vehicle, it gains a +2 bonus to tests involving its speed.</p>
+                                <p><strong>Master</strong> If you fail an ability test to control a vehicle, you can re-roll it, but must keep the results of the second roll. In addition, while you are at the controls, your vehicle gains a +2 bonus to Defense as long as it is moving.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="attr_talent_pinpoint" class="unhide-content invisible" value="1" />
+                    <div class="hidden-if-checked dynamic-content">
+                        <div class="black-bar">
+                            <input type="checkbox" class="unhide-content invisible" name="attr_enable_talent_pinpoint" value="1" />
+                            <button type="action" name="act_select_talent_pinpoint" class="hidden-if-unchecked white-text btn-invisible">Pinpoint</button>
+                            <label class="hidden-if-checked white-text">Pinpoint</label>
+                        </div>
+                        <div class="tiny-text blue-text aliceblue-bg justify">
+                            <p>If you can see it, you can hit it. Hard.</p>
+                            <p><strong>Requirements</strong> Accuracy or Fighting 1 or higher, and Dexterity 1 or higher</p>
+                            <input type="checkbox" class="unhide-content styled-sibling" />
+                            <span>&plusmn; Show More</span>
+                            <div class="hidden-if-unchecked">
+                                <p><strong>Novice</strong> You strike where it hurts the most. Once per round, you can add 1d6 to the damage of a successful attack if your Dexterity is greater than your target’s.</p>
+                                <p><strong>Expert</strong> Your instinct is as sharp as your eyes. When you take the Aim action, the attack bonus you gain is +2 instead of +1.</p>
+                                <p><strong>Master</strong> You can perform the Called Shot action stunt for 3 SP. You can also use it with any weapon, not just guns.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="attr_talent_pistol" class="unhide-content invisible" value="1" />
+                    <div class="hidden-if-checked dynamic-content">
+                        <div class="black-bar">
+                            <input type="checkbox" class="unhide-content invisible" name="attr_enable_talent_pistol" value="1" />
+                            <button type="action" name="act_select_talent_pistol" class="hidden-if-unchecked white-text btn-invisible">Pistol</button>
+                            <label class="hidden-if-checked white-text">Pistol</label>
+                        </div>
+                        <div class="tiny-text blue-text aliceblue-bg justify">
+                            <p>Between the quick and the dead, you prefer the former.</p>
+                            <p><strong>Requirements</strong> Accuracy (Pistols) focus</p>
+                            <input type="checkbox" class="unhide-content styled-sibling" />
+                            <span>&plusmn; Show More</span>
+                            <div class="hidden-if-unchecked">
+                                <p><strong>Novice</strong> You are deadlier close-up. You gain a +1 bonus to damage with pistols against targets within 6 meters.</p>
+                                <p><strong>Expert</strong> If you have a pistol in your hand, or draw or grab one as your first available action, you can roll initiative with an Accuracy (Pistols) test instead of a Dexterity (Initiative) test. You can also generate stunt points with this test, unlike a normal initiative roll, and spend them on general combat or gun stunts.</p>
+                                <p><strong>Master</strong> When hitting a target with a shot from a pistol, you can add your Dexterity to the damage total.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="attr_talent_protector" class="unhide-content invisible" value="1" />
+                    <div class="hidden-if-checked dynamic-content">
+                        <div class="black-bar">
+                            <input type="checkbox" class="unhide-content invisible" name="attr_enable_talent_protector" value="1" />
+                            <button type="action" name="act_select_talent_protector" class="hidden-if-unchecked white-text btn-invisible">Protector</button>
+                            <label class="hidden-if-checked white-text">Protector</label>
+                        </div>
+                        <div class="tiny-text blue-text aliceblue-bg justify">
+                            <p>You are the shield that protects your friends.</p>
+                            <p><strong>Requirements</strong> Perception and Willpower 1 or higher</p>
+                            <input type="checkbox" class="unhide-content styled-sibling" />
+                            <span>&plusmn; Show More</span>
+                            <div class="hidden-if-unchecked">
+                                <p><strong>Novice</strong> Your desire to protect others lends you speed. When you perform the Blockade action stunt, you can move up to 6 meters instead of 3.</p>
+                                <p><strong>Expert</strong> You react quickly to put yourself in harm’s way. When you perform the Guardian Angel action stunt, the amount of damage you take instead of your ally is equal to the number of SP spent +2.</p>
+                                <p><strong>Master</strong> You become the shadow of those who would hurt others. If you are standing next to an opponent and that opponent moves within 2 meters of one of your allies, you can move adjacent to the opponent before they finish their turn, even if it would surpass your Speed. Your Speed is 0 on your next turn.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="attr_talent_quick_reflexes" class="unhide-content invisible" value="1" />
+                    <div class="hidden-if-checked dynamic-content">
+                        <div class="black-bar">
+                            <input type="checkbox" class="unhide-content invisible" name="attr_enable_talent_quick_reflexes" value="1" />
+                            <button type="action" name="act_select_talent_quick_reflexes" class="hidden-if-unchecked white-text btn-invisible">Quick Reflexes</button>
+                            <label class="hidden-if-checked white-text">Quick Reflexes</label>
+                        </div>
+                        <div class="tiny-text blue-text aliceblue-bg justify">
+                            <p>You react to threats instantly and instinctually.</p>
+                            <p><strong>Requirements</strong> Dexterity 2 or higher</p>
+                            <input type="checkbox" class="unhide-content styled-sibling" />
+                            <span>&plusmn; Show More</span>
+                            <div class="hidden-if-unchecked">
+                                <p><strong>Novice</strong> You can prepare for action in an instant. Once per round on your turn you can use Ready as a free action.</p>
+                                <p><strong>Expert</strong> You can go prone or stand up as a free action rather than as part of a Move action.</p>
+                                <p><strong>Master</strong> It is hard to get the drop on you. You may re-roll your initiative roll at the start of a combat encounter, but must keep the results of the second roll.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="attr_talent_rifle" class="unhide-content invisible" value="1" />
+                    <div class="hidden-if-checked dynamic-content">
+                        <div class="black-bar">
+                            <input type="checkbox" class="unhide-content invisible" name="attr_enable_talent_rifle" value="1" />
+                            <button type="action" name="act_select_talent_rifle" class="hidden-if-unchecked white-text btn-invisible">Rifle</button>
+                            <label class="hidden-if-checked white-text">Rifle</label>
+                        </div>
+                        <div class="tiny-text blue-text aliceblue-bg justify">
+                            <p>A rifle is far more dangerous in your hands.</p>
+                            <p><strong>Requirements</strong> Accuracy (Rifles) focus</p>
+                            <input type="checkbox" class="unhide-content styled-sibling" />
+                            <span>&plusmn; Show More</span>
+                            <div class="hidden-if-unchecked">
+                                <p><strong>Novice</strong> You can assume a highly ready stance; as long as you are not moving more than half your normal speed, you can make an attack with a loaded rifle you are holding as a reaction before rolling initiative, even if surprised. This attack uses up your major action for the round, which means that you only have a minor action available during your next turn.</p>
+                                <p><strong>Expert</strong> You trust in your weapon’s power to punch through cover. The attack roll modifier for a target behind light cover does not apply to your attacks with a rifle. This includes the penalty from the Human Shield action stunt.</p>
+                                <p><strong>Master</strong> Penalties to the attack roll due to range do not apply to your attacks with a rifle.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="attr_talent_scouting" class="unhide-content invisible" value="1" />
+                    <div class="hidden-if-checked dynamic-content">
+                        <div class="black-bar">
+                            <input type="checkbox" class="unhide-content invisible" name="attr_enable_talent_scouting" value="1" />
+                            <button type="action" name="act_select_talent_scouting" class="hidden-if-unchecked white-text btn-invisible">Scouting</button>
+                            <label class="hidden-if-checked white-text">Scouting</label>
+                        </div>
+                        <div class="tiny-text blue-text aliceblue-bg justify">
+                            <p>You are skilled in reconnaissance and infiltration.</p>
+                            <p><strong>Requirements</strong> Dexterity 2 or higher</p>
+                            <input type="checkbox" class="unhide-content styled-sibling" />
+                            <span>&plusmn; Show More</span>
+                            <div class="hidden-if-unchecked">
+                                <p><strong>Novice</strong> If you fail a Dexterity (Stealth) test, you can re-roll it, but must keep the results of the second roll.</p>
+                                <p><strong>Expert</strong> You know how to get the drop on opponents. You can perform the Seize the Initiative stunt for 2 SP.</p>
+                                <p><strong>Master</strong> You are a skilled observer. If you fail a Perception (Seeing) test, you can re-roll it, but must keep the results of the second roll.</p>
                             </div>
                         </div>
                     </div>
@@ -2756,8 +3560,8 @@
 
     // Check requirements for all Talents
 
-    on("change:dexterity change:focus_acrobatics", (info) => {
-        getAttrs(['dexterity', 'focus_acrobatics'], (values) => {
+    on("change:accuracy change:dexterity change:fighting change:focus_acrobatics", (info) => {
+        getAttrs(['accuracy', 'dexterity', 'fighting', 'focus_acrobatics'], (values) => {
             if (values.dexterity >= 2 && values.focus_acrobatics > 0) {
                 setAttrs({enable_talent_agility: 1}, {silent: true})
             } else {
@@ -2767,15 +3571,31 @@
             if (values.dexterity >= 2) {
                 setAttrs({enable_talent_burglary: 1}, {silent: true})
                 setAttrs({enable_talent_dual_weapon: 1}, {silent: true})
+                setAttrs({enable_talent_quick_reflexes: 1}, {silent: true})
+                setAttrs({enable_talent_scouting: 1}, {silent: true})
             } else {
                 setAttrs({enable_talent_burglary: 0}, {silent: true})
                 setAttrs({enable_talent_dual_weapon: 0}, {silent: true})
+                setAttrs({enable_talent_quick_reflexes: 0}, {silent: true})
+                setAttrs({enable_talent_scouting: 0}, {silent: true})
+            }
+
+            if (values.fighting >= 2) {
+                setAttrs({enable_talent_overwhelm: 1}, {silent: true})
+            } else {
+                setAttrs({enable_talent_overwhelm: 0}, {silent: true})
+            }
+
+            if (values.dexterity > 0 && (values.accuracy > 0 || values.fighting > 0)) {
+                setAttrs({enable_talent_pinpoint: 1}, {silent: true})
+            } else {
+                setAttrs({enable_talent_pinpoint: 0}, {silent: true})
             }
         })
     });
 
-    on("change:intelligence change:willpower", (info) => {
-        getAttrs(['intelligence', 'willpower'], (values) => {
+    on("change:intelligence change:perception change:willpower", (info) => {
+        getAttrs(['intelligence', 'perception', 'willpower'], (values) => {
             if (values.intelligence > 0 || values.willpower > 0) {
                 setAttrs({enable_talent_improvisation: 1}, {silent: true})
             } else {
@@ -2792,9 +3612,24 @@
 
             if (values.intelligence > 0) {
                 setAttrs({enable_talent_linguistics: 1}, {silent: true})
+                setAttrs({enable_talent_medic: 1}, {silent: true})
             } else {
                 setAttrs({enable_talent_linguistics: 0}, {silent: true})
+                setAttrs({enable_talent_medic: 0}, {silent: true})
             }
+
+            if (values.perception >= 2) {
+                setAttrs({enable_talent_observation: 1}, {silent: true})
+            } else {
+                setAttrs({enable_talent_observation: 0}, {silent: true})
+            }
+
+            if (values.perception > 0 && values.willpower > 0) {
+                setAttrs({enable_talent_protector: 1}, {silent: true})
+            } else {
+                setAttrs({enable_talent_protector: 0}, {silent: true})
+            }
+
         })
     })
 
@@ -2808,7 +3643,27 @@
         })
     })
 
-    on("change:communication change:constitution change:focus_crafting change:focus_expression change:focus", (info) => {
+    on("change:focus_deception", (info) => {
+        getAttrs(['focus_deception'], (values) => {
+            if (values.focus_deception > 0) {
+                setAttrs({enable_talent_misdirection: 1}, {silent: true})
+            } else {
+                setAttrs({enable_talent_misdirection: 0}, {silent: true})
+            }
+        })
+    })
+
+    on("change:focus_persuasion", (info) => {
+        getAttrs(['focus_persuasion'], (values) => {
+            if (values.focus_persuasion > 0) {
+                setAttrs({enable_talent_oratory: 1}, {silent: true})
+            } else {
+                setAttrs({enable_talent_oratory: 0}, {silent: true})
+            }
+        })
+    })
+
+    on("change:communication change:constitution change:focus_crafting change:focus_expression", (info) => {
         getAttrs(['communication', 'constitution', 'focus_crafting', 'focus_expression'], (values) => {
             if (values.communication > 0 && (values.focus_crafting > 0 || values.focus_expression > 0)) {
                 setAttrs({enable_talent_artistry: 1}, {silent: true})
@@ -2822,21 +3677,22 @@
                 setAttrs({enable_talent_carousing: 0}, {silent: true})
             }
 
-            if (values.communication >= 2) {
-                setAttrs({enable_talent_command: 1}, {silent: true})
-                setAttrs({enable_talent_intrigue: 1}, {silent: true})
-            } else {
-                setAttrs({enable_talent_command: 0}, {silent: true})
-                setAttrs({enable_talent_inspire: 0}, {silent: true})
-                setAttrs({enable_talent_intrigue: 0}, {silent: true})
-            }
-
             if (values.communication > 0) {
                 setAttrs({enable_talent_contacts: 1}, {silent: true})
                 setAttrs({enable_talent_fringer: 1}, {silent: true})
             } else {
                 setAttrs({enable_talent_contacts: 0}, {silent: true})
                 setAttrs({enable_talent_fringer: 0}, {silent: true})
+            }
+
+            if (values.communication >= 2) {
+                setAttrs({enable_talent_command: 1}, {silent: true})
+                setAttrs({enable_talent_inspire: 1}, {silent: true})
+                setAttrs({enable_talent_intrigue: 1}, {silent: true})
+            } else {
+                setAttrs({enable_talent_command: 0}, {silent: true})
+                setAttrs({enable_talent_inspire: 0}, {silent: true})
+                setAttrs({enable_talent_intrigue: 0}, {silent: true})
             }
         })
     })
@@ -2849,12 +3705,46 @@
         }
     });
 
+    on("change:focus_pistols", (info) => {
+        if (info.newValue > 0) {
+            setAttrs({enable_talent_pistol: 1}, {silent: true});
+        } else {
+            setAttrs({enable_talent_pistol: 0}, {silent: true});
+        }
+    });
+
+    on("change:focus_rifles", (info) => {
+        if (info.newValue > 0) {
+            setAttrs({enable_talent_rifle: 1}, {silent: true});
+        } else {
+            setAttrs({enable_talent_rifle: 0}, {silent: true});
+        }
+    });
+
+    on("change:focus_performing", (info) => {
+        if (info.newValue > 0) {
+            setAttrs({enable_talent_performance: 1}, {silent: true});
+        } else {
+            setAttrs({enable_talent_performance: 0}, {silent: true});
+        }
+    });
+
     on("change:focus_security change:focus_technology", (info) => {
         getAttrs(['focus_security', 'focus_technology'], (values) => {
             if (values.focus_security > 0 && values.focus_technology > 0) {
                 setAttrs({enable_talent_hacking: 1}, {silent: true});
             } else {
                 setAttrs({enable_talent_hacking: 0}, {silent: true});
+            }
+        })
+    });
+
+    on("change:focus_driving change:focus_piloting", (info) => {
+        getAttrs(['focus_driving', 'focus_piloting'], (values) => {
+            if (values.focus_driving > 0 || values.focus_piloting > 0) {
+                setAttrs({enable_talent_pilot: 1}, {silent: true});
+            } else {
+                setAttrs({enable_talent_pilot: 0}, {silent: true});
             }
         })
     });
@@ -3057,6 +3947,146 @@
                 setAttrs({talent_linguistics: 0}, {silent: true})
             } else {
                 setAttrs({talent_linguistics: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_talent_maker", () => {
+        getAttrs(['talent_maker'], (values) => {
+            if (values.talent_maker) {
+                setAttrs({talent_maker: 0}, {silent: true})
+            } else {
+                setAttrs({talent_maker: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_talent_medic", () => {
+        getAttrs(['talent_medic'], (values) => {
+            if (values.talent_medic) {
+                setAttrs({talent_medic: 0}, {silent: true})
+            } else {
+                setAttrs({talent_medic: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_talent_misdirection", () => {
+        getAttrs(['talent_misdirection'], (values) => {
+            if (values.talent_misdirection) {
+                setAttrs({talent_misdirection: 0}, {silent: true})
+            } else {
+                setAttrs({talent_misdirection: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_talent_observation", () => {
+        getAttrs(['talent_observation'], (values) => {
+            if (values.talent_observation) {
+                setAttrs({talent_observation: 0}, {silent: true})
+            } else {
+                setAttrs({talent_observation: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_talent_oratory", () => {
+        getAttrs(['talent_oratory'], (values) => {
+            if (values.talent_oratory) {
+                setAttrs({talent_oratory: 0}, {silent: true})
+            } else {
+                setAttrs({talent_oratory: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_talent_overwhelm", () => {
+        getAttrs(['talent_overwhelm'], (values) => {
+            if (values.talent_overwhelm) {
+                setAttrs({talent_overwhelm: 0}, {silent: true})
+            } else {
+                setAttrs({talent_overwhelm: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_talent_performance", () => {
+        getAttrs(['talent_performance'], (values) => {
+            if (values.talent_performance) {
+                setAttrs({talent_performance: 0}, {silent: true})
+            } else {
+                setAttrs({talent_performance: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_talent_pilot", () => {
+        getAttrs(['talent_pilot'], (values) => {
+            if (values.talent_pilot) {
+                setAttrs({talent_pilot: 0}, {silent: true})
+            } else {
+                setAttrs({talent_pilot: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_talent_pinpoint", () => {
+        getAttrs(['talent_pinpoint'], (values) => {
+            if (values.talent_pinpoint) {
+                setAttrs({talent_pinpoint: 0}, {silent: true})
+            } else {
+                setAttrs({talent_pinpoint: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_talent_pistol", () => {
+        getAttrs(['talent_pistol'], (values) => {
+            if (values.talent_pistol) {
+                setAttrs({talent_pistol: 0}, {silent: true})
+            } else {
+                setAttrs({talent_pistol: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_talent_protector", () => {
+        getAttrs(['talent_protector'], (values) => {
+            if (values.talent_protector) {
+                setAttrs({talent_protector: 0}, {silent: true})
+            } else {
+                setAttrs({talent_protector: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_talent_quick_reflexes", () => {
+        getAttrs(['talent_quick_reflexes'], (values) => {
+            if (values.talent_quick_reflexes) {
+                setAttrs({talent_quick_reflexes: 0}, {silent: true})
+            } else {
+                setAttrs({talent_quick_reflexes: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_talent_rifle", () => {
+        getAttrs(['talent_rifle'], (values) => {
+            if (values.talent_rifle) {
+                setAttrs({talent_rifle: 0}, {silent: true})
+            } else {
+                setAttrs({talent_rifle: 1}, {silent: true})
+            }
+        })
+    })
+
+    on("clicked:select_talent_scouting", () => {
+        getAttrs(['talent_scouting'], (values) => {
+            if (values.talent_scouting) {
+                setAttrs({talent_scouting: 0}, {silent: true})
+            } else {
+                setAttrs({talent_scouting: 1}, {silent: true})
             }
         })
     })
