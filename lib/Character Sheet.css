@@ -171,11 +171,22 @@ input[type=checkbox].sheet-styled-sibling {
     bottom: 100%;
     left: 50%;
     margin-left: -60px;
-
+    margin-bottom: 10px;
 }
 
 .sheet-tooltip:hover .sheet-tooltiptext {
     visibility: visible;
+}
+
+.sheet-tooltip .sheet-tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
 }
 
 .sheet-btn-invisible {
