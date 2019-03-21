@@ -4366,186 +4366,361 @@
                 <div class="blue-text">
                     This ability is your capacity to pick up on and notice things using any of his senses.
                 </div>
+
+                <div class="focuses">
+                    <div>
+                        <input type="checkbox" name="attr_focus_empathy" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Perception(Empathy)|||@{perception}|||@{focus_empathy_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Empathy
+                                </button>
+
+                                <button type="action" name="act_select_focus_empathy" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Picking up on and interpreting the feelings and emotions of others.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_empathy_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_empathy_total" class="invisible" value="@{focus_empathy} * (@{focus_empathy} + 1 + @{focus_empathy_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_hearing" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Perception(Hearing)|||@{perception}|||@{focus_hearing_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Hearing
+                                </button>
+
+                                <button type="action" name="act_select_focus_hearing" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Perceiving using your auditory sense.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_hearing_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_hearing_total" class="invisible" value="@{focus_hearing} * (@{focus_hearing} + 1 + @{focus_hearing_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_intuition" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Perception(Intuition)|||@{perception}|||@{focus_intuition_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Intuition
+                                </button>
+
+                                <button type="action" name="act_select_focus_intuition" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Having a "gut feeling" about certain things you can’t otherwise sense.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_intuition_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_intuition_total" class="invisible" value="@{focus_intuition} * (@{focus_intuition} + 1 + @{focus_intuition_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_searching" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Perception(Searching)|||@{perception}|||@{focus_searching_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Searching
+                                </button>
+
+                                <button type="action" name="act_select_focus_searching" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Finding things that are hidden or obscured, such as hidden compartments.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_searching_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_searching_total" class="invisible" value="@{focus_searching} * (@{focus_searching} + 1 + @{focus_searching_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_seeing" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Perception(Seeing)|||@{perception}|||@{focus_seeing_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Seeing
+                                </button>
+
+                                <button type="action" name="act_select_focus_seeing" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Perceiving using your visual sense.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_seeing_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_seeing_total" class="invisible" value="@{focus_seeing} * (@{focus_seeing} + 1 + @{focus_seeing_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_smelling" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Perception(Smelling)|||@{perception}|||@{focus_smelling_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Smelling
+                                </button>
+
+                                <button type="action" name="act_select_focus_smelling" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Perceiving using your olfactory sense.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_smelling_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_smelling_total" class="invisible" value="@{focus_smelling} * (@{focus_smelling} + 1 + @{focus_smelling_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_survival" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Perception(Survival)|||@{perception}|||@{focus_survival_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Survival
+                                </button>
+
+                                <button type="action" name="act_select_focus_survival" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Practical skills of wilderness survival.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_survival_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_survival_total" class="invisible" value="@{focus_survival} * (@{focus_survival} + 1 + @{focus_survival_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_tasting" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Perception(Tasting)|||@{perception}|||@{focus_tasting_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Tasting
+                                </button>
+
+                                <button type="action" name="act_select_focus_tasting" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Perceiving using your gustatory sense.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_tasting_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_tasting_total" class="invisible" value="@{focus_tasting} * (@{focus_tasting} + 1 + @{focus_tasting_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_touching" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Perception(Touching)|||@{perception}|||@{focus_touching_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Touching
+                                </button>
+
+                                <button type="action" name="act_select_focus_touching" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Perceiving using your tactile sense.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_touching_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_touching_total" class="invisible" value="@{focus_touching} * (@{focus_touching} + 1 + @{focus_touching_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_tracking" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Perception(Tracking)|||@{perception}|||@{focus_tracking_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Tracking
+                                </button>
+
+                                <button type="action" name="act_select_focus_tracking" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Following tracks and other signs of passage.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_tracking_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_tracking_total" class="invisible" value="@{focus_tracking} * (@{focus_tracking} + 1 + @{focus_tracking_improved})" disabled="true" />
+                    </div>
+                </div>
+
                 <div class="focuses hidden-if-unchecked">
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Perception(Empathy)|||@{perception}|||@{focus_empathy_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Empathy
-                        </button>
-                        <input type="checkbox" id="focus_empathy" class="unhide-content invisible" value="2" name="attr_focus_empathy">
-                        <label for="focus_empathy" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_empathy" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Picking up on and interpreting the feelings and emotions of others.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_empathyi" class="unhide-content invisible" value="1" name="attr_focus_empathy_improved">
-                                <label for="focus_empathyi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_empathyi" class="hidden-if-unchecked white-text">Improved</label>
+                    <label class="black-bar white-text improve-label">More Focuses</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_empathy" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_empathy" class="white-text btn-invisible">
+                                    Empathy
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Picking up on and interpreting the feelings and emotions of others.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_empathy_total" class="invisible" value="@{focus_empathy}+@{focus_empathy_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Perception(Hearing)|||@{perception}|||@{focus_hearing_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Hearing
-                        </button>
-                        <input type="checkbox" id="focus_hearing" class="unhide-content invisible" value="2" name="attr_focus_hearing">
-                        <label for="focus_hearing" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_hearing" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Perceiving using your auditory sense.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_hearingi" class="unhide-content invisible" value="1" name="attr_focus_hearing_improved">
-                                <label for="focus_hearingi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_hearingi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_hearing" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_hearing" class="white-text btn-invisible">
+                                    Hearing
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Perceiving using your auditory sense.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_hearing_total" class="invisible" value="@{focus_hearing}+@{focus_hearing_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Perception(Intuition)|||@{perception}|||@{focus_intuition_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Intuition
-                        </button>
-                        <input type="checkbox" id="focus_intuition" class="unhide-content invisible" value="2" name="attr_focus_intuition">
-                        <label for="focus_intuition" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_intuition" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Having a “gut feeling” about certain things you can’t otherwise sense.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_intuitioni" class="unhide-content invisible" value="1" name="attr_focus_intuition_improved">
-                                <label for="focus_intuitioni" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_intuitioni" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_intuition" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_intuition" class="white-text btn-invisible">
+                                    Intuition
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Having a "gut feeling" about certain things you can’t otherwise sense.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_intuition_total" class="invisible" value="@{focus_intuition}+@{focus_intuition_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Perception(Searching)|||@{perception}|||@{focus_searching_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Searching
-                        </button>
-                        <input type="checkbox" id="focus_searching" class="unhide-content invisible" value="2" name="attr_focus_searching">
-                        <label for="focus_searching" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_searching" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Finding things that are hidden or obscured, such as hidden compartments.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_searchingi" class="unhide-content invisible" value="1" name="attr_focus_searching_improved">
-                                <label for="focus_searchingi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_searchingi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_searching" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_searching" class="white-text btn-invisible">
+                                    Searching
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Finding things that are hidden or obscured, such as hidden compartments.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_searching_total" class="invisible" value="@{focus_searching}+@{focus_searching_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Perception(Seeing)|||@{perception}|||@{focus_seeing_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Seeing
-                        </button>
-                        <input type="checkbox" id="focus_seeing" class="unhide-content invisible" value="2" name="attr_focus_seeing">
-                        <label for="focus_seeing" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_seeing" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Perceiving using your visual sense.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_seeingi" class="unhide-content invisible" value="1" name="attr_focus_seeing_improved">
-                                <label for="focus_seeingi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_seeingi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_seeing" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_seeing" class="white-text btn-invisible">
+                                    Seeing
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Perceiving using your visual sense.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_seeing_total" class="invisible" value="@{focus_seeing}+@{focus_seeing_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Perception(Smelling)|||@{perception}|||@{focus_smelling_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Smelling
-                        </button>
-                        <input type="checkbox" id="focus_smelling" class="unhide-content invisible" value="2" name="attr_focus_smelling">
-                        <label for="focus_smelling" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_smelling" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Perceiving using your olfactory sense.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_smellingi" class="unhide-content invisible" value="1" name="attr_focus_smelling_improved">
-                                <label for="focus_smellingi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_smellingi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_smelling" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_smelling" class="white-text btn-invisible">
+                                    Smelling
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Perceiving using your olfactory sense.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_smelling_total" class="invisible" value="@{focus_smelling}+@{focus_smelling_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Perception(Survival)|||@{perception}|||@{focus_survival_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Survival
-                        </button>
-                        <input type="checkbox" id="focus_survival" class="unhide-content invisible" value="2" name="attr_focus_survival">
-                        <label for="focus_survival" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_survival" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Practical skills of wilderness survival.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_survivali" class="unhide-content invisible" value="1" name="attr_focus_survival_improved">
-                                <label for="focus_survivali" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_survivali" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_survival" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_survival" class="white-text btn-invisible">
+                                    Survival
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Practical skills of wilderness survival.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_survival_total" class="invisible" value="@{focus_survival}+@{focus_survival_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Perception(Tasting)|||@{perception}|||@{focus_tasting_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Tasting
-                        </button>
-                        <input type="checkbox" id="focus_tasting" class="unhide-content invisible" value="2" name="attr_focus_tasting">
-                        <label for="focus_tasting" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_tasting" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Perceiving using your gustatory sense.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_tastingi" class="unhide-content invisible" value="1" name="attr_focus_tasting_improved">
-                                <label for="focus_tastingi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_tastingi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_tasting" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_tasting" class="white-text btn-invisible">
+                                    Tasting
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Perceiving using your gustatory sense.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_tasting_total" class="invisible" value="@{focus_tasting}+@{focus_tasting_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Perception(Touching)|||@{perception}|||@{focus_touching_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Touching
-                        </button>
-                        <input type="checkbox" id="focus_touching" class="unhide-content invisible" value="2" name="attr_focus_touching">
-                        <label for="focus_touching" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_touching" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Perceiving using your tactile sense.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_touchingi" class="unhide-content invisible" value="1" name="attr_focus_touching_improved">
-                                <label for="focus_touchingi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_touchingi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_touching" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_touching" class="white-text btn-invisible">
+                                    Touching
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Perceiving using your tactile sense.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_touching_total" class="invisible" value="@{focus_touching}+@{focus_touching_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Perception(Tracking)|||@{perception}|||@{focus_tracking_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Tracking
-                        </button>
-                        <input type="checkbox" id="focus_tracking" class="unhide-content invisible" value="2" name="attr_focus_tracking">
-                        <label for="focus_tracking" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_tracking" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Following tracks and other signs of passage.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_trackingi" class="unhide-content invisible" value="1" name="attr_focus_tracking_improved">
-                                <label for="focus_trackingi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_trackingi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_tracking" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_tracking" class="white-text btn-invisible">
+                                    Tracking
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Following tracks and other signs of passage.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_tracking_total" class="invisible" value="@{focus_tracking}+@{focus_tracking_improved}" disabled="true" />
                     </div>
                 </div>
             </div>
@@ -4716,92 +4891,92 @@
 <script type="text/worker">
     on("change:level", (lvlInfo) => {
         if (lvlInfo.newValue >= 11) {
-            setAttrs({improved_focus: 1}, {silent: true});
+            setAttrs({improved_focus: 1})
         } else {
-            setAttrs({improved_focus: 0}, {silent: true});
+            setAttrs({improved_focus: 0})
         }
-    });
+    })
 
     // Check requirements for all Talents
 
     on("change:accuracy change:dexterity change:fighting change:intelligence change:perception change:strength change:willpower change:focus_acrobatics", (info) => {
         getAttrs(['accuracy', 'dexterity', 'fighting', 'intelligence', 'perception', 'strength', 'willpower', 'focus_acrobatics'], (values) => {
             if (values.dexterity >= 2 && values.focus_acrobatics > 0) {
-                setAttrs({enable_talent_agility: 1}, {silent: true})
+                setAttrs({enable_talent_agility: 1})
             } else {
-                setAttrs({enable_talent_agility: 0}, {silent: true})
+                setAttrs({enable_talent_agility: 0})
             }
 
             if (values.dexterity >= 2) {
-                setAttrs({enable_talent_burglary: 1}, {silent: true})
-                setAttrs({enable_talent_dual_weapon: 1}, {silent: true})
-                setAttrs({enable_talent_quick_reflexes: 1}, {silent: true})
-                setAttrs({enable_talent_scouting: 1}, {silent: true})
+                setAttrs({enable_talent_burglary: 1})
+                setAttrs({enable_talent_dual_weapon: 1})
+                setAttrs({enable_talent_quick_reflexes: 1})
+                setAttrs({enable_talent_scouting: 1})
             } else {
-                setAttrs({enable_talent_burglary: 0}, {silent: true})
-                setAttrs({enable_talent_dual_weapon: 0}, {silent: true})
-                setAttrs({enable_talent_quick_reflexes: 0}, {silent: true})
-                setAttrs({enable_talent_scouting: 0}, {silent: true})
+                setAttrs({enable_talent_burglary: 0})
+                setAttrs({enable_talent_dual_weapon: 0})
+                setAttrs({enable_talent_quick_reflexes: 0})
+                setAttrs({enable_talent_scouting: 0})
             }
 
             if (values.fighting >= 2) {
-                setAttrs({enable_talent_overwhelm: 1}, {silent: true})
+                setAttrs({enable_talent_overwhelm: 1})
             } else {
-                setAttrs({enable_talent_overwhelm: 0}, {silent: true})
+                setAttrs({enable_talent_overwhelm: 0})
             }
 
             if (values.dexterity > 0 && (values.accuracy > 0 || values.fighting > 0)) {
-                setAttrs({enable_talent_pinpoint: 1}, {silent: true})
+                setAttrs({enable_talent_pinpoint: 1})
             } else {
-                setAttrs({enable_talent_pinpoint: 0}, {silent: true})
+                setAttrs({enable_talent_pinpoint: 0})
             }
 
             if (values.intelligence > 0 || values.willpower > 0) {
-                setAttrs({enable_talent_improvisation: 1}, {silent: true})
+                setAttrs({enable_talent_improvisation: 1})
             } else {
-                setAttrs({enable_talent_improvisation: 0}, {silent: true})
+                setAttrs({enable_talent_improvisation: 0})
             }
 
             if (values.intelligence >= 2) {
-                setAttrs({enable_talent_knowitall: 1}, {silent: true})
-                setAttrs({enable_talent_knowledge: 1}, {silent: true})
+                setAttrs({enable_talent_knowitall: 1})
+                setAttrs({enable_talent_knowledge: 1})
             } else {
-                setAttrs({enable_talent_knowitall: 0}, {silent: true})
-                setAttrs({enable_talent_knowledge: 0}, {silent: true})
+                setAttrs({enable_talent_knowitall: 0})
+                setAttrs({enable_talent_knowledge: 0})
             }
 
             if (values.intelligence > 0) {
-                setAttrs({enable_talent_linguistics: 1}, {silent: true})
-                setAttrs({enable_talent_medic: 1}, {silent: true})
+                setAttrs({enable_talent_linguistics: 1})
+                setAttrs({enable_talent_medic: 1})
             } else {
-                setAttrs({enable_talent_linguistics: 0}, {silent: true})
-                setAttrs({enable_talent_medic: 0}, {silent: true})
+                setAttrs({enable_talent_linguistics: 0})
+                setAttrs({enable_talent_medic: 0})
             }
 
             if (values.perception >= 2) {
-                setAttrs({enable_talent_observation: 1}, {silent: true})
-                setAttrs({enable_talent_single_weapon: 1}, {silent: true})
+                setAttrs({enable_talent_observation: 1})
+                setAttrs({enable_talent_single_weapon: 1})
             } else {
-                setAttrs({enable_talent_observation: 0}, {silent: true})
-                setAttrs({enable_talent_single_weapon: 0}, {silent: true})
+                setAttrs({enable_talent_observation: 0})
+                setAttrs({enable_talent_single_weapon: 0})
             }
 
             if (values.perception > 0 && values.willpower > 0) {
-                setAttrs({enable_talent_protector: 1}, {silent: true})
+                setAttrs({enable_talent_protector: 1})
             } else {
-                setAttrs({enable_talent_protector: 0}, {silent: true})
+                setAttrs({enable_talent_protector: 0})
             }
 
             if (values.dexterity > 0 && values.perception > 0) {
-                setAttrs({enable_talent_tactical: 1}, {silent: true})
+                setAttrs({enable_talent_tactical: 1})
             } else {
-                setAttrs({enable_talent_tactical: 0}, {silent: true})
+                setAttrs({enable_talent_tactical: 0})
             }
 
             if (values.strength >= 3 && values.fighting > 0) {
-                setAttrs({enable_talent_two_handed: 1}, {silent: true})
+                setAttrs({enable_talent_two_handed: 1})
             } else {
-                setAttrs({enable_talent_two_handed: 0}, {silent: true})
+                setAttrs({enable_talent_two_handed: 0})
             }
         })
     });
@@ -4809,17 +4984,17 @@
     on("change:focus_brawling change:focus_grappling", (info) => {
         getAttrs(['focus_grappling', 'focus_brawling'], (values) => {
             if (values.focus_brawling > 0) {
-                setAttrs({enable_talent_self_defense: 1}, {silent: true})
-                setAttrs({enable_talent_striking: 1}, {silent: true})
+                setAttrs({enable_talent_self_defense: 1})
+                setAttrs({enable_talent_striking: 1})
             } else {
-                setAttrs({enable_talent_self_defense: 0}, {silent: true})
-                setAttrs({enable_talent_striking: 0}, {silent: true})
+                setAttrs({enable_talent_self_defense: 0})
+                setAttrs({enable_talent_striking: 0})
             }
 
             if (values.focus_grappling > 0) {
-                setAttrs({enable_talent_grappling: 1}, {silent: true})
+                setAttrs({enable_talent_grappling: 1})
             } else {
-                setAttrs({enable_talent_grappling: 0}, {silent: true})
+                setAttrs({enable_talent_grappling: 0})
             }
         })
     })
@@ -4827,9 +5002,9 @@
     on("change:focus_deception", (info) => {
         getAttrs(['focus_deception'], (values) => {
             if (values.focus_deception > 0) {
-                setAttrs({enable_talent_misdirection: 1}, {silent: true})
+                setAttrs({enable_talent_misdirection: 1})
             } else {
-                setAttrs({enable_talent_misdirection: 0}, {silent: true})
+                setAttrs({enable_talent_misdirection: 0})
             }
         })
     })
@@ -4837,9 +5012,9 @@
     on("change:focus_persuasion", (info) => {
         getAttrs(['focus_persuasion'], (values) => {
             if (values.focus_persuasion > 0) {
-                setAttrs({enable_talent_oratory: 1}, {silent: true})
+                setAttrs({enable_talent_oratory: 1})
             } else {
-                setAttrs({enable_talent_oratory: 0}, {silent: true})
+                setAttrs({enable_talent_oratory: 0})
             }
         })
     })
@@ -4847,75 +5022,75 @@
     on("change:communication change:constitution change:focus_crafting change:focus_expression", (info) => {
         getAttrs(['communication', 'constitution', 'focus_crafting', 'focus_expression'], (values) => {
             if (values.communication > 0 && (values.focus_crafting > 0 || values.focus_expression > 0)) {
-                setAttrs({enable_talent_artistry: 1}, {silent: true})
+                setAttrs({enable_talent_artistry: 1})
             } else {
-                setAttrs({enable_talent_artistry: 0}, {silent: true})
+                setAttrs({enable_talent_artistry: 0})
             }
 
             if (values.communication > 0 && values.constitution > 0) {
-                setAttrs({enable_talent_carousing: 1}, {silent: true})
+                setAttrs({enable_talent_carousing: 1})
             } else {
-                setAttrs({enable_talent_carousing: 0}, {silent: true})
+                setAttrs({enable_talent_carousing: 0})
             }
 
             if (values.communication > 0) {
-                setAttrs({enable_talent_contacts: 1}, {silent: true})
-                setAttrs({enable_talent_fringer: 1}, {silent: true})
+                setAttrs({enable_talent_contacts: 1})
+                setAttrs({enable_talent_fringer: 1})
             } else {
-                setAttrs({enable_talent_contacts: 0}, {silent: true})
-                setAttrs({enable_talent_fringer: 0}, {silent: true})
+                setAttrs({enable_talent_contacts: 0})
+                setAttrs({enable_talent_fringer: 0})
             }
 
             if (values.communication >= 2) {
-                setAttrs({enable_talent_command: 1}, {silent: true})
-                setAttrs({enable_talent_inspire: 1}, {silent: true})
-                setAttrs({enable_talent_intrigue: 1}, {silent: true})
+                setAttrs({enable_talent_command: 1})
+                setAttrs({enable_talent_inspire: 1})
+                setAttrs({enable_talent_intrigue: 1})
             } else {
-                setAttrs({enable_talent_command: 0}, {silent: true})
-                setAttrs({enable_talent_inspire: 0}, {silent: true})
-                setAttrs({enable_talent_intrigue: 0}, {silent: true})
+                setAttrs({enable_talent_command: 0})
+                setAttrs({enable_talent_inspire: 0})
+                setAttrs({enable_talent_intrigue: 0})
             }
         })
     })
 
     on("change:focus_medicine", (info) => {
         if (info.newValue > 0) {
-            setAttrs({enable_talent_doctor: 1}, {silent: true});
+            setAttrs({enable_talent_doctor: 1});
         } else {
-            setAttrs({enable_talent_doctor: 0}, {silent: true});
+            setAttrs({enable_talent_doctor: 0});
         }
     });
 
     on("change:focus_pistols", (info) => {
         if (info.newValue > 0) {
-            setAttrs({enable_talent_pistol: 1}, {silent: true});
+            setAttrs({enable_talent_pistol: 1});
         } else {
-            setAttrs({enable_talent_pistol: 0}, {silent: true});
+            setAttrs({enable_talent_pistol: 0});
         }
     });
 
     on("change:focus_rifles", (info) => {
         if (info.newValue > 0) {
-            setAttrs({enable_talent_rifle: 1}, {silent: true});
+            setAttrs({enable_talent_rifle: 1});
         } else {
-            setAttrs({enable_talent_rifle: 0}, {silent: true});
+            setAttrs({enable_talent_rifle: 0});
         }
     });
 
     on("change:focus_performing", (info) => {
         if (info.newValue > 0) {
-            setAttrs({enable_talent_performance: 1}, {silent: true});
+            setAttrs({enable_talent_performance: 1});
         } else {
-            setAttrs({enable_talent_performance: 0}, {silent: true});
+            setAttrs({enable_talent_performance: 0});
         }
     });
 
     on("change:focus_security change:focus_technology", (info) => {
         getAttrs(['focus_security', 'focus_technology'], (values) => {
             if (values.focus_security > 0 && values.focus_technology > 0) {
-                setAttrs({enable_talent_hacking: 1}, {silent: true});
+                setAttrs({enable_talent_hacking: 1});
             } else {
-                setAttrs({enable_talent_hacking: 0}, {silent: true});
+                setAttrs({enable_talent_hacking: 0});
             }
         })
     });
@@ -4923,9 +5098,9 @@
     on("change:focus_driving change:focus_piloting", (info) => {
         getAttrs(['focus_driving', 'focus_piloting'], (values) => {
             if (values.focus_driving > 0 || values.focus_piloting > 0) {
-                setAttrs({enable_talent_pilot: 1}, {silent: true});
+                setAttrs({enable_talent_pilot: 1});
             } else {
-                setAttrs({enable_talent_pilot: 0}, {silent: true});
+                setAttrs({enable_talent_pilot: 0});
             }
         })
     });
@@ -4935,9 +5110,9 @@
     on("clicked:select_talent_affluent", () => {
         getAttrs(['talent_affluent'], (values) => {
             if (values.talent_affluent) {
-                setAttrs({talent_affluent: 0}, {silent: true})
+                setAttrs({talent_affluent: 0})
             } else {
-                setAttrs({talent_affluent: 1}, {silent: true})
+                setAttrs({talent_affluent: 1})
             }
         })
     })
@@ -4945,9 +5120,9 @@
     on("clicked:select_talent_agility", () => {
         getAttrs(['talent_agility'], (values) => {
             if (values.talent_agility) {
-                setAttrs({talent_agility: 0}, {silent: true})
+                setAttrs({talent_agility: 0})
             } else {
-                setAttrs({talent_agility: 1}, {silent: true})
+                setAttrs({talent_agility: 1})
             }
         })
     })
@@ -4955,9 +5130,9 @@
     on("clicked:select_talent_artistry", () => {
         getAttrs(['talent_artistry'], (values) => {
             if (values.talent_artistry) {
-                setAttrs({talent_artistry: 0}, {silent: true})
+                setAttrs({talent_artistry: 0})
             } else {
-                setAttrs({talent_artistry: 1}, {silent: true})
+                setAttrs({talent_artistry: 1})
             }
         })
     })
@@ -4965,9 +5140,9 @@
     on("clicked:select_talent_attractive", () => {
         getAttrs(['talent_attractive'], (values) => {
             if (values.talent_attractive) {
-                setAttrs({talent_attractive: 0}, {silent: true})
+                setAttrs({talent_attractive: 0})
             } else {
-                setAttrs({talent_attractive: 1}, {silent: true})
+                setAttrs({talent_attractive: 1})
             }
         })
     })
@@ -4975,9 +5150,9 @@
     on("clicked:select_talent_burglary", () => {
         getAttrs(['talent_burglary'], (values) => {
             if (values.talent_burglary) {
-                setAttrs({talent_burglary: 0}, {silent: true})
+                setAttrs({talent_burglary: 0})
             } else {
-                setAttrs({talent_burglary: 1}, {silent: true})
+                setAttrs({talent_burglary: 1})
             }
         })
     })
@@ -4985,9 +5160,9 @@
     on("clicked:select_talent_carousing", () => {
         getAttrs(['talent_carousing'], (values) => {
             if (values.talent_carousing) {
-                setAttrs({talent_carousing: 0}, {silent: true})
+                setAttrs({talent_carousing: 0})
             } else {
-                setAttrs({talent_carousing: 1}, {silent: true})
+                setAttrs({talent_carousing: 1})
             }
         })
     })
@@ -4995,9 +5170,9 @@
     on("clicked:select_talent_command", () => {
         getAttrs(['talent_command'], (values) => {
             if (values.talent_command) {
-                setAttrs({talent_command: 0}, {silent: true})
+                setAttrs({talent_command: 0})
             } else {
-                setAttrs({talent_command: 1}, {silent: true})
+                setAttrs({talent_command: 1})
             }
         })
     })
@@ -5005,9 +5180,9 @@
     on("clicked:select_talent_contacts", () => {
         getAttrs(['talent_contacts'], (values) => {
             if (values.talent_contacts) {
-                setAttrs({talent_contacts: 0}, {silent: true})
+                setAttrs({talent_contacts: 0})
             } else {
-                setAttrs({talent_contacts: 1}, {silent: true})
+                setAttrs({talent_contacts: 1})
             }
         })
     })
@@ -5015,9 +5190,9 @@
     on("clicked:select_talent_doctor", () => {
         getAttrs(['talent_doctor'], (values) => {
             if (values.talent_doctor) {
-                setAttrs({talent_doctor: 0}, {silent: true})
+                setAttrs({talent_doctor: 0})
             } else {
-                setAttrs({talent_doctor: 1}, {silent: true})
+                setAttrs({talent_doctor: 1})
             }
         })
     })
@@ -5025,9 +5200,9 @@
     on("clicked:select_talent_dual_weapon", () => {
         getAttrs(['talent_dual_weapon'], (values) => {
             if (values.talent_dual_weapon) {
-                setAttrs({talent_dual_weapon: 0}, {silent: true})
+                setAttrs({talent_dual_weapon: 0})
             } else {
-                setAttrs({talent_dual_weapon: 1}, {silent: true})
+                setAttrs({talent_dual_weapon: 1})
             }
         })
     })
@@ -5035,9 +5210,9 @@
     on("clicked:select_talent_expertise", () => {
         getAttrs(['talent_expertise'], (values) => {
             if (values.talent_expertise) {
-                setAttrs({talent_expertise: 0}, {silent: true})
+                setAttrs({talent_expertise: 0})
             } else {
-                setAttrs({talent_expertise: 1}, {silent: true})
+                setAttrs({talent_expertise: 1})
             }
         })
     })
@@ -5045,9 +5220,9 @@
     on("clicked:select_talent_fringer", () => {
         getAttrs(['talent_fringer'], (values) => {
             if (values.talent_fringer) {
-                setAttrs({talent_fringer: 0}, {silent: true})
+                setAttrs({talent_fringer: 0})
             } else {
-                setAttrs({talent_fringer: 1}, {silent: true})
+                setAttrs({talent_fringer: 1})
             }
         })
     })
@@ -5055,9 +5230,9 @@
     on("clicked:select_talent_grappling", () => {
         getAttrs(['talent_grappling'], (values) => {
             if (values.talent_grappling) {
-                setAttrs({talent_grappling: 0}, {silent: true})
+                setAttrs({talent_grappling: 0})
             } else {
-                setAttrs({talent_grappling: 1}, {silent: true})
+                setAttrs({talent_grappling: 1})
             }
         })
     })
@@ -5065,9 +5240,9 @@
     on("clicked:select_talent_hacking", () => {
         getAttrs(['talent_hacking'], (values) => {
             if (values.talent_hacking) {
-                setAttrs({talent_hacking: 0}, {silent: true})
+                setAttrs({talent_hacking: 0})
             } else {
-                setAttrs({talent_hacking: 1}, {silent: true})
+                setAttrs({talent_hacking: 1})
             }
         })
     })
@@ -5075,9 +5250,9 @@
     on("clicked:select_talent_improvisation", () => {
         getAttrs(['talent_improvisation'], (values) => {
             if (values.talent_improvisation) {
-                setAttrs({talent_improvisation: 0}, {silent: true})
+                setAttrs({talent_improvisation: 0})
             } else {
-                setAttrs({talent_improvisation: 1}, {silent: true})
+                setAttrs({talent_improvisation: 1})
             }
         })
     })
@@ -5085,9 +5260,9 @@
     on("clicked:select_talent_inspire", () => {
         getAttrs(['talent_inspire'], (values) => {
             if (values.talent_inspire) {
-                setAttrs({talent_inspire: 0}, {silent: true})
+                setAttrs({talent_inspire: 0})
             } else {
-                setAttrs({talent_inspire: 1}, {silent: true})
+                setAttrs({talent_inspire: 1})
             }
         })
     })
@@ -5095,9 +5270,9 @@
     on("clicked:select_talent_intrigue", () => {
         getAttrs(['talent_intrigue'], (values) => {
             if (values.talent_intrigue) {
-                setAttrs({talent_intrigue: 0}, {silent: true})
+                setAttrs({talent_intrigue: 0})
             } else {
-                setAttrs({talent_intrigue: 1}, {silent: true})
+                setAttrs({talent_intrigue: 1})
             }
         })
     })
@@ -5105,9 +5280,9 @@
     on("clicked:select_talent_knowitall", () => {
         getAttrs(['talent_knowitall'], (values) => {
             if (values.talent_knowitall) {
-                setAttrs({talent_knowitall: 0}, {silent: true})
+                setAttrs({talent_knowitall: 0})
             } else {
-                setAttrs({talent_knowitall: 1}, {silent: true})
+                setAttrs({talent_knowitall: 1})
             }
         })
     })
@@ -5115,9 +5290,9 @@
     on("clicked:select_talent_knowledge", () => {
         getAttrs(['talent_knowledge'], (values) => {
             if (values.talent_knowledge) {
-                setAttrs({talent_knowledge: 0}, {silent: true})
+                setAttrs({talent_knowledge: 0})
             } else {
-                setAttrs({talent_knowledge: 1}, {silent: true})
+                setAttrs({talent_knowledge: 1})
             }
         })
     })
@@ -5125,9 +5300,9 @@
     on("clicked:select_talent_linguistics", () => {
         getAttrs(['talent_linguistics'], (values) => {
             if (values.talent_linguistics) {
-                setAttrs({talent_linguistics: 0}, {silent: true})
+                setAttrs({talent_linguistics: 0})
             } else {
-                setAttrs({talent_linguistics: 1}, {silent: true})
+                setAttrs({talent_linguistics: 1})
             }
         })
     })
@@ -5135,9 +5310,9 @@
     on("clicked:select_talent_maker", () => {
         getAttrs(['talent_maker'], (values) => {
             if (values.talent_maker) {
-                setAttrs({talent_maker: 0}, {silent: true})
+                setAttrs({talent_maker: 0})
             } else {
-                setAttrs({talent_maker: 1}, {silent: true})
+                setAttrs({talent_maker: 1})
             }
         })
     })
@@ -5145,9 +5320,9 @@
     on("clicked:select_talent_medic", () => {
         getAttrs(['talent_medic'], (values) => {
             if (values.talent_medic) {
-                setAttrs({talent_medic: 0}, {silent: true})
+                setAttrs({talent_medic: 0})
             } else {
-                setAttrs({talent_medic: 1}, {silent: true})
+                setAttrs({talent_medic: 1})
             }
         })
     })
@@ -5155,9 +5330,9 @@
     on("clicked:select_talent_misdirection", () => {
         getAttrs(['talent_misdirection'], (values) => {
             if (values.talent_misdirection) {
-                setAttrs({talent_misdirection: 0}, {silent: true})
+                setAttrs({talent_misdirection: 0})
             } else {
-                setAttrs({talent_misdirection: 1}, {silent: true})
+                setAttrs({talent_misdirection: 1})
             }
         })
     })
@@ -5165,9 +5340,9 @@
     on("clicked:select_talent_observation", () => {
         getAttrs(['talent_observation'], (values) => {
             if (values.talent_observation) {
-                setAttrs({talent_observation: 0}, {silent: true})
+                setAttrs({talent_observation: 0})
             } else {
-                setAttrs({talent_observation: 1}, {silent: true})
+                setAttrs({talent_observation: 1})
             }
         })
     })
@@ -5175,9 +5350,9 @@
     on("clicked:select_talent_oratory", () => {
         getAttrs(['talent_oratory'], (values) => {
             if (values.talent_oratory) {
-                setAttrs({talent_oratory: 0}, {silent: true})
+                setAttrs({talent_oratory: 0})
             } else {
-                setAttrs({talent_oratory: 1}, {silent: true})
+                setAttrs({talent_oratory: 1})
             }
         })
     })
@@ -5185,9 +5360,9 @@
     on("clicked:select_talent_overwhelm", () => {
         getAttrs(['talent_overwhelm'], (values) => {
             if (values.talent_overwhelm) {
-                setAttrs({talent_overwhelm: 0}, {silent: true})
+                setAttrs({talent_overwhelm: 0})
             } else {
-                setAttrs({talent_overwhelm: 1}, {silent: true})
+                setAttrs({talent_overwhelm: 1})
             }
         })
     })
@@ -5195,9 +5370,9 @@
     on("clicked:select_talent_performance", () => {
         getAttrs(['talent_performance'], (values) => {
             if (values.talent_performance) {
-                setAttrs({talent_performance: 0}, {silent: true})
+                setAttrs({talent_performance: 0})
             } else {
-                setAttrs({talent_performance: 1}, {silent: true})
+                setAttrs({talent_performance: 1})
             }
         })
     })
@@ -5205,9 +5380,9 @@
     on("clicked:select_talent_pilot", () => {
         getAttrs(['talent_pilot'], (values) => {
             if (values.talent_pilot) {
-                setAttrs({talent_pilot: 0}, {silent: true})
+                setAttrs({talent_pilot: 0})
             } else {
-                setAttrs({talent_pilot: 1}, {silent: true})
+                setAttrs({talent_pilot: 1})
             }
         })
     })
@@ -5215,9 +5390,9 @@
     on("clicked:select_talent_pinpoint", () => {
         getAttrs(['talent_pinpoint'], (values) => {
             if (values.talent_pinpoint) {
-                setAttrs({talent_pinpoint: 0}, {silent: true})
+                setAttrs({talent_pinpoint: 0})
             } else {
-                setAttrs({talent_pinpoint: 1}, {silent: true})
+                setAttrs({talent_pinpoint: 1})
             }
         })
     })
@@ -5225,9 +5400,9 @@
     on("clicked:select_talent_pistol", () => {
         getAttrs(['talent_pistol'], (values) => {
             if (values.talent_pistol) {
-                setAttrs({talent_pistol: 0}, {silent: true})
+                setAttrs({talent_pistol: 0})
             } else {
-                setAttrs({talent_pistol: 1}, {silent: true})
+                setAttrs({talent_pistol: 1})
             }
         })
     })
@@ -5235,9 +5410,9 @@
     on("clicked:select_talent_protector", () => {
         getAttrs(['talent_protector'], (values) => {
             if (values.talent_protector) {
-                setAttrs({talent_protector: 0}, {silent: true})
+                setAttrs({talent_protector: 0})
             } else {
-                setAttrs({talent_protector: 1}, {silent: true})
+                setAttrs({talent_protector: 1})
             }
         })
     })
@@ -5245,9 +5420,9 @@
     on("clicked:select_talent_quick_reflexes", () => {
         getAttrs(['talent_quick_reflexes'], (values) => {
             if (values.talent_quick_reflexes) {
-                setAttrs({talent_quick_reflexes: 0}, {silent: true})
+                setAttrs({talent_quick_reflexes: 0})
             } else {
-                setAttrs({talent_quick_reflexes: 1}, {silent: true})
+                setAttrs({talent_quick_reflexes: 1})
             }
         })
     })
@@ -5255,9 +5430,9 @@
     on("clicked:select_talent_rifle", () => {
         getAttrs(['talent_rifle'], (values) => {
             if (values.talent_rifle) {
-                setAttrs({talent_rifle: 0}, {silent: true})
+                setAttrs({talent_rifle: 0})
             } else {
-                setAttrs({talent_rifle: 1}, {silent: true})
+                setAttrs({talent_rifle: 1})
             }
         })
     })
@@ -5265,9 +5440,9 @@
     on("clicked:select_talent_scouting", () => {
         getAttrs(['talent_scouting'], (values) => {
             if (values.talent_scouting) {
-                setAttrs({talent_scouting: 0}, {silent: true})
+                setAttrs({talent_scouting: 0})
             } else {
-                setAttrs({talent_scouting: 1}, {silent: true})
+                setAttrs({talent_scouting: 1})
             }
         })
     })
@@ -5275,9 +5450,9 @@
     on("clicked:select_talent_self_defense", () => {
         getAttrs(['talent_self_defense'], (values) => {
             if (values.talent_self_defense) {
-                setAttrs({talent_self_defense: 0}, {silent: true})
+                setAttrs({talent_self_defense: 0})
             } else {
-                setAttrs({talent_self_defense: 1}, {silent: true})
+                setAttrs({talent_self_defense: 1})
             }
         })
     })
@@ -5285,9 +5460,9 @@
     on("clicked:select_talent_single_weapon", () => {
         getAttrs(['talent_single_weapon'], (values) => {
             if (values.talent_single_weapon) {
-                setAttrs({talent_single_weapon: 0}, {silent: true})
+                setAttrs({talent_single_weapon: 0})
             } else {
-                setAttrs({talent_single_weapon: 1}, {silent: true})
+                setAttrs({talent_single_weapon: 1})
             }
         })
     })
@@ -5295,9 +5470,9 @@
     on("clicked:select_talent_striking", () => {
         getAttrs(['talent_striking'], (values) => {
             if (values.talent_striking) {
-                setAttrs({talent_striking: 0}, {silent: true})
+                setAttrs({talent_striking: 0})
             } else {
-                setAttrs({talent_striking: 1}, {silent: true})
+                setAttrs({talent_striking: 1})
             }
         })
     })
@@ -5305,9 +5480,9 @@
     on("clicked:select_talent_tactical", () => {
         getAttrs(['talent_tactical'], (values) => {
             if (values.talent_tactical) {
-                setAttrs({talent_tactical: 0}, {silent: true})
+                setAttrs({talent_tactical: 0})
             } else {
-                setAttrs({talent_tactical: 1}, {silent: true})
+                setAttrs({talent_tactical: 1})
             }
         })
     })
@@ -5315,9 +5490,9 @@
     on("clicked:select_talent_thrown", () => {
         getAttrs(['talent_thrown'], (values) => {
             if (values.talent_thrown) {
-                setAttrs({talent_thrown: 0}, {silent: true})
+                setAttrs({talent_thrown: 0})
             } else {
-                setAttrs({talent_thrown: 1}, {silent: true})
+                setAttrs({talent_thrown: 1})
             }
         })
     })
@@ -5325,9 +5500,9 @@
     on("clicked:select_talent_two_handed", () => {
         getAttrs(['talent_two_handed'], (values) => {
             if (values.talent_two_handed) {
-                setAttrs({talent_two_handed: 0}, {silent: true})
+                setAttrs({talent_two_handed: 0})
             } else {
-                setAttrs({talent_two_handed: 1}, {silent: true})
+                setAttrs({talent_two_handed: 1})
             }
         })
     })
@@ -5335,9 +5510,9 @@
     on("clicked:select_focus_bows", () => {
         getAttrs(['focus_bows'], (values) => {
             if (values.focus_bows) {
-                setAttrs({focus_bows: 0}, {silent: true})
+                setAttrs({focus_bows: 0})
             } else {
-                setAttrs({focus_bows: 1}, {silent: true})
+                setAttrs({focus_bows: 1})
             }
         })
     })
@@ -5345,9 +5520,9 @@
     on("clicked:select_focus_gunnery", () => {
         getAttrs(['focus_gunnery'], (values) => {
             if (values.focus_gunnery) {
-                setAttrs({focus_gunnery: 0}, {silent: true})
+                setAttrs({focus_gunnery: 0})
             } else {
-                setAttrs({focus_gunnery: 1}, {silent: true})
+                setAttrs({focus_gunnery: 1})
             }
         })
     })
@@ -5355,9 +5530,9 @@
     on("clicked:select_focus_pistols", () => {
         getAttrs(['focus_pistols'], (values) => {
             if (values.focus_pistols) {
-                setAttrs({focus_pistols: 0}, {silent: true})
+                setAttrs({focus_pistols: 0})
             } else {
-                setAttrs({focus_pistols: 1}, {silent: true})
+                setAttrs({focus_pistols: 1})
             }
         })
     })
@@ -5365,9 +5540,9 @@
     on("clicked:select_focus_rifles", () => {
         getAttrs(['focus_rifles'], (values) => {
             if (values.focus_rifles) {
-                setAttrs({focus_rifles: 0}, {silent: true})
+                setAttrs({focus_rifles: 0})
             } else {
-                setAttrs({focus_rifles: 1}, {silent: true})
+                setAttrs({focus_rifles: 1})
             }
         })
     })
@@ -5375,9 +5550,9 @@
     on("clicked:select_focus_throwing", () => {
         getAttrs(['focus_throwing'], (values) => {
             if (values.focus_throwing) {
-                setAttrs({focus_throwing: 0}, {silent: true})
+                setAttrs({focus_throwing: 0})
             } else {
-                setAttrs({focus_throwing: 1}, {silent: true})
+                setAttrs({focus_throwing: 1})
             }
         })
     })
@@ -5385,9 +5560,9 @@
     on("clicked:select_focus_bargaining", () => {
         getAttrs(['focus_bargaining'], (values) => {
             if (values.focus_bargaining) {
-                setAttrs({focus_bargaining: 0}, {silent: true})
+                setAttrs({focus_bargaining: 0})
             } else {
-                setAttrs({focus_bargaining: 1}, {silent: true})
+                setAttrs({focus_bargaining: 1})
             }
         })
     })
@@ -5395,9 +5570,9 @@
     on("clicked:select_focus_deception", () => {
         getAttrs(['focus_deception'], (values) => {
             if (values.focus_deception) {
-                setAttrs({focus_deception: 0}, {silent: true})
+                setAttrs({focus_deception: 0})
             } else {
-                setAttrs({focus_deception: 1}, {silent: true})
+                setAttrs({focus_deception: 1})
             }
         })
     })
@@ -5405,9 +5580,9 @@
     on("clicked:select_focus_disguise", () => {
         getAttrs(['focus_disguise'], (values) => {
             if (values.focus_disguise) {
-                setAttrs({focus_disguise: 0}, {silent: true})
+                setAttrs({focus_disguise: 0})
             } else {
-                setAttrs({focus_disguise: 1}, {silent: true})
+                setAttrs({focus_disguise: 1})
             }
         })
     })
@@ -5415,9 +5590,9 @@
     on("clicked:select_focus_etiquette", () => {
         getAttrs(['focus_etiquette'], (values) => {
             if (values.focus_etiquette) {
-                setAttrs({focus_etiquette: 0}, {silent: true})
+                setAttrs({focus_etiquette: 0})
             } else {
-                setAttrs({focus_etiquette: 1}, {silent: true})
+                setAttrs({focus_etiquette: 1})
             }
         })
     })
@@ -5425,9 +5600,9 @@
     on("clicked:select_focus_expression", () => {
         getAttrs(['focus_expression'], (values) => {
             if (values.focus_expression) {
-                setAttrs({focus_expression: 0}, {silent: true})
+                setAttrs({focus_expression: 0})
             } else {
-                setAttrs({focus_expression: 1}, {silent: true})
+                setAttrs({focus_expression: 1})
             }
         })
     })
@@ -5435,9 +5610,9 @@
     on("clicked:select_focus_gambling", () => {
         getAttrs(['focus_gambling'], (values) => {
             if (values.focus_gambling) {
-                setAttrs({focus_gambling: 0}, {silent: true})
+                setAttrs({focus_gambling: 0})
             } else {
-                setAttrs({focus_gambling: 1}, {silent: true})
+                setAttrs({focus_gambling: 1})
             }
         })
     })
@@ -5445,9 +5620,9 @@
     on("clicked:select_focus_investigation", () => {
         getAttrs(['focus_investigation'], (values) => {
             if (values.focus_investigation) {
-                setAttrs({focus_investigation: 0}, {silent: true})
+                setAttrs({focus_investigation: 0})
             } else {
-                setAttrs({focus_investigation: 1}, {silent: true})
+                setAttrs({focus_investigation: 1})
             }
         })
     })
@@ -5455,9 +5630,9 @@
     on("clicked:select_focus_leadership", () => {
         getAttrs(['focus_leadership'], (values) => {
             if (values.focus_leadership) {
-                setAttrs({focus_leadership: 0}, {silent: true})
+                setAttrs({focus_leadership: 0})
             } else {
-                setAttrs({focus_leadership: 1}, {silent: true})
+                setAttrs({focus_leadership: 1})
             }
         })
     })
@@ -5465,9 +5640,9 @@
     on("clicked:select_focus_performing", () => {
         getAttrs(['focus_performing'], (values) => {
             if (values.focus_performing) {
-                setAttrs({focus_performing: 0}, {silent: true})
+                setAttrs({focus_performing: 0})
             } else {
-                setAttrs({focus_performing: 1}, {silent: true})
+                setAttrs({focus_performing: 1})
             }
         })
     })
@@ -5475,9 +5650,9 @@
     on("clicked:select_focus_persuasion", () => {
         getAttrs(['focus_persuasion'], (values) => {
             if (values.focus_persuasion) {
-                setAttrs({focus_persuasion: 0}, {silent: true})
+                setAttrs({focus_persuasion: 0})
             } else {
-                setAttrs({focus_persuasion: 1}, {silent: true})
+                setAttrs({focus_persuasion: 1})
             }
         })
     })
@@ -5485,9 +5660,9 @@
     on("clicked:select_focus_seduction", () => {
         getAttrs(['focus_seduction'], (values) => {
             if (values.focus_seduction) {
-                setAttrs({focus_seduction: 0}, {silent: true})
+                setAttrs({focus_seduction: 0})
             } else {
-                setAttrs({focus_seduction: 1}, {silent: true})
+                setAttrs({focus_seduction: 1})
             }
         })
     })
@@ -5495,9 +5670,9 @@
     on("clicked:select_focus_running", () => {
         getAttrs(['focus_running'], (values) => {
             if (values.focus_running) {
-                setAttrs({focus_running: 0}, {silent: true})
+                setAttrs({focus_running: 0})
             } else {
-                setAttrs({focus_running: 1}, {silent: true})
+                setAttrs({focus_running: 1})
             }
         })
     })
@@ -5505,9 +5680,9 @@
     on("clicked:select_focus_stamina", () => {
         getAttrs(['focus_stamina'], (values) => {
             if (values.focus_stamina) {
-                setAttrs({focus_stamina: 0}, {silent: true})
+                setAttrs({focus_stamina: 0})
             } else {
-                setAttrs({focus_stamina: 1}, {silent: true})
+                setAttrs({focus_stamina: 1})
             }
         })
     })
@@ -5515,9 +5690,9 @@
     on("clicked:select_focus_swimming", () => {
         getAttrs(['focus_swimming'], (values) => {
             if (values.focus_swimming) {
-                setAttrs({focus_swimming: 0}, {silent: true})
+                setAttrs({focus_swimming: 0})
             } else {
-                setAttrs({focus_swimming: 1}, {silent: true})
+                setAttrs({focus_swimming: 1})
             }
         })
     })
@@ -5525,9 +5700,9 @@
     on("clicked:select_focus_tolerance", () => {
         getAttrs(['focus_tolerance'], (values) => {
             if (values.focus_tolerance) {
-                setAttrs({focus_tolerance: 0}, {silent: true})
+                setAttrs({focus_tolerance: 0})
             } else {
-                setAttrs({focus_tolerance: 1}, {silent: true})
+                setAttrs({focus_tolerance: 1})
             }
         })
     })
@@ -5535,9 +5710,9 @@
     on("clicked:select_focus_acrobatics", () => {
         getAttrs(['focus_acrobatics'], (values) => {
             if (values.focus_acrobatics) {
-                setAttrs({focus_acrobatics: 0}, {silent: true})
+                setAttrs({focus_acrobatics: 0})
             } else {
-                setAttrs({focus_acrobatics: 1}, {silent: true})
+                setAttrs({focus_acrobatics: 1})
             }
         })
     })
@@ -5545,9 +5720,9 @@
     on("clicked:select_focus_crafting", () => {
         getAttrs(['focus_crafting'], (values) => {
             if (values.focus_crafting) {
-                setAttrs({focus_crafting: 0}, {silent: true})
+                setAttrs({focus_crafting: 0})
             } else {
-                setAttrs({focus_crafting: 1}, {silent: true})
+                setAttrs({focus_crafting: 1})
             }
         })
     })
@@ -5555,9 +5730,9 @@
     on("clicked:select_focus_driving", () => {
         getAttrs(['focus_driving'], (values) => {
             if (values.focus_driving) {
-                setAttrs({focus_driving: 0}, {silent: true})
+                setAttrs({focus_driving: 0})
             } else {
-                setAttrs({focus_driving: 1}, {silent: true})
+                setAttrs({focus_driving: 1})
             }
         })
     })
@@ -5565,9 +5740,9 @@
     on("clicked:select_focus_freefall", () => {
         getAttrs(['focus_freefall'], (values) => {
             if (values.focus_freefall) {
-                setAttrs({focus_freefall: 0}, {silent: true})
+                setAttrs({focus_freefall: 0})
             } else {
-                setAttrs({focus_freefall: 1}, {silent: true})
+                setAttrs({focus_freefall: 1})
             }
         })
     })
@@ -5575,9 +5750,9 @@
     on("clicked:select_focus_initiative", () => {
         getAttrs(['focus_initiative'], (values) => {
             if (values.focus_initiative) {
-                setAttrs({focus_initiative: 0}, {silent: true})
+                setAttrs({focus_initiative: 0})
             } else {
-                setAttrs({focus_initiative: 1}, {silent: true})
+                setAttrs({focus_initiative: 1})
             }
         })
     })
@@ -5585,9 +5760,9 @@
     on("clicked:select_focus_piloting", () => {
         getAttrs(['focus_piloting'], (values) => {
             if (values.focus_piloting) {
-                setAttrs({focus_piloting: 0}, {silent: true})
+                setAttrs({focus_piloting: 0})
             } else {
-                setAttrs({focus_piloting: 1}, {silent: true})
+                setAttrs({focus_piloting: 1})
             }
         })
     })
@@ -5595,9 +5770,9 @@
     on("clicked:select_focus_sleight_of_hand", () => {
         getAttrs(['focus_sleight_of_hand'], (values) => {
             if (values.focus_sleight_of_hand) {
-                setAttrs({focus_sleight_of_hand: 0}, {silent: true})
+                setAttrs({focus_sleight_of_hand: 0})
             } else {
-                setAttrs({focus_sleight_of_hand: 1}, {silent: true})
+                setAttrs({focus_sleight_of_hand: 1})
             }
         })
     })
@@ -5605,9 +5780,9 @@
     on("clicked:select_focus_stealth", () => {
         getAttrs(['focus_stealth'], (values) => {
             if (values.focus_stealth) {
-                setAttrs({focus_stealth: 0}, {silent: true})
+                setAttrs({focus_stealth: 0})
             } else {
-                setAttrs({focus_stealth: 1}, {silent: true})
+                setAttrs({focus_stealth: 1})
             }
         })
     })
@@ -5615,9 +5790,9 @@
     on("clicked:select_focus_brawling", () => {
         getAttrs(['focus_brawling'], (values) => {
             if (values.focus_brawling) {
-                setAttrs({focus_brawling: 0}, {silent: true})
+                setAttrs({focus_brawling: 0})
             } else {
-                setAttrs({focus_brawling: 1}, {silent: true})
+                setAttrs({focus_brawling: 1})
             }
         })
     })
@@ -5625,9 +5800,9 @@
     on("clicked:select_focus_grappling", () => {
         getAttrs(['focus_grappling'], (values) => {
             if (values.focus_grappling) {
-                setAttrs({focus_grappling: 0}, {silent: true})
+                setAttrs({focus_grappling: 0})
             } else {
-                setAttrs({focus_grappling: 1}, {silent: true})
+                setAttrs({focus_grappling: 1})
             }
         })
     })
@@ -5635,9 +5810,9 @@
     on("clicked:select_focus_heavy_weapons", () => {
         getAttrs(['focus_heavy_weapons'], (values) => {
             if (values.focus_heavy_weapons) {
-                setAttrs({focus_heavy_weapons: 0}, {silent: true})
+                setAttrs({focus_heavy_weapons: 0})
             } else {
-                setAttrs({focus_heavy_weapons: 1}, {silent: true})
+                setAttrs({focus_heavy_weapons: 1})
             }
         })
     })
@@ -5645,9 +5820,9 @@
     on("clicked:select_focus_light_weapons", () => {
         getAttrs(['focus_light_weapons'], (values) => {
             if (values.focus_light_weapons) {
-                setAttrs({focus_light_weapons: 0}, {silent: true})
+                setAttrs({focus_light_weapons: 0})
             } else {
-                setAttrs({focus_light_weapons: 1}, {silent: true})
+                setAttrs({focus_light_weapons: 1})
             }
         })
     })
@@ -5655,9 +5830,9 @@
     on("clicked:select_focus_art", () => {
         getAttrs(['focus_art'], (values) => {
             if (values.focus_art) {
-                setAttrs({focus_art: 0}, {silent: true})
+                setAttrs({focus_art: 0})
             } else {
-                setAttrs({focus_art: 1}, {silent: true})
+                setAttrs({focus_art: 1})
             }
         })
     })
@@ -5665,9 +5840,9 @@
     on("clicked:select_focus_business", () => {
         getAttrs(['focus_business'], (values) => {
             if (values.focus_business) {
-                setAttrs({focus_business: 0}, {silent: true})
+                setAttrs({focus_business: 0})
             } else {
-                setAttrs({focus_business: 1}, {silent: true})
+                setAttrs({focus_business: 1})
             }
         })
     })
@@ -5675,9 +5850,9 @@
     on("clicked:select_focus_cryptography", () => {
         getAttrs(['focus_cryptography'], (values) => {
             if (values.focus_cryptography) {
-                setAttrs({focus_cryptography: 0}, {silent: true})
+                setAttrs({focus_cryptography: 0})
             } else {
-                setAttrs({focus_cryptography: 1}, {silent: true})
+                setAttrs({focus_cryptography: 1})
             }
         })
     })
@@ -5685,9 +5860,9 @@
     on("clicked:select_focus_current_affairs", () => {
         getAttrs(['focus_current_affairs'], (values) => {
             if (values.focus_current_affairs) {
-                setAttrs({focus_current_affairs: 0}, {silent: true})
+                setAttrs({focus_current_affairs: 0})
             } else {
-                setAttrs({focus_current_affairs: 1}, {silent: true})
+                setAttrs({focus_current_affairs: 1})
             }
         })
     })
@@ -5695,9 +5870,9 @@
     on("clicked:select_focus_demolitions", () => {
         getAttrs(['focus_demolitions'], (values) => {
             if (values.focus_demolitions) {
-                setAttrs({focus_demolitions: 0}, {silent: true})
+                setAttrs({focus_demolitions: 0})
             } else {
-                setAttrs({focus_demolitions: 1}, {silent: true})
+                setAttrs({focus_demolitions: 1})
             }
         })
     })
@@ -5705,9 +5880,9 @@
     on("clicked:select_focus_engineering", () => {
         getAttrs(['focus_engineering'], (values) => {
             if (values.focus_engineering) {
-                setAttrs({focus_engineering: 0}, {silent: true})
+                setAttrs({focus_engineering: 0})
             } else {
-                setAttrs({focus_engineering: 1}, {silent: true})
+                setAttrs({focus_engineering: 1})
             }
         })
     })
@@ -5715,9 +5890,9 @@
     on("clicked:select_focus_evaluation", () => {
         getAttrs(['focus_evaluation'], (values) => {
             if (values.focus_evaluation) {
-                setAttrs({focus_evaluation: 0}, {silent: true})
+                setAttrs({focus_evaluation: 0})
             } else {
-                setAttrs({focus_evaluation: 1}, {silent: true})
+                setAttrs({focus_evaluation: 1})
             }
         })
     })
@@ -5725,9 +5900,9 @@
     on("clicked:select_focus_law", () => {
         getAttrs(['focus_law'], (values) => {
             if (values.focus_law) {
-                setAttrs({focus_law: 0}, {silent: true})
+                setAttrs({focus_law: 0})
             } else {
-                setAttrs({focus_law: 1}, {silent: true})
+                setAttrs({focus_law: 1})
             }
         })
     })
@@ -5735,9 +5910,9 @@
     on("clicked:select_focus_medicine", () => {
         getAttrs(['focus_medicine'], (values) => {
             if (values.focus_medicine) {
-                setAttrs({focus_medicine: 0}, {silent: true})
+                setAttrs({focus_medicine: 0})
             } else {
-                setAttrs({focus_medicine: 1}, {silent: true})
+                setAttrs({focus_medicine: 1})
             }
         })
     })
@@ -5745,9 +5920,9 @@
     on("clicked:select_focus_navigation", () => {
         getAttrs(['focus_navigation'], (values) => {
             if (values.focus_navigation) {
-                setAttrs({focus_navigation: 0}, {silent: true})
+                setAttrs({focus_navigation: 0})
             } else {
-                setAttrs({focus_navigation: 1}, {silent: true})
+                setAttrs({focus_navigation: 1})
             }
         })
     })
@@ -5755,9 +5930,9 @@
     on("clicked:select_focus_research", () => {
         getAttrs(['focus_research'], (values) => {
             if (values.focus_research) {
-                setAttrs({focus_research: 0}, {silent: true})
+                setAttrs({focus_research: 0})
             } else {
-                setAttrs({focus_research: 1}, {silent: true})
+                setAttrs({focus_research: 1})
             }
         })
     })
@@ -5765,9 +5940,9 @@
     on("clicked:select_focus_science", () => {
         getAttrs(['focus_science'], (values) => {
             if (values.focus_science) {
-                setAttrs({focus_science: 0}, {silent: true})
+                setAttrs({focus_science: 0})
             } else {
-                setAttrs({focus_science: 1}, {silent: true})
+                setAttrs({focus_science: 1})
             }
         })
     })
@@ -5775,9 +5950,9 @@
     on("clicked:select_focus_security", () => {
         getAttrs(['focus_security'], (values) => {
             if (values.focus_security) {
-                setAttrs({focus_security: 0}, {silent: true})
+                setAttrs({focus_security: 0})
             } else {
-                setAttrs({focus_security: 1}, {silent: true})
+                setAttrs({focus_security: 1})
             }
         })
     })
@@ -5785,9 +5960,9 @@
     on("clicked:select_focus_tactics", () => {
         getAttrs(['focus_tactics'], (values) => {
             if (values.focus_tactics) {
-                setAttrs({focus_tactics: 0}, {silent: true})
+                setAttrs({focus_tactics: 0})
             } else {
-                setAttrs({focus_tactics: 1}, {silent: true})
+                setAttrs({focus_tactics: 1})
             }
         })
     })
@@ -5795,9 +5970,109 @@
     on("clicked:select_focus_technology", () => {
         getAttrs(['focus_technology'], (values) => {
             if (values.focus_technology) {
-                setAttrs({focus_technology: 0}, {silent: true})
+                setAttrs({focus_technology: 0})
             } else {
-                setAttrs({focus_technology: 1}, {silent: true})
+                setAttrs({focus_technology: 1})
+            }
+        })
+    })
+
+    on("clicked:select_focus_empathy", () => {
+        getAttrs(['focus_empathy'], (values) => {
+            if (values.focus_empathy) {
+                setAttrs({focus_empathy: 0})
+            } else {
+                setAttrs({focus_empathy: 1})
+            }
+        })
+    })
+
+    on("clicked:select_focus_hearing", () => {
+        getAttrs(['focus_hearing'], (values) => {
+            if (values.focus_hearing) {
+                setAttrs({focus_hearing: 0})
+            } else {
+                setAttrs({focus_hearing: 1})
+            }
+        })
+    })
+
+    on("clicked:select_focus_intuition", () => {
+        getAttrs(['focus_intuition'], (values) => {
+            if (values.focus_intuition) {
+                setAttrs({focus_intuition: 0})
+            } else {
+                setAttrs({focus_intuition: 1})
+            }
+        })
+    })
+
+    on("clicked:select_focus_searching", () => {
+        getAttrs(['focus_searching'], (values) => {
+            if (values.focus_searching) {
+                setAttrs({focus_searching: 0})
+            } else {
+                setAttrs({focus_searching: 1})
+            }
+        })
+    })
+
+    on("clicked:select_focus_seeing", () => {
+        getAttrs(['focus_seeing'], (values) => {
+            if (values.focus_seeing) {
+                setAttrs({focus_seeing: 0})
+            } else {
+                setAttrs({focus_seeing: 1})
+            }
+        })
+    })
+
+    on("clicked:select_focus_smelling", () => {
+        getAttrs(['focus_smelling'], (values) => {
+            if (values.focus_smelling) {
+                setAttrs({focus_smelling: 0})
+            } else {
+                setAttrs({focus_smelling: 1})
+            }
+        })
+    })
+
+    on("clicked:select_focus_survival", () => {
+        getAttrs(['focus_survival'], (values) => {
+            if (values.focus_survival) {
+                setAttrs({focus_survival: 0})
+            } else {
+                setAttrs({focus_survival: 1})
+            }
+        })
+    })
+
+    on("clicked:select_focus_tasting", () => {
+        getAttrs(['focus_tasting'], (values) => {
+            if (values.focus_tasting) {
+                setAttrs({focus_tasting: 0})
+            } else {
+                setAttrs({focus_tasting: 1})
+            }
+        })
+    })
+
+    on("clicked:select_focus_touching", () => {
+        getAttrs(['focus_touching'], (values) => {
+            if (values.focus_touching) {
+                setAttrs({focus_touching: 0})
+            } else {
+                setAttrs({focus_touching: 1})
+            }
+        })
+    })
+
+    on("clicked:select_focus_tracking", () => {
+        getAttrs(['focus_tracking'], (values) => {
+            if (values.focus_tracking) {
+                setAttrs({focus_tracking: 0})
+            } else {
+                setAttrs({focus_tracking: 1})
             }
         })
     })
