@@ -4736,78 +4736,151 @@
                 <div class="blue-text">
                     This ability rates your sheer muscle power and the ability to apply it, from lifting heavy things to feats of athletics.
                 </div>
+
+                <div class="focuses">
+                    <div>
+                        <input type="checkbox" name="attr_focus_climbing" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Strength(Climbing)|||@{strength}|||@{focus_climbing_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Climbing
+                                </button>
+
+                                <button type="action" name="act_select_focus_climbing" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Scaling walls and other vertical obstacles.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_climbing_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_climbing_total" class="invisible" value="@{focus_climbing} * (@{focus_climbing} + 1 + @{focus_climbing_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_intimidation" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Strength(Intimidation)|||@{strength}|||@{focus_intimidation_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Intimidation
+                                </button>
+
+                                <button type="action" name="act_select_focus_intimidation" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Scaling walls and other vertical obstacles.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_intimidation_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_intimidation_total" class="invisible" value="@{focus_intimidation} * (@{focus_intimidation} + 1 + @{focus_intimidation_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_jumping" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Strength(Jumping)|||@{strength}|||@{focus_jumping_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Jumping
+                                </button>
+
+                                <button type="action" name="act_select_focus_jumping" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Scaling walls and other vertical obstacles.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_jumping_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_jumping_total" class="invisible" value="@{focus_jumping} * (@{focus_jumping} + 1 + @{focus_jumping_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_might" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Strength(Might)|||@{strength}|||@{focus_might_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Might
+                                </button>
+
+                                <button type="action" name="act_select_focus_might" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Scaling walls and other vertical obstacles.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_might_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_might_total" class="invisible" value="@{focus_might} * (@{focus_might} + 1 + @{focus_might_improved})" disabled="true" />
+                    </div>
+                </div>
+
                 <div class="focuses hidden-if-unchecked">
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Strength(Climbing)|||@{strength}|||@{focus_climbing_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Climbing
-                        </button>
-                        <input type="checkbox" id="focus_climbing" class="unhide-content invisible" value="2" name="attr_focus_climbing">
-                        <label for="focus_climbing" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_climbing" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Scaling walls and other vertical obstacles.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_climbingi" class="unhide-content invisible" value="1" name="attr_focus_climbing_improved">
-                                <label for="focus_climbingi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_climbingi" class="hidden-if-unchecked white-text">Improved</label>
+                    <label class="black-bar white-text improve-label">More Focuses</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_climbing" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_climbing" class="white-text btn-invisible">
+                                    Climbing
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Scaling walls and other vertical obstacles.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_climbing_total" class="invisible" value="@{focus_climbing}+@{focus_climbing_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Strength(Intimidation)|||@{strength}|||@{focus_intimidation_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Intimidation
-                        </button>
-                        <input type="checkbox" id="focus_intimidation" class="unhide-content invisible" value="2" name="attr_focus_intimidation">
-                        <label for="focus_intimidation" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_intimidation" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Overawing others with your physical presence and threats.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_intimidationi" class="unhide-content invisible" value="1" name="attr_focus_intimidation_improved">
-                                <label for="focus_intimidationi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_intimidationi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_intimidation" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_intimidation" class="white-text btn-invisible">
+                                    Intimidation
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Overawing others with your physical presence and threats.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_intimidation_total" class="invisible" value="@{focus_intimidation}+@{focus_intimidation_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Strength(Jumping)|||@{strength}|||@{focus_jumping_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Jumping
-                        </button>
-                        <input type="checkbox" id="focus_jumping" class="unhide-content invisible" value="2" name="attr_focus_jumping">
-                        <label for="focus_jumping" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_jumping" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Making standing or running jumps.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_jumpingi" class="unhide-content invisible" value="1" name="attr_focus_jumping_improved">
-                                <label for="focus_jumpingi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_jumpingi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_jumping" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_jumping" class="white-text btn-invisible">
+                                    Jumping
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Making standing or running jumps.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_jumping_total" class="invisible" value="@{focus_jumping}+@{focus_jumping_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Strength(Might)|||@{strength}|||@{focus_might_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Might
-                        </button>
-                        <input type="checkbox" id="focus_might" class="unhide-content invisible" value="2" name="attr_focus_might">
-                        <label for="focus_might" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_might" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Feats of raw power, such as lifting or holding up heavy objects.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_mighti" class="unhide-content invisible" value="1" name="attr_focus_might_improved">
-                                <label for="focus_mighti" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_mighti" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_might" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_might" class="white-text btn-invisible">
+                                    Might
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Feats of raw power, such as lifting or holding up heavy objects.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_might_total" class="invisible" value="@{focus_might}+@{focus_might_improved}" disabled="true" />
                     </div>
                 </div>
             </div>
@@ -4823,60 +4896,116 @@
                 <div class="blue-text">
                     This ability measures your self-control, self-discipline, mental fortitude, and confidence.
                 </div>
+
+                <div class="focuses">
+                    <div>
+                        <input type="checkbox" name="attr_focus_courage" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Willpower(Courage)|||@{willpower}|||@{focus_courage_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Courage
+                                </button>
+
+                                <button type="action" name="act_select_focus_courage" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Overcoming fear in the face of adversity.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_courage_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_courage_total" class="invisible" value="@{focus_courage} * (@{focus_courage} + 1 + @{focus_courage_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_faith" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Willpower(Faith)|||@{willpower}|||@{focus_faith_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Faith
+                                </button>
+
+                                <button type="action" name="act_select_focus_faith" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Deriving inner strength through spiritual or moral belief.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_faith_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_faith_total" class="invisible" value="@{focus_faith} * (@{focus_faith} + 1 + @{focus_faith_improved})" disabled="true" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_focus_self_discipline" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Willpower(Self-Discipline)|||@{willpower}|||@{focus_self_discipline_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                    Self-Discipline
+                                </button>
+
+                                <button type="action" name="act_select_focus_self_discipline" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="dynamic-subsection justify">
+                                <p>Focusing your mental energy or controlling your impulses and emotions.</p>
+                                <input type="checkbox" class="unhide-content invisible" name="attr_improved_focus" value="1" />
+                                <div class="hidden-if-unchecked dynamic-subsection">
+                                    <input type="checkbox" class="unhide-content" value="1" name="attr_focus_self_discipline_improved">
+                                    <label class="hidden-if-checked black-bar white-text improve-label">Improve</label>
+                                    <label class="hidden-if-unchecked black-bar white-text improve-label">Improved</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" name="attr_focus_self_discipline_total" class="invisible" value="@{focus_self_discipline} * (@{focus_self_discipline} + 1 + @{focus_self_discipline_improved})" disabled="true" />
+                    </div>
+                </div>
+
                 <div class="focuses hidden-if-unchecked">
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Willpower(Courage)|||@{willpower}|||@{focus_courage_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Courage
-                        </button>
-                        <input type="checkbox" id="focus_courage" class="unhide-content invisible" value="2" name="attr_focus_courage">
-                        <label for="focus_courage" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_courage" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Overcoming fear in the face of adversity.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_couragei" class="unhide-content invisible" value="1" name="attr_focus_courage_improved">
-                                <label for="focus_couragei" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_couragei" class="hidden-if-unchecked white-text">Improved</label>
+                    <label class="black-bar white-text improve-label">More Focuses</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_courage" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_courage" class="white-text btn-invisible">
+                                    Courage
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Overcoming fear in the face of adversity.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_courage_total" class="invisible" value="@{focus_courage}+@{focus_courage_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Willpower(Faith)|||@{willpower}|||@{focus_faith_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Faith
-                        </button>
-                        <input type="checkbox" id="focus_faith" class="unhide-content invisible" value="2" name="attr_focus_faith">
-                        <label for="focus_faith" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_faith" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Deriving inner strength through spiritual or moral belief.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_faithi" class="unhide-content invisible" value="1" name="attr_focus_faith_improved">
-                                <label for="focus_faithi" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_faithi" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_faith" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_faith" class="white-text btn-invisible">
+                                    Faith
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Deriving inner strength through spiritual or moral belief.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_faith_total" class="invisible" value="@{focus_faith}+@{focus_faith_improved}" disabled="true" />
                     </div>
-                    <div class="black-bar subsection margin-5">
-                        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Willpower(Self-Discipline)|||@{willpower}|||@{focus_self_discipline_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                            Self-Discipline
-                        </button>
-                        <input type="checkbox" id="focus_self_discipline" class="unhide-content invisible" value="2" name="attr_focus_self_discipline">
-                        <label for="focus_self_discipline" class="hidden-if-checked white-text float-right">Select</label>
-                        <label for="focus_self_discipline" class="hidden-if-unchecked white-text float-right">Selected</label>
-                        <div class="hidden-if-unchecked focus blue-text">
-                            Focusing your mental energy or controlling your impulses and emotions.
-                            <input type="checkbox" id="improved_focus" class="unhide-content invisible" name="attr_improved_focus" value="1">
-                            <div class="hidden-if-unchecked black-bar dynamic-subsection">
-                                <input type="checkbox" id="focus_self_disciplinei" class="unhide-content invisible" value="1" name="attr_focus_self_discipline_improved">
-                                <label for="focus_self_disciplinei" class="hidden-if-checked white-text">Improve</label>
-                                <label for="focus_self_disciplinei" class="hidden-if-unchecked white-text">Improved</label>
+                    <div>
+                        <input type="checkbox" name="attr_focus_self_discipline" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <button type="action" name="act_select_focus_self_discipline" class="white-text btn-invisible">
+                                    Self-Discipline
+                                </button>
+                            </div>
+                            <div class="focus blue-text">
+                                Focusing your mental energy or controlling your impulses and emotions.
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_self_discipline_total" class="invisible" value="@{focus_self_discipline}+@{focus_self_discipline_improved}" disabled="true" />
                     </div>
                 </div>
             </div>
@@ -6073,6 +6202,76 @@
                 setAttrs({focus_tracking: 0})
             } else {
                 setAttrs({focus_tracking: 1})
+            }
+        })
+    })
+
+    on("clicked:select_focus_climbing", () => {
+        getAttrs(['focus_climbing'], (values) => {
+            if (values.focus_climbing) {
+                setAttrs({focus_climbing: 0})
+            } else {
+                setAttrs({focus_climbing: 1})
+            }
+        })
+    })
+
+    on("clicked:select_focus_intimidation", () => {
+        getAttrs(['focus_intimidation'], (values) => {
+            if (values.focus_intimidation) {
+                setAttrs({focus_intimidation: 0})
+            } else {
+                setAttrs({focus_intimidation: 1})
+            }
+        })
+    })
+
+    on("clicked:select_focus_jumping", () => {
+        getAttrs(['focus_jumping'], (values) => {
+            if (values.focus_jumping) {
+                setAttrs({focus_jumping: 0})
+            } else {
+                setAttrs({focus_jumping: 1})
+            }
+        })
+    })
+
+    on("clicked:select_focus_might", () => {
+        getAttrs(['focus_might'], (values) => {
+            if (values.focus_might) {
+                setAttrs({focus_might: 0})
+            } else {
+                setAttrs({focus_might: 1})
+            }
+        })
+    })
+
+    on("clicked:select_focus_courage", () => {
+        getAttrs(['focus_courage'], (values) => {
+            if (values.focus_courage) {
+                setAttrs({focus_courage: 0})
+            } else {
+                setAttrs({focus_courage: 1})
+            }
+        })
+    })
+
+    on("clicked:select_focus_faith", () => {
+        getAttrs(['focus_faith'], (values) => {
+            if (values.focus_faith) {
+                setAttrs({focus_faith: 0})
+            } else {
+                setAttrs({focus_faith: 1})
+            }
+        })
+    })
+
+    on("clicked:select_focus_self_discipline", () => {
+        getAttrs(['focus_self_discipline'], (values) => {
+            if (values.focus_self_discipline) {
+                setAttrs({focus_self_discipline: 0})
+            } else {
+                setAttrs({focus_self_discipline: 1})
             }
         })
     })
