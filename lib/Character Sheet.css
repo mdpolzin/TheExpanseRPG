@@ -24,7 +24,7 @@ label {
 
 input {
 	display: inline-block;
-	width: 165px;
+	/*width: 165px;*/
 }
 
 img {
@@ -32,8 +32,15 @@ img {
 }
 
 textarea {
-	resize: vertical;
+    vertical-align: top;
+    resize: none;
+	overflow-y: scroll;
 	width: 90%;
+	height: 85%;
+}
+
+select {
+    width: fit-content;
 }
 
 /* Targetted styling that only effects elements with these classes */
@@ -273,6 +280,10 @@ input[type=checkbox]:checked + label.sheet-checked-glow,
     margin: 5px;
 }
 
+.sheet-dynamic-content-small {
+    width: 40%;
+}
+
 .sheet-dynamic-content {
     width: 47%;
 }
@@ -294,4 +305,15 @@ input[type=checkbox]:checked + label.sheet-checked-glow,
 
 .sheet-relationships {
     font-style: normal;
+}
+
+.sheet-textarea {
+    height: 75px;
+    background-color: #eee;
+}
+
+.sheet-clearfix:after {
+    content: " ";
+    display: table;
+    clear: both;
 }

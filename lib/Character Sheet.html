@@ -1,5 +1,9 @@
-<div class="2colrow">
+<div class="row textarea">
+    <label>Notes</label>
+    <textarea name="attr_notes"></textarea>
+</div>
 
+<div class="2colrow">
     <div class="col justify">
         <label>Name</label><input type="text" name="attr_character_name" />
         <label>Level</label><input type="number" name="attr_level" value="1" />
@@ -3450,25 +3454,87 @@
         <div class="section">
             <div class="black-bar">
                 <label class="white-text">Drive</label>
-                <div class="blue-text">
-                    Your character’s drive describes what motivates them to act, to say “yes” to an opportunity. Just like an Epstein on a ship, drive is what moves your character forward. Drive gives you cues for action as a player and provides the GM with “hooks” to encourage your character to take action.
-                </div>
+            </div>
+            <div class="blue-text">
+                Your character’s drive describes what motivates them to act, to say “yes” to an opportunity. Just like an Epstein on a ship, drive is what moves your character forward. Drive gives you cues for action as a player and provides the GM with “hooks” to encourage your character to take action.
+            </div>
+            <div class="textarea">
+                <textarea name="attr-drive"></textarea>
             </div>
         </div>
-        <div class="section black-bar">
-            <label class="white-text">Relationships</label>
+        <div class="section">
+            <div class="black-bar">
+                <label class="white-text">Relationships</label>
+            </div>
             <div class="blue-text">
                 Once per game session you can get as many SP as your Relationship rating to perform any stunt that would be in-character when it comes to interacting with that character. You choose this after you see if you succeed on a test.
-                <fieldset class="repeating_relationships relationships">
+            </div>
+            <div class="relationships">
+                <fieldset class="repeating_relationships">
                     <input type="number" name="attr_relationship_level" /><input type="text" name="attr_relationship_partner" />
                 </fieldset>
             </div>
         </div>
-        <div class="section black-bar">
-            <label class="white-text">Attacks</label>
-            <div class="blue-text">
-                Lorem Ipsum blah blah blah
+        <div class="section">
+            <div class="black-bar">
+                <label class="white-text">Attacks</label>
             </div>
+            <div class="blue-text">
+                Attacks allow you to do damage to opponents.
+            </div>
+            <fieldset class="repeating_weapons">
+                <div class="subsection">
+                    <div class="black-bar">
+                        <input type="text" name="attr_weapon_name" />
+                        <input type="checkbox" class="unhide-content styled-sibling-floated float-right" />
+                        <span class="white-text float-right">&plusmn;</span>
+
+
+                        <div class="hidden-if-unchecked aliceblue-bg dynamic-subsection justify">
+                            <div>
+                                <select name="attr_weapon_type">
+                                    <option value=""></option>
+                                    <option value="light">Light Close</option>
+                                    <option value="heavy">Heavy Close</option>
+                                    <option value="pistol">Pistol</option>
+                                    <option value="rifle">Rifle</option>
+                                    <option value="grenade">Grenade</option>
+                                    <option value="makeshift">Makeshift</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label>Range</label>
+                                <input type="number" name="attr_weapon_range" />
+                                <label>Meters</label>
+                            </div>
+                            <div>
+                                <label>Damage Base</label>
+                                <select name="attr_weapon_damage_base" style="width: fit-content;">
+                                    <option value=""></option>
+                                    <option value="1d3">1d3</option>
+                                    <option value="1d6">1d6</option>
+                                    <option value="2d6">2d6</option>
+                                    <option value="3d6">3d6</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label>Damage Bonus</label>
+                                <input type="radio" name="attr_weapon_damage_bonus" value="0" checked/> <label>None</label>
+                                <input type="radio" name="attr_weapon_damage_bonus" value="@{dexterity}" /> <label>DEX</label>
+                                <input type="radio" name="attr_weapon_damage_bonus" value="@{perception}" /> <label>PER</label>
+                                <input type="radio" name="attr_weapon_damage_bonus" value="@{strength}" /> <label>STR</label>
+                            </div>
+                            <div class="bordered-box margin-5">
+                                <label>Qualities, Flaws, Notes</label>
+                                <textarea name="attr_weapon_qfn"></textarea>
+                            </div>
+                            <button type='roll' value='!theexpanse|||damage|||@{character_name}|||[[@{weapon_damage_base}]]|||Damage|||@{weapon_damage_bonus}|||?{Additional Modifiers|0}'>
+                                Roll for Damage
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
         </div>
         <div class="2colrow">
             <div class="col">
