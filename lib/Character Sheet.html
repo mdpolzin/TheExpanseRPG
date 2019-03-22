@@ -6271,7 +6271,7 @@
                 }
             }
         })
-    });
+    })
 
     on("change:focus_brawling change:focus_grappling", (info) => {
         getAttrs(['focus_grappling', 'focus_brawling'], (values) => {
@@ -6307,7 +6307,7 @@
         } else {
             setAttrs({enable_talent_doctor: 0});
         }
-    });
+    })
 
     on("change:focus_pistols", (info) => {
         if (info.newValue > 0) {
@@ -6315,7 +6315,7 @@
         } else {
             setAttrs({enable_talent_pistol: 0});
         }
-    });
+    })
 
     // Show/hide selected talents and focuses via attributes
 
