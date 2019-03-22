@@ -247,7 +247,7 @@ input[type=checkbox]:checked + label.sheet-checked-glow,
     width: fit-content;
     margin: auto;
 }
-
+.sheet-talents,
 .sheet-focuses {
     background-color: #eee;
     overflow: auto;
