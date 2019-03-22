@@ -1,9 +1,23 @@
-<div class="row">
-    <label>Name</label><input type="text" name="attr_character_name" />
-    <label>Level</label><input type="number" name="attr_level" value="1" />
+<div class="2colrow">
+
+    <div class="col justify">
+        <label>Name</label><input type="text" name="attr_character_name" />
+        <label>Level</label><input type="number" name="attr_level" value="1" />
         <button type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Dexterity(Initiative)|||@{dexterity}|||@{focus_initiative_total}|||?{Additional Modifiers|0}|||???'>
             Roll for Initiative
         </button>
+    </div>
+    <div class="col black-bar">
+        <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Income|||@{income_total}|||0|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+            Income
+        </button>
+        <div class="float-right">
+            <label class="white-text">Base</label>
+            <input type="text" name="attr_income" class="short" value="0" />
+            <label class="white-text">Total</label>
+            <input type="number" name="attr_income_modifiers" disabled="true" class="invisible" value="(@{income_mod_1})" />
+            <input type="number" name="attr_income_total" disabled="true" value="@{income}+(@{income_modifiers})" />
+        </div>
     </div>
 </div>
 
@@ -39,7 +53,7 @@
                 <div class="focuses">
                     <div>
                         <input type="checkbox" name="attr_talent_affluent" class="unhide-content invisible" value="1" />
-                        <input type="number" disabled="true" name="attr_income_modifiers_sub1" class="invisible" value="@{talent_affluent}*((@{talent_affluent_novice}*2)+@{talent_affluent_expert}+@{talent_affluent_master})" />
+                        <input type="number" disabled="true" name="attr_income_mod_1" class="invisible" value="@{talent_affluent}*((@{talent_affluent_novice}*2)+@{talent_affluent_expert}+@{talent_affluent_master})" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
                                 <button type="action" name="act_select_talent_affluent" class="white-text btn-invisible">Affluent</button>
@@ -2425,11 +2439,337 @@
             </div>
         </div>
         <div class="section">
-            <div class="black-bar justify">
+            <div class="black-bar">
                 <label class="white-text">Specializations</label>
+                <input type="checkbox" class="unhide-content styled-sibling-floated float-right" />
+                <span class="white-text float-right">&plusmn;</span>
                 <div class="blue-text">
-                    Specializations help you to realize your character’s full potential. Each specialization has a theme on which you can build your character concept. Your character might work for a government agency or corporation, for example, but that could mean being a computer expert, or a researcher, or a master of unarmed combat, among other things. Every specialization has its own unique talent. When you take a second specialization, think about how the two might work together, and what the combination says about your character.
-                    <p><strong>Max 2.</strong></p>
+                    Specializations help you to realize your character’s full potential.
+                </div>
+                <div class="blue-text hidden-if-unchecked">
+                    Each specialization has a theme on which you can build your character concept. Your character might work for a government agency or corporation, for example, but that could mean being a computer expert, or a researcher, or a master of unarmed combat, among other things. Every specialization has its own unique talent. When you take a second specialization, think about how the two might work together, and what the combination says about your character.
+                </div>
+                <div class="blue-text">
+                    <strong>Must be Level 4 or higher. Max 2.</strong>
+                </div>
+
+                <div class="focuses">
+                    <div>
+                        <input type="checkbox" name="attr_spec_academic" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <label class="white-text">Academic</label>
+                                <button type="action" name="act_select_spec_academic" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="justify">
+                                <p><strong>Requirements</strong> Intelligence 2 or higher and the Intelligence (Research) focus</p>
+                                <input type="checkbox" class="unhide-content styled-sibling" />
+                                <span>&plusmn; Show More</span>
+                                <div class="hidden-if-unchecked">
+                                    While the notion of "academic" often equates to irrelevant, you know that knowledge is power. You know how to find information and put it to work in order to achieve your goals, and you understand the value of information in the right hands.
+                                    <p><strong>Novice</strong> You have a real skill in not only finding facts, but knowing where to look. If you fail an Intelligence (Research) test, you can re-roll it, but must keep the result of the second roll.</p>
+                                    <p><strong>Expert</strong> You have become adept at recalling relevant information. When you perform the A-Ha! stunt, you gain one free extra use of it; that is, if you spend 1 SP, you can perform the stunt twice, if you spend 2 SP, you can use it three times, and so on.</p>
+                                    <p><strong>Master</strong> Your fact-finding abilities are unparalleled. When you make an Intelligence (Research) test as part of an advanced test, you gain a +1 bonus to the result of each Drama Die. This increases your total roll, and allows you to reach the success threshold faster.</p>
+                                </div>
+                            </div>
+
+                            <div class="dynamic-subsection justify">
+                                <span>
+                                    <input type="checkbox" name="attr_spec_academic_novice" class="styled-sibling" value="1" checked/>
+                                    <span>&plusmn; Novice</span>
+                                </span>
+                                &nbsp;
+                                <span>
+                                    <input type="checkbox" name="attr_spec_academic_expert" class="styled-sibling" value="1" />
+                                    <span>&plusmn; Expert</span>
+                                </span>
+                                <div>
+                                    <input type="checkbox" name="attr_spec_academic_master" class="styled-sibling" value="1" />
+                                    <span>&plusmn; Master</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_spec_ace" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <label class="white-text">Ace</label>
+                                <button type="action" name="act_select_spec_ace" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="justify">
+                                <p>Few can fly like you do.</p>
+                                <p><strong>Requirements</strong> Dexterity 3 or higher and the Dexterity (Piloting) focus</p>
+                                <input type="checkbox" class="unhide-content styled-sibling" />
+                                <span>&plusmn; Show More</span>
+                                <div class="hidden-if-unchecked">
+                                    You’re in the cockpit, in the command chair, at the stick. You make your ship like an extension of yourself, maneuvering through tight spaces, coaxing out those extra few Gs, and praying to whoever you pray to that it all holds together through just one more burn to get you where you’re going. Plenty of people can fly from point A to point B, but only a handful of them are true pilots, and you’re one of them.
+                                    <p><strong>Novice</strong> You can coax more out of your ship than most. When you perform the Punch It chase stunt, you gain an extra +1 bonus on your next chase test, above the bonus gained for the stunt (so the bonus is +2 when you spend 1 SP, +3 when you spend 2 SP and so on).</p>
+                                    <p><strong>Expert</strong> Add +2 to the Drama Die when making tests using the Dexterity (Piloting) focus.</p>
+                                    <p><strong>Master</strong> You are a peerless pilot. Add +1 to tests made using Dexterity (Piloting) and you may re-roll a failed test, although you don’t get the bonus on the re-roll and must take the result of the second roll.</p>
+                                </div>
+                            </div>
+
+                            <div class="dynamic-subsection justify">
+                                <span>
+                                    <input type="checkbox" name="attr_spec_ace_novice" class="styled-sibling" value="1" checked/>
+                                    <span>&plusmn; Novice</span>
+                                </span>
+                                &nbsp;
+                                <span>
+                                    <input type="checkbox" name="attr_spec_ace_expert" class="styled-sibling" value="1" />
+                                    <span>&plusmn; Expert</span>
+                                </span>
+                                <div>
+                                    <input type="checkbox" name="attr_spec_ace_master" class="styled-sibling unhide-content" value="1" />
+                                    <span>&plusmn; Master</span>
+                                    <input type="number" disabled=true class="invisible" name="attr_focus_piloting_mod_1" value="@{spec_ace_master}" />
+                                    <div class="hidden-if-unchecked">
+                                        (Bonus automatically applied to roll)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_spec_agent" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <label class="white-text">Agent</label>
+                                <button type="action" name="act_select_spec_agent" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="justify">
+                                <p>You’re a skilled spy and infiltrator.</p>
+                                <p><strong>Requirements</strong> Perception 2 or higher and the Perception (Empathy) and Communication (Deception) focuses</p>
+                                <input type="checkbox" class="unhide-content styled-sibling" />
+                                <span>&plusmn; Show More</span>
+                                <div class="hidden-if-unchecked">
+                                    You hide in plain sight and deal in secrets. You work undercover and make few friends, and lying is second nature to you. You might have been in place for years, gaining authority in a group you are supposed to subvert, or even starting a family.
+                                    <p><strong>Novice</strong> You built your life on lies. If you fail a Communication (Deception) test, you can re-roll it, but must keep the result of the second roll.</p>
+                                    <p><strong>Expert</strong> You are also adept at seeing through deception. When you use the Read the Room stunt, add +3 to your Perception (Empathy) roll when the stunt is opposed.</p>
+                                    <p><strong>Master</strong> You are a masterful spy. You gain two of the following focuses if you don’t have them already: Communication (Disguise), Communication (Investigation), Dexterity (Stealth), Intelligence (Cryptography), and Intelligence (Security). If you already have all of these, pick two and add +1 to all rolls made using them.</p>
+                                </div>
+                            </div>
+
+                            <div class="dynamic-subsection justify">
+                                <span>
+                                    <input type="checkbox" name="attr_spec_agent_novice" class="styled-sibling" value="1" checked/>
+                                    <span>&plusmn; Novice</span>
+                                </span>
+                                &nbsp;
+                                <span>
+                                    <input type="checkbox" name="attr_spec_agent_expert" class="styled-sibling" value="1" />
+                                    <span>&plusmn; Expert</span>
+                                </span>
+                                <div>
+                                    <input type="checkbox" name="attr_spec_agent_master" class="styled-sibling unhide-content" value="1" />
+                                    <span>&plusmn; Master</span>
+                                    <!-- hereiam -->
+                                    <div class="hidden-if-unchecked">
+                                        <div>Select 2 Focuses. If you already have all of them, then select up to 2 to give a +1 bonus to. (Bonus will automatically apply to rolls)</div>
+                                        <div>
+                                            <input type="checkbox" name="attr_focus_disguise" class="unhide-content invisible" value="1" />
+                                            <div class="hidden-if-unchecked subsection">
+                                                <div class="black-bar">
+                                                    <label class="white-text">Disguise</label>
+                                                    <button type="action" name="act_select_focus_disguise" class="white-text btn-invisible float-right">X</button>
+                                                </div>
+                                                <input type="checkbox" name="attr_focus_disguise_mod_1" class="styled-sibling" value="1" />
+                                                <span>&plusmn; Bonus</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="attr_focus_investigation" class="unhide-content invisible" value="1" />
+                                            <div class="hidden-if-unchecked subsection">
+                                                <div class="black-bar">
+                                                    <label class="white-text">Invest.</label>
+                                                    <button type="action" name="act_select_focus_investigation" class="white-text btn-invisible float-right">X</button>
+                                                </div>
+                                                <input type="checkbox" name="attr_focus_investigation_mod_1" class="styled-sibling" value="1" />
+                                                <span>&plusmn; Bonus</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="attr_focus_stealth" class="unhide-content invisible" value="1" />
+                                            <div class="hidden-if-unchecked subsection">
+                                                <div class="black-bar">
+                                                    <label class="white-text">Stealth</label>
+                                                    <button type="action" name="act_select_focus_stealth" class="white-text btn-invisible float-right">X</button>
+                                                </div>
+                                                <input type="checkbox" name="attr_focus_stealth_mod_1" class="styled-sibling" value="1" />
+                                                <span>&plusmn; Bonus</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="attr_focus_cryptography" class="unhide-content invisible" value="1" />
+                                            <div class="hidden-if-unchecked subsection">
+                                                <div class="black-bar">
+                                                    <label class="white-text">Crypto.</label>
+                                                    <button type="action" name="act_select_focus_cryptography" class="white-text btn-invisible float-right">X</button>
+                                                </div>
+                                                <input type="checkbox" name="attr_focus_cryptography_mod_1" class="styled-sibling" value="1" />
+                                                <span>&plusmn; Bonus</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="attr_focus_security" class="unhide-content invisible" value="1" />
+                                            <div class="hidden-if-unchecked subsection">
+                                                <div class="black-bar">
+                                                    <label class="white-text">Security</label>
+                                                    <button type="action" name="act_select_focus_security" class="white-text btn-invisible float-right">X</button>
+                                                </div>
+                                                <input type="checkbox" name="attr_focus_security_mod_1" class="styled-sibling" value="1" />
+                                                <span>&plusmn; Bonus</span>
+                                            </div>
+                                        </div>
+
+                                        <input type="checkbox" class="styled-sibling unhide-content" value="1" checked/>
+                                        <span class="black-bar white-text improve-label">&plusmn; Unselected</span>
+                                        <div class="hidden-if-unchecked">
+                                            <div>
+                                                <input type="checkbox" name="attr_focus_disguise" class="unhide-content invisible" value="1" />
+                                                <div class="hidden-if-checked subsection">
+                                                    <div class="black-bar">
+                                                        <button type="action" name="act_select_focus_disguise" class="white-text btn-invisible">
+                                                            Disguise
+                                                        </button>
+                                                    </div>
+                                                    <div class="focus blue-text">
+                                                        Changing your appearance to look like someone else.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" name="attr_focus_investigation" class="unhide-content invisible" value="1" />
+                                                <div class="hidden-if-checked subsection">
+                                                    <div class="black-bar">
+                                                        <button type="action" name="act_select_focus_investigation" class="white-text btn-invisible">
+                                                            Invest.
+                                                        </button>
+                                                    </div>
+                                                    <div class="focus blue-text">
+                                                        Interviewing people for information and finding and deciphering clues.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" name="attr_focus_stealth" class="unhide-content invisible" value="1" />
+                                                <div class="hidden-if-checked subsection">
+                                                    <div class="black-bar">
+                                                        <button type="action" name="act_select_focus_stealth" class="white-text btn-invisible">
+                                                            Stealth
+                                                        </button>
+                                                    </div>
+                                                    <div class="focus blue-text">
+                                                        Moving around without being noticed.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" name="attr_focus_cryptography" class="unhide-content invisible" value="1" />
+                                                <div class="hidden-if-checked subsection">
+                                                    <div class="black-bar">
+                                                        <button type="action" name="act_select_focus_cryptography" class="white-text btn-invisible">
+                                                            Crypto.
+                                                        </button>
+                                                    </div>
+                                                    <div class="focus blue-text">
+                                                        Creating and deciphering codes and ciphers.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" name="attr_focus_security" class="unhide-content invisible" value="1" />
+                                                <div class="hidden-if-checked subsection">
+                                                    <div class="black-bar">
+                                                        <button type="action" name="act_select_focus_security" class="white-text btn-invisible">
+                                                            Security
+                                                        </button>
+                                                    </div>
+                                                    <div class="focus blue-text">
+                                                        Knowledge of different security devices, systems, protocols, and personnel.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="focuses hidden-if-unchecked">
+                    <label class="black-bar white-text improve-label">More Specializations</label>
+                    <div>
+                        <input type="checkbox" name="attr_spec_academic" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <input type="checkbox" name="attr_enable_spec_academic" class="unhide-content invisible" value="1" />
+                                <button type="action" name="act_select_spec_academic" class="hidden-if-unchecked white-text btn-invisible">Academic</button>
+                                <label class="hidden-if-checked white-text">Academic</label>
+                            </div>
+                            <div class="tiny-text blue-text aliceblue-bg justify">
+                                <p>You are trained in finding information and putting it to use.</p>
+                                <p><strong>Requirements</strong> Intelligence 2 or higher and the Intelligence (Research) focus</p>
+                                <input type="checkbox" class="unhide-content styled-sibling" />
+                                <span>&plusmn; Show More</span>
+                                <div class="hidden-if-unchecked">
+                                    While the notion of "academic" often equates to irrelevant, you know that knowledge is power. You know how to find information and put it to work in order to achieve your goals, and you understand the value of information in the right hands.
+                                    <p><strong>Novice</strong> You have a real skill in not only finding facts, but knowing where to look. If you fail an Intelligence (Research) test, you can re-roll it, but must keep the result of the second roll.</p>
+                                    <p><strong>Expert</strong> You have become adept at recalling relevant information. When you perform the A-Ha! stunt, you gain one free extra use of it; that is, if you spend 1 SP, you can perform the stunt twice, if you spend 2 SP, you can use it three times, and so on.</p>
+                                    <p><strong>Master</strong> Your fact-finding abilities are unparalleled. When you make an Intelligence (Research) test as part of an advanced test, you gain a +1 bonus to the result of each Drama Die. This increases your total roll, and allows you to reach the success threshold faster.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_spec_ace" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <input type="checkbox" name="attr_enable_spec_ace" class="unhide-content invisible" value="1" />
+                                <button type="action" name="act_select_spec_ace" class="hidden-if-unchecked white-text btn-invisible">Ace</button>
+                                <label class="hidden-if-checked white-text">Ace</label>
+                            </div>
+                            <div class="tiny-text blue-text aliceblue-bg justify">
+                                <p>Few can fly like you do.</p>
+                                <p><strong>Requirements</strong> Dexterity 3 or higher and the Dexterity (Piloting) focus</p>
+                                <input type="checkbox" class="unhide-content styled-sibling" />
+                                <span>&plusmn; Show More</span>
+                                <div class="hidden-if-unchecked">
+                                    You’re in the cockpit, in the command chair, at the stick. You make your ship like an extension of yourself, maneuvering through tight spaces, coaxing out those extra few Gs, and praying to whoever you pray to that it all holds together through just one more burn to get you where you’re going. Plenty of people can fly from point A to point B, but only a handful of them are true pilots, and you’re one of them.
+                                    <p><strong>Novice</strong> You can coax more out of your ship than most. When you perform the Punch It chase stunt, you gain an extra +1 bonus on your next chase test, above the bonus gained for the stunt (so the bonus is +2 when you spend 1 SP, +3 when you spend 2 SP and so on).</p>
+                                    <p><strong>Expert</strong> Add +2 to the Drama Die when making tests using the Dexterity (Piloting) focus.</p>
+                                    <p><strong>Master</strong> You are a peerless pilot. Add +1 to tests made using Dexterity (Piloting) and you may re-roll a failed test, although you don’t get the bonus on the re-roll and must take the result of the second roll.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_spec_agent" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <input type="checkbox" name="attr_enable_spec_agent" class="unhide-content invisible" value="1" />
+                                <button type="action" name="act_select_spec_agent" class="hidden-if-unchecked white-text btn-invisible">Agent</button>
+                                <label class="hidden-if-checked white-text">Agent</label>
+                            </div>
+                            <div class="tiny-text blue-text aliceblue-bg justify">
+                                <p>You’re a skilled spy and infiltrator.</p>
+                                <p><strong>Requirements</strong> Perception 2 or higher and the Perception (Empathy) and Communication (Deception) focuses</p>
+                                <input type="checkbox" class="unhide-content styled-sibling" />
+                                <span>&plusmn; Show More</span>
+                                <div class="hidden-if-unchecked">
+                                    You hide in plain sight and deal in secrets. You work undercover and make few friends, and lying is second nature to you. You might have been in place for years, gaining authority in a group you are supposed to subvert, or even starting a family.
+                                    <p><strong>Novice</strong> You built your life on lies. If you fail a Communication (Deception) test, you can re-roll it, but must keep the result of the second roll.</p>
+                                    <p><strong>Expert</strong> You are also adept at seeing through deception. When you use the Read the Room stunt, add +3 to your Perception (Empathy) roll when the stunt is opposed.</p>
+                                    <p><strong>Master</strong> You are a masterful spy. You gain two of the following focuses if you don’t have them already: Communication (Disguise), Communication (Investigation), Dexterity (Stealth), Intelligence (Cryptography), and Intelligence (Security). If you already have all of these, pick two and add +1 to all rolls made using them.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -2584,18 +2924,6 @@
                 </div>
             </div>
 	    </div>
-        <div class="row black-bar margin-5">
-            <button class="white-text btn-invisible" type='roll' value='!theexpanse|||@{character_name}|||[[3d6]]|||Income|||@{income_total}|||0|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
-                Income
-            </button>
-            <div class="float-right">
-                <label class="white-text">Base</label>
-                <input type="text" name="attr_income" class="short" value="0" />
-                <label class="white-text">Total</label>
-                <input type="number" name="attr_income_modifiers" disabled="true" class="invisible" value="(@{income_modifiers_sub1})" />
-                <input type="number" name="attr_income_total" disabled="true" value="@{income}+(@{income_modifiers})" />
-            </div>
-       </div>
 	</div>
 
     <div class="col">
@@ -2872,7 +3200,7 @@
                                 </div>
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_disguise_total" class="invisible" value="@{focus_disguise} * (@{focus_disguise} + 1 + @{focus_disguise_improved})" disabled="true" />
+                        <input type="number" name="attr_focus_disguise_total" class="invisible" value="@{focus_disguise} * (@{focus_disguise} + 1 + @{focus_disguise_improved} + @{focus_disguise_mod_1})" disabled="true" />
                     </div>
                     <div>
                         <input type="checkbox" name="attr_focus_etiquette" class="unhide-content invisible" value="1" />
@@ -2960,7 +3288,7 @@
                                 </div>
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_investigation_total" class="invisible" value="@{focus_investigation} * (@{focus_investigation} + 1 + @{focus_investigation_improved})" disabled="true" />
+                        <input type="number" name="attr_focus_investigation_total" class="invisible" value="@{focus_investigation} * (@{focus_investigation} + 1 + @{focus_investigation_improved} + @{focus_investigation_mod_1})" disabled="true" />
                     </div>
                     <div>
                         <input type="checkbox" name="attr_focus_leadership" class="unhide-content invisible" value="1" />
@@ -3503,7 +3831,7 @@
                                 </div>
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_piloting_total" class="invisible" value="@{focus_piloting} * (@{focus_piloting} + 1 + @{focus_piloting_improved})" disabled="true" />
+                        <input type="number" name="attr_focus_piloting_total" class="invisible" value="@{focus_piloting} * (@{focus_piloting} + 1 + @{focus_piloting_improved} + (@{focus_piloting_mod_1}))" disabled="true" />
                     </div>
                     <div>
                         <input type="checkbox" name="attr_focus_sleight_of_hand" class="unhide-content invisible" value="1" />
@@ -3547,7 +3875,7 @@
                                 </div>
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_stealth_total" class="invisible" value="@{focus_stealth} * (@{focus_stealth} + 1 + @{focus_stealth_improved})" disabled="true" />
+                        <input type="number" name="attr_focus_stealth_total" class="invisible" value="@{focus_stealth} * (@{focus_stealth} + 1 + @{focus_stealth_improved} + @{focus_stealth_mod_1})" disabled="true" />
                     </div>
                 </div>
 
@@ -3897,7 +4225,7 @@
                                 </div>
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_cryptography_total" class="invisible" value="@{focus_cryptography} * (@{focus_cryptography} + 1 + @{focus_cryptography_improved})" disabled="true" />
+                        <input type="number" name="attr_focus_cryptography_total" class="invisible" value="@{focus_cryptography} * (@{focus_cryptography} + 1 + @{focus_cryptography_improved} + @{focus_cryptography_mod_1})" disabled="true" />
                     </div>
                     <div>
                         <input type="checkbox" name="attr_focus_current_affairs" class="unhide-content invisible" value="1" />
@@ -4117,7 +4445,7 @@
                                 </div>
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_security_total" class="invisible" value="@{focus_security} * (@{focus_security} + 1 + @{focus_security_improved})" disabled="true" />
+                        <input type="number" name="attr_focus_security_total" class="invisible" value="@{focus_security} * (@{focus_security} + 1 + @{focus_security_improved} + @{focus_security_mod_1})" disabled="true" />
                     </div>
                     <div>
                         <input type="checkbox" name="attr_focus_tactics" class="unhide-content invisible" value="1" />
@@ -5028,18 +5356,16 @@
 </div>
 
 <script type="text/worker">
-    on("change:level", (lvlInfo) => {
-        if (lvlInfo.newValue >= 11) {
-            setAttrs({improved_focus: 1})
-        } else {
-            setAttrs({improved_focus: 0})
-        }
-    })
+    // Check requirements for all Talents and Specializations
 
-    // Check requirements for all Talents
+    on("change:level change:accuracy change:communication change:constitution change:dexterity change:fighting change:intelligence change:perception change:strength change:willpower change:focus_acrobatics change:focus_research change:focus_piloting change:focus_crafting change:focus_expression change:focus_deception change:focus_empathy", (info) => {
+        getAttrs(['level', 'accuracy', 'communication', 'constitution', 'dexterity', 'fighting', 'intelligence', 'perception', 'strength', 'willpower', 'focus_acrobatics', 'focus_research', 'focus_piloting', 'focus_crafting', 'focus_expression', 'focus_deception', 'focus_empathy'], (values) => {
+            if (values.level >= 11) {
+                setAttrs({improved_focus: 1})
+            } else {
+                setAttrs({improved_focus: 0})
+            }
 
-    on("change:accuracy change:dexterity change:fighting change:intelligence change:perception change:strength change:willpower change:focus_acrobatics", (info) => {
-        getAttrs(['accuracy', 'dexterity', 'fighting', 'intelligence', 'perception', 'strength', 'willpower', 'focus_acrobatics'], (values) => {
             if (values.dexterity >= 2 && values.focus_acrobatics > 0) {
                 setAttrs({enable_talent_agility: 1})
             } else {
@@ -5117,6 +5443,56 @@
             } else {
                 setAttrs({enable_talent_two_handed: 0})
             }
+            if (values.communication > 0 && (values.focus_crafting > 0 || values.focus_expression > 0)) {
+                setAttrs({enable_talent_artistry: 1})
+            } else {
+                setAttrs({enable_talent_artistry: 0})
+            }
+
+            if (values.communication > 0 && values.constitution > 0) {
+                setAttrs({enable_talent_carousing: 1})
+            } else {
+                setAttrs({enable_talent_carousing: 0})
+            }
+
+            if (values.communication > 0) {
+                setAttrs({enable_talent_contacts: 1})
+                setAttrs({enable_talent_fringer: 1})
+            } else {
+                setAttrs({enable_talent_contacts: 0})
+                setAttrs({enable_talent_fringer: 0})
+            }
+
+            if (values.communication >= 2) {
+                setAttrs({enable_talent_command: 1})
+                setAttrs({enable_talent_inspire: 1})
+                setAttrs({enable_talent_intrigue: 1})
+            } else {
+                setAttrs({enable_talent_command: 0})
+                setAttrs({enable_talent_inspire: 0})
+                setAttrs({enable_talent_intrigue: 0})
+            }
+
+            // All specializations require level 4 or higher
+            if (values.level >= 4) {
+                if (values.intelligence >= 2 && values.focus_research > 0) {
+                    setAttrs({enable_spec_academic: 1})
+                } else {
+                    setAttrs({enable_spec_academic: 0})
+                }
+
+                if (values.dexterity >= 3 && values.focus_piloting > 0) {
+                    setAttrs({enable_spec_ace: 1})
+                } else {
+                    setAttrs({enable_spec_ace: 0})
+                }
+
+                if (values.perception >= 2 && values.focus_empathy > 0 && values.focus_deception > 0) {
+                    setAttrs({enable_spec_agent: 1})
+                } else {
+                    setAttrs({enable_spec_agent: 0})
+                }
+            }
         })
     });
 
@@ -5154,40 +5530,6 @@
                 setAttrs({enable_talent_oratory: 1})
             } else {
                 setAttrs({enable_talent_oratory: 0})
-            }
-        })
-    })
-
-    on("change:communication change:constitution change:focus_crafting change:focus_expression", (info) => {
-        getAttrs(['communication', 'constitution', 'focus_crafting', 'focus_expression'], (values) => {
-            if (values.communication > 0 && (values.focus_crafting > 0 || values.focus_expression > 0)) {
-                setAttrs({enable_talent_artistry: 1})
-            } else {
-                setAttrs({enable_talent_artistry: 0})
-            }
-
-            if (values.communication > 0 && values.constitution > 0) {
-                setAttrs({enable_talent_carousing: 1})
-            } else {
-                setAttrs({enable_talent_carousing: 0})
-            }
-
-            if (values.communication > 0) {
-                setAttrs({enable_talent_contacts: 1})
-                setAttrs({enable_talent_fringer: 1})
-            } else {
-                setAttrs({enable_talent_contacts: 0})
-                setAttrs({enable_talent_fringer: 0})
-            }
-
-            if (values.communication >= 2) {
-                setAttrs({enable_talent_command: 1})
-                setAttrs({enable_talent_inspire: 1})
-                setAttrs({enable_talent_intrigue: 1})
-            } else {
-                setAttrs({enable_talent_command: 0})
-                setAttrs({enable_talent_inspire: 0})
-                setAttrs({enable_talent_intrigue: 0})
             }
         })
     })
@@ -6282,6 +6624,36 @@
                 setAttrs({focus_self_discipline: 0})
             } else {
                 setAttrs({focus_self_discipline: 1})
+            }
+        })
+    })
+
+    on("clicked:select_spec_academic", () => {
+        getAttrs(['spec_academic'], (values) => {
+            if (values.spec_academic) {
+                setAttrs({spec_academic: 0})
+            } else {
+                setAttrs({spec_academic: 1})
+            }
+        })
+    })
+
+    on("clicked:select_spec_ace", () => {
+        getAttrs(['spec_ace'], (values) => {
+            if (values.spec_ace) {
+                setAttrs({spec_ace: 0})
+            } else {
+                setAttrs({spec_ace: 1})
+            }
+        })
+    })
+
+    on("clicked:select_spec_agent", () => {
+        getAttrs(['spec_agent'], (values) => {
+            if (values.spec_agent) {
+                setAttrs({spec_agent: 0})
+            } else {
+                setAttrs({spec_agent: 1})
             }
         })
     })

@@ -247,10 +247,12 @@ input[type=checkbox]:checked + label.sheet-checked-glow,
     width: fit-content;
     margin: auto;
 }
-.sheet-talents,
+
 .sheet-focuses {
     background-color: #eee;
     overflow: auto;
+    overflow-y: hidden;
+    width: 100%;
 }
 
 .sheet-invisible {
@@ -263,16 +265,16 @@ input[type=checkbox]:checked + label.sheet-checked-glow,
     margin-bottom: 5px;
 }
 
-.sheet-talents {
-    display: inline-block;
-    width: 100%;
-}
+.sheet-dynamic-content-small,
 .sheet-dynamic-content {
     background: aliceblue;
     border-radius: 15px;
-    width: 47%;
     float: left;
     margin: 5px;
+}
+
+.sheet-dynamic-content {
+    width: 47%;
 }
 
 .sheet-justify {
