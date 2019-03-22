@@ -1017,7 +1017,6 @@
                                     <option value="tasting">PER (Tasting)</option>
                                     <option value="touching">PER (Touching)</option>
                                     <option value="tracking">PER (Tracking)</option>
-                                <option value="technology">INT (Technology)</option>
                                 </select>
                             </div>
 
@@ -2525,7 +2524,7 @@
                                     <span>&plusmn; Master</span>
                                     <input type="number" disabled=true class="invisible" name="attr_focus_piloting_mod_1" value="@{spec_ace_master}" />
                                     <div class="hidden-if-unchecked">
-                                        (Bonus automatically applied to roll)
+                                        (Bonus automatically applied to roll. You MUST subtract it manually on a re-roll.)
                                     </div>
                                 </div>
                             </div>
@@ -2574,8 +2573,9 @@
                                                     <label class="white-text">Disguise</label>
                                                     <button type="action" name="act_select_focus_disguise" class="white-text btn-invisible float-right">X</button>
                                                 </div>
-                                                <input type="checkbox" name="attr_focus_disguise_mod_1" class="styled-sibling" value="1" />
+                                                <input type="checkbox" name="attr_spec_agent_disguise_bonus" class="styled-sibling" value="1" />
                                                 <span>&plusmn; Bonus</span>
+                                                <input type="number" disabled="true" class="invisible" name="attr_focus_disguise_mod_1" value="@{spec_agent}*@{spec_agent_disguise_bonus}" />
                                             </div>
                                         </div>
                                         <div>
@@ -2585,8 +2585,9 @@
                                                     <label class="white-text">Invest.</label>
                                                     <button type="action" name="act_select_focus_investigation" class="white-text btn-invisible float-right">X</button>
                                                 </div>
-                                                <input type="checkbox" name="attr_focus_investigation_mod_1" class="styled-sibling" value="1" />
+                                                <input type="checkbox" name="attr_spec_agent_investigation_bonus" class="styled-sibling" value="1" />
                                                 <span>&plusmn; Bonus</span>
+                                                <input type="number" disabled="true" class="invisible" name="attr_focus_investigation_mod_1" value="@{spec_agent}*@{spec_agent_investigation_bonus}" />
                                             </div>
                                         </div>
                                         <div>
@@ -2596,8 +2597,9 @@
                                                     <label class="white-text">Stealth</label>
                                                     <button type="action" name="act_select_focus_stealth" class="white-text btn-invisible float-right">X</button>
                                                 </div>
-                                                <input type="checkbox" name="attr_focus_stealth_mod_1" class="styled-sibling" value="1" />
+                                                <input type="checkbox" name="attr_spec_agent_stealth_bonus" class="styled-sibling" value="1" />
                                                 <span>&plusmn; Bonus</span>
+                                                <input type="number" disabled="true" class="invisible" name="attr_focus_stealth_mod_1" value="@{spec_agent}*@{spec_agent_stealth_bonus}" />
                                             </div>
                                         </div>
                                         <div>
@@ -2607,8 +2609,9 @@
                                                     <label class="white-text">Crypto.</label>
                                                     <button type="action" name="act_select_focus_cryptography" class="white-text btn-invisible float-right">X</button>
                                                 </div>
-                                                <input type="checkbox" name="attr_focus_cryptography_mod_1" class="styled-sibling" value="1" />
+                                                <input type="checkbox" name="attr_spec_agent_cryptography_bonus" class="styled-sibling" value="1" />
                                                 <span>&plusmn; Bonus</span>
+                                                <input type="number" disabled="true" class="invisible" name="attr_focus_cryptography_mod_1" value="@{spec_agent}*@{spec_agent_cryptography_bonus}" />
                                             </div>
                                         </div>
                                         <div>
@@ -2618,12 +2621,13 @@
                                                     <label class="white-text">Security</label>
                                                     <button type="action" name="act_select_focus_security" class="white-text btn-invisible float-right">X</button>
                                                 </div>
-                                                <input type="checkbox" name="attr_focus_security_mod_1" class="styled-sibling" value="1" />
+                                                <input type="checkbox" name="attr_spec_agent_security_bonus" class="styled-sibling" value="1" />
                                                 <span>&plusmn; Bonus</span>
+                                                <input type="number" disabled="true" class="invisible" name="attr_focus_security_mod_1" value="@{spec_agent}*@{spec_agent_security_bonus}" />
                                             </div>
                                         </div>
 
-                                        <input type="checkbox" class="styled-sibling unhide-content" value="1" checked/>
+                                        <input type="checkbox" class="styled-sibling unhide-content" value="1" />
                                         <span class="black-bar white-text improve-label">&plusmn; Unselected</span>
                                         <div class="hidden-if-unchecked">
                                             <div>
@@ -2693,7 +2697,418 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_spec_commando" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <label class="white-text">Commando</label>
+                                <button type="action" name="act_select_spec_commando" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="justify">
+                                <p>You are trained to fight, and to win, no matter the odds.</p>
+                                <p><strong>Requirements</strong> Constitution 2 or higher and the Willpower (Self-Discipline) focus</p>
+                                <input type="checkbox" class="unhide-content styled-sibling" />
+                                <span>&plusmn; Show More</span>
+                                <div class="hidden-if-unchecked">
+                                    For as long as there have been people, there have been wars, and there have been soldiers to fight them. You’re not just any soldier, however. You are one of the best there is: the elite special forces, like a UN commando or Martian Marine, or perhaps an OPA veteran of countless conflicts who knows all of the tricks. You might also be a mercenary, either working for corporate security or your latest client.
+                                    <p><strong>Novice</strong> If you fail a Constitution or Willpower (Self- Discipline) test, you can re-roll, but must keep the result of the second roll.</p>
+                                    <p><strong>Expert</strong> You know how to work with a team to get things done. At this degree, you gain an intensity 1 Relationship with your team, whoever that may be, and you keep the relationship even if the membership of your team changes.</p>
+                                    <p><strong>Master</strong> You can overcome the effects of some conditions through sheer grit. When you acquire the exhausted, fatigued, injured, or wounded conditions, make a TN 13 Constitution (Stamina) or Willpower (Self-Discipline) test; if you succeed, you ignore the effects of the condition for the remainder of the encounter, although the condition itself remains.</p>
+                                </div>
+                            </div>
 
+                            <div class="dynamic-subsection justify">
+                                <span>
+                                    <input type="checkbox" name="attr_spec_commando_novice" class="styled-sibling" value="1" checked/>
+                                    <span>&plusmn; Novice</span>
+                                </span>
+                                &nbsp;
+                                <span>
+                                    <input type="checkbox" name="attr_spec_commando_expert" class="styled-sibling" value="1" />
+                                    <span>&plusmn; Expert</span>
+                                </span>
+                                <div>
+                                    <input type="checkbox" name="attr_spec_commando_master" class="styled-sibling unhide-content" value="1" />
+                                    <span>&plusmn; Master</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_spec_executive" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <label class="white-text">Executive</label>
+                                <button type="action" name="act_select_spec_executive" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="justify">
+                                <p>You claim authority and leadership in an organization.</p>
+                                <p><strong>Requirements</strong> Communication 2 or higher and the Communication (Persuasion) focus</p>
+                                <input type="checkbox" class="unhide-content styled-sibling" />
+                                <span>&plusmn; Show More</span>
+                                <div class="hidden-if-unchecked">
+                                    You’re the boss -- the responsibility is yours, but so is the guiding vision for your organization. A good Executive is a leader, someone who inspires others and makes things happen. You know what you’re doing. You’re the leader who gets their hands dirty to get the job done. You don’t have to be a business executive. You might just as easily be a criminal ringleader, a high-ranking military officer, a politician, or a handler in an espionage agency.
+                                    <p><strong>Novice</strong> You have experience in negotiating the byways of your organization. You acquire a Membership in a new organization or advance to the next rank with an existing Membership. You can re-roll any test to access privileges from, or influence members of, the organization behind this acquired or improved Membership, but must keep the results of the second roll.</p>
+                                    <p><strong>Expert</strong> Your authority extends to calling in a subordinate to support you. Once per day you may make a Communication (Persuasion) test. If you succeed, you can call in a subordinate from the organization you chose at the Novice rank to aid you. Use one of the profiles found in the Threats chapter. If your character is level 5-8, this subordinate can be no more than a Minor threat, called at a test TN of 11. If your character is level 9-12, you may choose a Moderate-threat subordinate instead, at a test TN of 13. If your character is level 13 or above, you have the option of a subordinate who’s a Major threat in their own right, if you succeed at a TN 15 test. You do not gain the novice re-roll benefit on this test.</p>
+                                    <p><strong>Master</strong> Because you have influence in your organization, you have constant access to resources. Add your Membership rank in the organization to your Income whenever you can call upon your organization. Furthermore, if your Income score decreases, you regain the lost point during the next interlude when you interact with the organization.</p>
+                                </div>
+                            </div>
+
+                            <div class="dynamic-subsection justify">
+                                <span>
+                                    <input type="checkbox" name="attr_spec_executive_novice" class="styled-sibling" value="1" checked/>
+                                    <span>&plusmn; Novice</span>
+                                </span>
+                                &nbsp;
+                                <span>
+                                    <input type="checkbox" name="attr_spec_executive_expert" class="styled-sibling" value="1" />
+                                    <span>&plusmn; Expert</span>
+                                </span>
+                                <div>
+                                    <input type="checkbox" name="attr_spec_executive_master" class="styled-sibling unhide-content" value="1" />
+                                    <span>&plusmn; Master</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_spec_gunfighter" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <label class="white-text">Gunfighter</label>
+                                <button type="action" name="act_select_spec_gunfighter" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="justify">
+                                <p>No one shoots as quickly or as accurately as you.</p>
+                                <p><strong>Requirements</strong> Dexterity 2 and Accuracy 2 or higher</p>
+                                <input type="checkbox" class="unhide-content styled-sibling" />
+                                <span>&plusmn; Show More</span>
+                                <div class="hidden-if-unchecked">
+                                    Few can match your skill with a gun. You might be a swashbuckling revolutionary, a talented private soldier, a bodyguard, or a cop. Perhaps you trained your whole life, but maybe it’s a knack. Do you regret the lives you’ve taken, or have you only ever hit the bullseye in virtual simulations? Maybe you’ve killed, and don’t sleep easy—or maybe you sleep just fine, which could be a problem of its own.
+                                    <p><strong>Novice</strong> Your accuracy is instinctive. Pick Accuracy (Pistols) or Accuracy (Rifles). You gain a +1 to attack and damage rolls for attacks made using your chosen focus.</p>
+                                    <p><strong>Expert</strong> You’re fast and precise. You may pick the other focus from the Novice degree and apply the Novice benefit to it, or improve the bonus for the focus you picked at Novice rank to +2 to your attack and damage rolls.</p>
+                                    <p><strong>Master</strong> You’re one with the gun. Choose one of the following stunts: Lightning Attack, Overwatch, Lethal Blow, or Instant Kill. You can perform the chosen stunt for 1 SP less than usual when wielding a firearm. In the case of Overwatch, spending 1 SP gives you the effects of spending 2 SP, and spending 2 SP gives you the 3 SP effect.</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <p>Select focus (bonus NOT applied to rolls):</p>
+                                <select name="attr_spec_gunfighter_focus_1" style="width: 100%;">
+                                    <option></option>
+                                    <option value="empathy">ACC (Pistols)</option>
+                                    <option value="hearing">ACC (Rifles)</option>
+                                </select>
+                            </div>
+
+                            <div class="dynamic-subsection justify">
+                                <span>
+                                    <input type="checkbox" name="attr_spec_gunfighter_novice" class="styled-sibling" value="1" checked/>
+                                    <span>&plusmn; Novice</span>
+                                </span>
+                                &nbsp;
+                                <span>
+                                    <input type="checkbox" name="attr_spec_gunfighter_expert" class="styled-sibling unhide-content" value="1" />
+                                    <span>&plusmn; Expert</span>
+                                    <div class="hidden-if-unchecked">
+                                        <p>Select focus (bonus NOT applied to rolls):</p>
+                                        <select name="attr_spec_gunfighter_focus_2" style="width: 100%;">
+                                            <option></option>
+                                            <option value="empathy">ACC (Pistols)</option>
+                                            <option value="hearing">ACC (Rifles)</option>
+                                        </select>
+                                    </div>
+                                </span>
+                                <div>
+                                    <input type="checkbox" name="attr_spec_gunfighter_master" class="styled-sibling unhide-content" value="1" />
+                                    <span>&plusmn; Master</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_spec_hacker" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <label class="white-text">Hacker</label>
+                                <button type="action" name="act_select_spec_hacker" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="justify">
+                                <p>You excel at the use and abuse of computer systems.</p>
+                                <p><strong>Requirements</strong> Intelligence 2 or higher and the Intelligence (Technology) focus</p>
+                                <input type="checkbox" class="unhide-content styled-sibling" />
+                                <span>&plusmn; Show More</span>
+                                <div class="hidden-if-unchecked">
+                                    For some, computers are opaque, just appliances, but to you they speak a language you understand intimately. For you, code is intuitive, almost lyrical, and you know how to make it sing your own compositions. You might be a digital Robin Hood, breaking into systems to share the secrets of the powerful with desperate people. You could be a security professional instead, keeping other hackers out whether you work for the police or organized crime, or a government “cyber-soldier” specializing in a unique kind of warfare.
+                                    <p><strong>Novice</strong> You are skilled in navigating computer systems. Add +1 to Intelligence (Technology) tests.</p>
+                                    <p><strong>Expert</strong> When things go wrong or don’t work quite how you want them to, you’re skilled in finding backdoors and loopholes. You can perform the High Tech Hustle stunt for 2 SP. In advanced tests involving computer systems, add +1 to your Drama Die roll. This increases your total test result and allows you to complete advanced tests faster.</p>
+                                    <p><strong>Master</strong> Breaking into a system is one thing, but getting in and then out without getting caught is another. While using a computer system, you may perform the Cover Your Tracks stunt for 1 SP. Add another +1 to your Drama Die result while performing advanced tests for a total of +2, otherwise the same as the Expert degree benefit.</p>
+                                </div>
+                            </div>
+
+                            <div class="dynamic-subsection justify">
+                                <span>
+                                    <input type="checkbox" name="attr_spec_hacker_novice" class="styled-sibling" value="1" checked/>
+                                    <span>&plusmn; Novice</span>
+                                    <input type="number" name="attr_focus_technology_mod_1" class="invisible" value="@{spec_hacker} * @{spec_hacker_novice}" />
+                                </span>
+                                &nbsp;
+                                <span>
+                                    <input type="checkbox" name="attr_spec_hacker_expert" class="styled-sibling" value="1" />
+                                    <span>&plusmn; Expert</span>
+                                </span>
+                                <div>
+                                    <input type="checkbox" name="attr_spec_hacker_master" class="styled-sibling" value="1" />
+                                    <span>&plusmn; Master</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_spec_investigator" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <label class="white-text">Investigator</label>
+                                <button type="action" name="act_select_spec_investigator" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="justify">
+                                <p>You’re a skilled detective.</p>
+                                <p><strong>Requirements</strong> Perception and Intelligence 2 or higher and least one Perception focus</p>
+                                <input type="checkbox" class="unhide-content styled-sibling" />
+                                <span>&plusmn; Show More</span>
+                                <div class="hidden-if-unchecked">
+                                    Just as the suspect is leaving, you have “just one more thing” to ask. You see the bead of sweat, the flicker of an eye, and it speaks volumes about their guilt. A room is just as telling as a suspect. A misplaced hair, an unidentified smudge, the angle of a piece of furniture: these things speak to you. You might not be a police investigator; you might just as easily work for a corporation or as a freelancer for whoever can meet your going rate.
+                                    <p><strong>Novice</strong> You can always make a test to unlock a lead, even if you don’t have a primary or tangential focus relevant to the investigation, although you take a +2 increase in TN when you don’t have either. If you do have a primary or tangential focus for the lead, you get a +1 bonus to the test with a primary focus (in addition to the focus bonus) and no increase in TN for using a tangential focus.</p>
+                                    <p><strong>Expert</strong> The real trick to being a great investigator isn’t finding clues, it’s knowing how to use them. You may use the Intuition stunt for 1 SP. Furthermore, if you have the primary focus required to unlock a lead, add another +1 to your roll to do so for a total of +2.</p>
+                                    <p><strong>Master</strong> When all the evidence is gathered, you only need a flash of inspiration to put it together and find the solution. You can use the Breakthrough stunt on an investigation for only 3 SP.</p>
+                                </div>
+                            </div>
+
+                            <div class="dynamic-subsection justify">
+                                <span>
+                                    <input type="checkbox" name="attr_spec_investigator_novice" class="styled-sibling" value="1" checked/>
+                                    <span>&plusmn; Novice</span>
+                                </span>
+                                &nbsp;
+                                <span>
+                                    <input type="checkbox" name="attr_spec_investigator_expert" class="styled-sibling" value="1" />
+                                    <span>&plusmn; Expert</span>
+                                </span>
+                                <div>
+                                    <input type="checkbox" name="attr_spec_investigator_master" class="styled-sibling" value="1" />
+                                    <span>&plusmn; Master</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_spec_martial_artist" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <label class="white-text">Martial Artist</label>
+                                <button type="action" name="act_select_spec_martial_artist" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="justify">
+                                <p>You are a master of hand-to-hand combat.</p>
+                                <p><strong>Requirements</strong> Fighting 2 or better and at least Novice rank in one hand-to-hand combat style, including Dual Weapon Style, Grappling Style, Overwhelm Style, Self-Defense Style, Single Weapon Style, Striking Style, or Two-Handed Style. Other combat style talents like these may also satisfy this requirement, at the GM’s discretion</p>
+                                <input type="checkbox" class="unhide-content styled-sibling" />
+                                <span>&plusmn; Show More</span>
+                                <div class="hidden-if-unchecked">
+                                    To you, close combat is an art, a dance, with a savage beauty you can express through many weapons, from your own body to a flashing sword. Your study of the martial arts could be just a hobby, or it could be an integral part of your training, perhaps as a special forces operative or a secret agent. It might be something you’ve trained in since you were a child, as part of your heritage.
+                                    <p><strong>Novice</strong> When you make a Fighting-based attack roll, add +1 to damage on a successful hit.</p>
+                                    <p><strong>Expert</strong> You have excellent speed and timing. When you perform the Momentum stunt with SP gained from a Fighting attack roll, you gain a bonus to your initiative as if you spent one more SP than you have. So, if you spend 1 SP, you gain a +6 bonus to initiative; if you spend 2 SP, you gain a bonus of +9.</p>
+                                    <p><strong>Master</strong> You are a master of many close combat techniques. When you perform the Stunt Attack action with a Fighting attack roll, you automatically generate 2 SP.</p>
+                                </div>
+                            </div>
+
+                            <div class="dynamic-subsection justify">
+                                <span>
+                                    <input type="checkbox" name="attr_spec_martial_artist_novice" class="styled-sibling" value="1" checked/>
+                                    <span>&plusmn; Novice</span>
+                                </span>
+                                &nbsp;
+                                <span>
+                                    <input type="checkbox" name="attr_spec_martial_artist_expert" class="styled-sibling" value="1" />
+                                    <span>&plusmn; Expert</span>
+                                </span>
+                                <div>
+                                    <input type="checkbox" name="attr_spec_martial_artist_master" class="styled-sibling" value="1" />
+                                    <span>&plusmn; Master</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_spec_sniper" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <label class="white-text">Sniper</label>
+                                <button type="action" name="act_select_spec_sniper" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="justify">
+                                <p>You are a crack shot.</p>
+                                <p><strong>Requirements</strong> Accuracy 3 or better and the Accuracy (Rifles) focus</p>
+                                <input type="checkbox" class="unhide-content styled-sibling" />
+                                <span>&plusmn; Show More</span>
+                                <div class="hidden-if-unchecked">
+                                    While the Gunfighter dazzles with speed and accuracy at short range, it’s the Sniper who makes the most difficult shots. A Sniper could be an assassin or someone trained in supplying covering fire. Snipers often work for the police, military, security, or some informal militia (often after being drummed out of one of the previous jobs).
+                                    <p><strong>Novice</strong> You know how to quietly set up a decisive shot. If you’re hidden from your target, you can re-roll your first Accuracy (Rifles) attack during an encounter, but must keep the results of the second roll.</p>
+                                    <p><strong>Expert</strong> You know how to wait for a perfect shot to present itself. If you use the Aim action for an Accuracy (Rifles) attack, add a bonus to damage equal to the attack roll bonus your Aim provides. This includes any bonus from the Precision Marksmanship stunt.</p>
+                                    <p><strong>Master</strong> You are a deadly shot. When you are using the Accuracy (Rifles) focus, you can perform the Called Shot stunt for 2 SP.</p>
+                                </div>
+                            </div>
+
+                            <div class="dynamic-subsection justify">
+                                <span>
+                                    <input type="checkbox" name="attr_spec_sniper_novice" class="styled-sibling" value="1" checked/>
+                                    <span>&plusmn; Novice</span>
+                                </span>
+                                &nbsp;
+                                <span>
+                                    <input type="checkbox" name="attr_spec_sniper_expert" class="styled-sibling" value="1" />
+                                    <span>&plusmn; Expert</span>
+                                </span>
+                                <div>
+                                    <input type="checkbox" name="attr_spec_sniper_master" class="styled-sibling" value="1" />
+                                    <span>&plusmn; Master</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_spec_socialite" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <label class="white-text">Socialite</label>
+                                <button type="action" name="act_select_spec_socialite" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="justify">
+                                <p>You know people, and how to get what you want from them.</p>
+                                <p><strong>Requirements</strong> Communication and Perception 2 or higher</p>
+                                <input type="checkbox" class="unhide-content styled-sibling" />
+                                <span>&plusmn; Show More</span>
+                                <div class="hidden-if-unchecked">
+                                    If there’s a party, you are there, and likely the life of it. You know how to talk to people and get your way with them. It’s not about your social class, although that might play a part, or about how much money you’ve got (although you know how to look like you’ve got plenty). You’ve got a magnetic personality and people know you, and want to know you. You might be a corporate mover-and-shaker, a political negotiator, the face of a black market syndicate, or a soulless manipulator but, regardless, you know how to work a room and get people talking.
+                                    <p><strong>Novice</strong> Your natural charm causes people to like you. You may perform the On the Fence stunt for 1 SP.</p>
+                                    <p><strong>Expert</strong> When you attempt a detailed social maneuver, you require one fewer shift (to a minimum of 1) to succeed. If the situation only requires a simple social maneuver, add +1 to your roll.</p>
+                                    <p><strong>Master</strong> Wherever you go, you fit in with ease. When you interact with people who would have an attitude of Neutral or worse toward you, they automatically shift it one step in your favor. This benefit disappears if subjects feel physically threatened by you or your allies, however.</p>
+                                </div>
+                            </div>
+
+                            <div class="dynamic-subsection justify">
+                                <span>
+                                    <input type="checkbox" name="attr_spec_socialite_novice" class="styled-sibling" value="1" checked/>
+                                    <span>&plusmn; Novice</span>
+                                </span>
+                                &nbsp;
+                                <span>
+                                    <input type="checkbox" name="attr_spec_socialite_expert" class="styled-sibling" value="1" />
+                                    <span>&plusmn; Expert</span>
+                                </span>
+                                <div>
+                                    <input type="checkbox" name="attr_spec_socialite_master" class="styled-sibling" value="1" />
+                                    <span>&plusmn; Master</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_spec_star" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <label class="white-text">Star</label>
+                                <button type="action" name="act_select_spec_star" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="justify">
+                                <p>You can sway people with your performance, personal charisma, and fame.</p>
+                                <p><strong>Requirements</strong> Communication 2 or higher and the Communication (Performing) focus</p>
+                                <input type="checkbox" class="unhide-content styled-sibling" />
+                                <span>&plusmn; Show More</span>
+                                <div class="hidden-if-unchecked">
+                                    You love an audience, and they love you. A bad day might see you booed or savaged in reviews, but you’re already a star, one of the best, and your good days bring you the adulations of millions, perhaps even billions. However you captivate your audience, be it music, acting, dance, or rhetoric, you have the talent and skill to be famous and beloved -- at least for now.
+                                    <p><strong>Novice</strong> When using the Communication (Performing) focus, you may perform the Sway the Crowd stunt for 1 SP.</p>
+                                    <p><strong>Expert</strong> A good performance opens doors, and makes people want to know you. You can perform the Oozing Confidence stunt for 2 SP.</p>
+                                    <p><strong>Master</strong> When you need to, you can pull out all of the stops with a performance. When you attempt a social grand gesture, your success threshold for each shift is one less than it would normally be.</p>
+                                </div>
+                            </div>
+
+                            <div class="dynamic-subsection justify">
+                                <span>
+                                    <input type="checkbox" name="attr_spec_star_novice" class="styled-sibling" value="1" checked/>
+                                    <span>&plusmn; Novice</span>
+                                </span>
+                                &nbsp;
+                                <span>
+                                    <input type="checkbox" name="attr_spec_star_expert" class="styled-sibling" value="1" />
+                                    <span>&plusmn; Expert</span>
+                                </span>
+                                <div>
+                                    <input type="checkbox" name="attr_spec_star_master" class="styled-sibling" value="1" />
+                                    <span>&plusmn; Master</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_spec_thief" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-unchecked dynamic-content">
+                            <div class="black-bar">
+                                <label class="white-text">Thief</label>
+                                <button type="action" name="act_select_spec_thief" class="white-text btn-invisible float-right">X</button>
+                            </div>
+                            <div class="justify">
+                                <p>You are adept at stealing things and avoiding getting caught.</p>
+                                <p><strong>Requirements</strong> Dexterity 2 or higher and the Dexterity (Sleight of Hand) and Dexterity (Stealth) focuses</p>
+                                <input type="checkbox" class="unhide-content styled-sibling" />
+                                <span>&plusmn; Show More</span>
+                                <div class="hidden-if-unchecked">
+                                    You’ve got a knack -- some might say a calling -- for taking things that don’t belong to you. You might work for a government agency, a corporation, or a criminal syndicate, or you may be a solo act motivated by greed, the thrill of the take, sticking it to the rich, or some other goal. Maybe you’re a thief because you always have been, or because someone has dirt on you and you don’t have a choice.
+                                    <p><strong>Novice</strong> The first thing a skilled thief perfects is the ability to work unnoticed. You add +1 to all tests made with the Dexterity (Stealth) or the Dexterity (Sleight of Hand) focuses. Choose which focus receives this benefit when you attain this degree.</p>
+                                    <p><strong>Expert</strong> When you make a Dexterity test to hide or steal an object, you can re-roll the test if you choose, but must keep the result of the second roll. You become an expert in avoiding suspicion. You may perform the It Wasn’t Me stunt for 2 SP.</p>
+                                    <p><strong>Master</strong> Add another +1 to tests using either Dexterity (Sleight of Hand) or Dexterity (Stealth), selecting the focus when you attain this degree.</p>
+                                </div>
+                            </div>
+
+                            <div class="justify">
+                                <div class="dynamic-subsection black-bar">
+                                    <input type="checkbox" class="styled-sibling" name="attr_spec_thief_soh_1" value="1" />
+                                    <span class="white-text">&plusmn; Sleight of Hand</span>
+                                </div>
+                                <div class="dynamic-subsection black-bar">
+                                    <input type="checkbox" class="styled-sibling" name="attr_spec_thief_stealth_1" value="1" />
+                                    <span class="white-text">&plusmn; Stealth</span>
+                                </div>
+                            </div>
+
+                            <div class="dynamic-subsection justify">
+                                <span>
+                                    <input type="checkbox" name="attr_spec_thief_novice" class="styled-sibling" value="1" checked/>
+                                    <span>&plusmn; Novice</span>
+                                </span>
+                                &nbsp;
+                                <span>
+                                    <input type="checkbox" name="attr_spec_thief_expert" class="styled-sibling" value="1" />
+                                    <span>&plusmn; Expert</span>
+                                </span>
+                                <div>
+                                    <input type="checkbox" name="attr_spec_thief_master" class="styled-sibling unhide-content" value="1" />
+                                    <span>&plusmn; Master</span>
+                                    <div class="hidden-if-unchecked">
+                                        <div class="dynamic-subsection black-bar">
+                                            <input type="checkbox" class="styled-sibling" name="attr_spec_thief_soh_2" value="1" />
+                                            <span class="white-text">&plusmn; Sleight of Hand</span>
+                                        </div>
+                                        <div class="dynamic-subsection black-bar">
+                                            <input type="checkbox" class="styled-sibling" name="attr_spec_thief_stealth_2" value="1" />
+                                            <span class="white-text">&plusmn; Stealth</span>
+                                        </div>
+                                    </div>
+                                    <input type="number" disabled="true" class="invisible" name="attr_focus_sleight_of_hand_mod_1" value="@{spec_thief} * (@{spec_thief_soh_1} + (@{spec_thief_master}*@{spec_thief_soh_2}))" />
+                                    <!-- Stealth already has a mod_1 -->
+                                    <input type="number" disabled="true" class="invisible" name="attr_focus_stealth_mod_2" value="@{spec_thief} * (@{spec_thief_stealth_1} + (@{spec_thief_master}*@{spec_thief_stealth_2}))" />
                                 </div>
                             </div>
                         </div>
@@ -2769,7 +3184,226 @@
                             </div>
                         </div>
                     </div>
-
+                    <div>
+                        <input type="checkbox" name="attr_spec_commando" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <input type="checkbox" name="attr_enable_spec_commando" class="unhide-content invisible" value="1" />
+                                <button type="action" name="act_select_spec_commando" class="hidden-if-unchecked white-text btn-invisible">Commando</button>
+                                <label class="hidden-if-checked white-text">Commando</label>
+                            </div>
+                            <div class="tiny-text blue-text aliceblue-bg justify">
+                                <p>You are trained to fight, and to win, no matter the odds.</p>
+                                <p><strong>Requirements</strong> Constitution 2 or higher and the Willpower (Self-Discipline) focus</p>
+                                <input type="checkbox" class="unhide-content styled-sibling" />
+                                <span>&plusmn; Show More</span>
+                                <div class="hidden-if-unchecked">
+                                    For as long as there have been people, there have been wars, and there have been soldiers to fight them. You’re not just any soldier, however. You are one of the best there is: the elite special forces, like a UN commando or Martian Marine, or perhaps an OPA veteran of countless conflicts who knows all of the tricks. You might also be a mercenary, either working for corporate security or your latest client.
+                                    <p><strong>Novice</strong> If you fail a Constitution or Willpower (Self- Discipline) test, you can re-roll, but must keep the result of the second roll.</p>
+                                    <p><strong>Expert</strong> You know how to work with a team to get things done. At this degree, you gain an intensity 1 Relationship with your team, whoever that may be, and you keep the relationship even if the membership of your team changes.</p>
+                                    <p><strong>Master</strong> You can overcome the effects of some conditions through sheer grit. When you acquire the exhausted, fatigued, injured, or wounded conditions, make a TN 13 Constitution (Stamina) or Willpower (Self-Discipline) test; if you succeed, you ignore the effects of the condition for the remainder of the encounter, although the condition itself remains.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_spec_executive" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <input type="checkbox" name="attr_enable_spec_executive" class="unhide-content invisible" value="1" />
+                                <button type="action" name="act_select_spec_executive" class="hidden-if-unchecked white-text btn-invisible">Executive</button>
+                                <label class="hidden-if-checked white-text">Executive</label>
+                            </div>
+                            <div class="tiny-text blue-text aliceblue-bg justify">
+                                <p>You claim authority and leadership in an organization.</p>
+                                <p><strong>Requirements</strong> Communication 2 or higher and the Communication (Persuasion) focus</p>
+                                <input type="checkbox" class="unhide-content styled-sibling" />
+                                <span>&plusmn; Show More</span>
+                                <div class="hidden-if-unchecked">
+                                    You’re the boss -- the responsibility is yours, but so is the guiding vision for your organization. A good Executive is a leader, someone who inspires others and makes things happen. You know what you’re doing. You’re the leader who gets their hands dirty to get the job done. You don’t have to be a business executive. You might just as easily be a criminal ringleader, a high-ranking military officer, a politician, or a handler in an espionage agency.
+                                    <p><strong>Novice</strong> You have experience in negotiating the byways of your organization. You acquire a Membership in a new organization or advance to the next rank with an existing Membership. You can re-roll any test to access privileges from, or influence members of, the organization behind this acquired or improved Membership, but must keep the results of the second roll.</p>
+                                    <p><strong>Expert</strong> Your authority extends to calling in a subordinate to support you. Once per day you may make a Communication (Persuasion) test. If you succeed, you can call in a subordinate from the organization you chose at the Novice rank to aid you. Use one of the profiles found in the Threats chapter. If your character is level 5-8, this subordinate can be no more than a Minor threat, called at a test TN of 11. If your character is level 9-12, you may choose a Moderate-threat subordinate instead, at a test TN of 13. If your character is level 13 or above, you have the option of a subordinate who’s a Major threat in their own right, if you succeed at a TN 15 test. You do not gain the novice re-roll benefit on this test.</p>
+                                    <p><strong>Master</strong> Because you have influence in your organization, you have constant access to resources. Add your Membership rank in the organization to your Income whenever you can call upon your organization. Furthermore, if your Income score decreases, you regain the lost point during the next interlude when you interact with the organization.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_spec_gunfighter" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <input type="checkbox" name="attr_enable_spec_gunfighter" class="unhide-content invisible" value="1" />
+                                <button type="action" name="act_select_spec_gunfighter" class="hidden-if-unchecked white-text btn-invisible">Gunfighter</button>
+                                <label class="hidden-if-checked white-text">Gunfighter</label>
+                            </div>
+                            <div class="tiny-text blue-text aliceblue-bg justify">
+                                <p>No one shoots as quickly or as accurately as you.</p>
+                                <p><strong>Requirements</strong> Dexterity 2 and Accuracy 2 or higher</p>
+                                <input type="checkbox" class="unhide-content styled-sibling" />
+                                <span>&plusmn; Show More</span>
+                                <div class="hidden-if-unchecked">
+                                    Few can match your skill with a gun. You might be a swashbuckling revolutionary, a talented private soldier, a bodyguard, or a cop. Perhaps you trained your whole life, but maybe it’s a knack. Do you regret the lives you’ve taken, or have you only ever hit the bullseye in virtual simulations? Maybe you’ve killed, and don’t sleep easy—or maybe you sleep just fine, which could be a problem of its own.
+                                    <p><strong>Novice</strong> Your accuracy is instinctive. Pick Accuracy (Pistols) or Accuracy (Rifles). You gain a +1 to attack and damage rolls for attacks made using your chosen focus.</p>
+                                    <p><strong>Expert</strong> You’re fast and precise. You may pick the other focus from the Novice degree and apply the Novice benefit to it, or improve the bonus for the focus you picked at Novice rank to +2 to your attack and damage rolls.</p>
+                                    <p><strong>Master</strong> You’re one with the gun. Choose one of the following stunts: Lightning Attack, Overwatch, Lethal Blow, or Instant Kill. You can perform the chosen stunt for 1 SP less than usual when wielding a firearm. In the case of Overwatch, spending 1 SP gives you the effects of spending 2 SP, and spending 2 SP gives you the 3 SP effect.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_spec_hacker" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <input type="checkbox" name="attr_enable_spec_hacker" class="unhide-content invisible" value="1" />
+                                <button type="action" name="act_select_spec_hacker" class="hidden-if-unchecked white-text btn-invisible">Hacker</button>
+                                <label class="hidden-if-checked white-text">Hacker</label>
+                            </div>
+                            <div class="tiny-text blue-text aliceblue-bg justify">
+                                <p>You excel at the use and abuse of computer systems.</p>
+                                <p><strong>Requirements</strong> Intelligence 2 or higher and the Intelligence (Technology) focus</p>
+                                <input type="checkbox" class="unhide-content styled-sibling" />
+                                <span>&plusmn; Show More</span>
+                                <div class="hidden-if-unchecked">
+                                    For some, computers are opaque, just appliances, but to you they speak a language you understand intimately. For you, code is intuitive, almost lyrical, and you know how to make it sing your own compositions. You might be a digital Robin Hood, breaking into systems to share the secrets of the powerful with desperate people. You could be a security professional instead, keeping other hackers out whether you work for the police or organized crime, or a government “cyber-soldier” specializing in a unique kind of warfare.
+                                    <p><strong>Novice</strong> You are skilled in navigating computer systems. Add +1 to Intelligence (Technology) tests.</p>
+                                    <p><strong>Expert</strong> When things go wrong or don’t work quite how you want them to, you’re skilled in finding backdoors and loopholes. You can perform the High Tech Hustle stunt for 2 SP. In advanced tests involving computer systems, add +1 to your Drama Die roll. This increases your total test result and allows you to complete advanced tests faster.</p>
+                                    <p><strong>Master</strong> Breaking into a system is one thing, but getting in and then out without getting caught is another. While using a computer system, you may perform the Cover Your Tracks stunt for 1 SP. Add another +1 to your Drama Die result while performing advanced tests for a total of +2, otherwise the same as the Expert degree benefit.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_spec_investigator" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <input type="checkbox" name="attr_enable_spec_investigator" class="unhide-content invisible" value="1" />
+                                <button type="action" name="act_select_spec_investigator" class="hidden-if-unchecked white-text btn-invisible">Investigator</button>
+                                <label class="hidden-if-checked white-text">Investigator</label>
+                            </div>
+                            <div class="tiny-text blue-text aliceblue-bg justify">
+                                <p>You’re a skilled detective.</p>
+                                <p><strong>Requirements</strong> Perception and Intelligence 2 or higher and least one Perception focus.</p>
+                                <input type="checkbox" class="unhide-content styled-sibling" />
+                                <span>&plusmn; Show More</span>
+                                <div class="hidden-if-unchecked">
+                                    Just as the suspect is leaving, you have “just one more thing” to ask. You see the bead of sweat, the flicker of an eye, and it speaks volumes about their guilt. A room is just as telling as a suspect. A misplaced hair, an unidentified smudge, the angle of a piece of furniture: these things speak to you. You might not be a police investigator; you might just as easily work for a corporation or as a freelancer for whoever can meet your going rate.
+                                    <p><strong>Novice</strong> You can always make a test to unlock a lead, even if you don’t have a primary or tangential focus relevant to the investigation, although you take a +2 increase in TN when you don’t have either. If you do have a primary or tangential focus for the lead, you get a +1 bonus to the test with a primary focus (in addition to the focus bonus) and no increase in TN for using a tangential focus.</p>
+                                    <p><strong>Expert</strong> The real trick to being a great investigator isn’t finding clues, it’s knowing how to use them. You may use the Intuition stunt for 1 SP. Furthermore, if you have the primary focus required to unlock a lead, add another +1 to your roll to do so for a total of +2.</p>
+                                    <p><strong>Master</strong> When all the evidence is gathered, you only need a flash of inspiration to put it together and find the solution. You can use the Breakthrough stunt on an investigation for only 3 SP.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_spec_martial_artist" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <input type="checkbox" name="attr_enable_spec_martial_artist" class="unhide-content invisible" value="1" />
+                                <button type="action" name="act_select_spec_martial_artist" class="hidden-if-unchecked white-text btn-invisible">Martial Artist</button>
+                                <label class="hidden-if-checked white-text">Martial Artist</label>
+                            </div>
+                            <div class="tiny-text blue-text aliceblue-bg justify">
+                                <p>You are a master of hand-to-hand combat.</p>
+                                <p><strong>Requirements</strong> Fighting 2 or better and at least Novice rank in one hand-to-hand combat style, including Dual Weapon Style, Grappling Style, Overwhelm Style, Self-Defense Style, Single Weapon Style, Striking Style, or Two-Handed Style. Other combat style talents like these may also satisfy this requirement, at the GM’s discretion</p>
+                                <input type="checkbox" class="unhide-content styled-sibling" />
+                                <span>&plusmn; Show More</span>
+                                <div class="hidden-if-unchecked">
+                                    To you, close combat is an art, a dance, with a savage beauty you can express through many weapons, from your own body to a flashing sword. Your study of the martial arts could be just a hobby, or it could be an integral part of your training, perhaps as a special forces operative or a secret agent. It might be something you’ve trained in since you were a child, as part of your heritage.
+                                    <p><strong>Novice</strong> When you make a Fighting-based attack roll, add +1 to damage on a successful hit.</p>
+                                    <p><strong>Expert</strong> You have excellent speed and timing. When you perform the Momentum stunt with SP gained from a Fighting attack roll, you gain a bonus to your initiative as if you spent one more SP than you have. So, if you spend 1 SP, you gain a +6 bonus to initiative; if you spend 2 SP, you gain a bonus of +9.</p>
+                                    <p><strong>Master</strong> You are a master of many close combat techniques. When you perform the Stunt Attack action with a Fighting attack roll, you automatically generate 2 SP.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_spec_sniper" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <input type="checkbox" name="attr_enable_spec_sniper" class="unhide-content invisible" value="1" />
+                                <button type="action" name="act_select_spec_sniper" class="hidden-if-unchecked white-text btn-invisible">Sniper</button>
+                                <label class="hidden-if-checked white-text">Sniper</label>
+                            </div>
+                            <div class="tiny-text blue-text aliceblue-bg justify">
+                                <p>You are a crack shot.</p>
+                                <p><strong>Requirements</strong> Accuracy 3 or better and the Accuracy (Rifles) focus</p>
+                                <input type="checkbox" class="unhide-content styled-sibling" />
+                                <span>&plusmn; Show More</span>
+                                <div class="hidden-if-unchecked">
+                                    While the Gunfighter dazzles with speed and accuracy at short range, it’s the Sniper who makes the most difficult shots. A Sniper could be an assassin or someone trained in supplying covering fire. Snipers often work for the police, military, security, or some informal militia (often after being drummed out of one of the previous jobs).
+                                    <p><strong>Novice</strong> You know how to quietly set up a decisive shot. If you’re hidden from your target, you can re-roll your first Accuracy (Rifles) attack during an encounter, but must keep the results of the second roll.</p>
+                                    <p><strong>Expert</strong> You know how to wait for a perfect shot to present itself. If you use the Aim action for an Accuracy (Rifles) attack, add a bonus to damage equal to the attack roll bonus your Aim provides. This includes any bonus from the Precision Marksmanship stunt.</p>
+                                    <p><strong>Master</strong> You are a deadly shot. When you are using the Accuracy (Rifles) focus, you can perform the Called Shot stunt for 2 SP.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_spec_socialite" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <input type="checkbox" name="attr_enable_spec_socialite" class="unhide-content invisible" value="1" />
+                                <button type="action" name="act_select_spec_socialite" class="hidden-if-unchecked white-text btn-invisible">Socialite</button>
+                                <label class="hidden-if-checked white-text">Socialite</label>
+                            </div>
+                            <div class="tiny-text blue-text aliceblue-bg justify">
+                                <p>You know people, and how to get what you want from them.</p>
+                                <p><strong>Requirements</strong> Communication and Perception 2 or higher</p>
+                                <input type="checkbox" class="unhide-content styled-sibling" />
+                                <span>&plusmn; Show More</span>
+                                <div class="hidden-if-unchecked">
+                                    If there’s a party, you are there, and likely the life of it. You know how to talk to people and get your way with them. It’s not about your social class, although that might play a part, or about how much money you’ve got (although you know how to look like you’ve got plenty). You’ve got a magnetic personality and people know you, and want to know you. You might be a corporate mover-and-shaker, a political negotiator, the face of a black market syndicate, or a soulless manipulator but, regardless, you know how to work a room and get people talking.
+                                    <p><strong>Novice</strong> Your natural charm causes people to like you. You may perform the On the Fence stunt for 1 SP.</p>
+                                    <p><strong>Expert</strong> When you attempt a detailed social maneuver, you require one fewer shift (to a minimum of 1) to succeed. If the situation only requires a simple social maneuver, add +1 to your roll.</p>
+                                    <p><strong>Master</strong> Wherever you go, you fit in with ease. When you interact with people who would have an attitude of Neutral or worse toward you, they automatically shift it one step in your favor. This benefit disappears if subjects feel physically threatened by you or your allies, however.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_spec_star" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <input type="checkbox" name="attr_enable_spec_star" class="unhide-content invisible" value="1" />
+                                <button type="action" name="act_select_spec_star" class="hidden-if-unchecked white-text btn-invisible">Star</button>
+                                <label class="hidden-if-checked white-text">Star</label>
+                            </div>
+                            <div class="tiny-text blue-text aliceblue-bg justify">
+                                <p>You can sway people with your performance, personal charisma, and fame.</p>
+                                <p><strong>Requirements</strong> Communication 2 or higher and the Communication (Performing) focus</p>
+                                <input type="checkbox" class="unhide-content styled-sibling" />
+                                <span>&plusmn; Show More</span>
+                                <div class="hidden-if-unchecked">
+                                    You love an audience, and they love you. A bad day might see you booed or savaged in reviews, but you’re already a star, one of the best, and your good days bring you the adulations of millions, perhaps even billions. However you captivate your audience, be it music, acting, dance, or rhetoric, you have the talent and skill to be famous and beloved -- at least for now.
+                                    <p><strong>Novice</strong> When using the Communication (Performing) focus, you may perform the Sway the Crowd stunt for 1 SP.</p>
+                                    <p><strong>Expert</strong> A good performance opens doors, and makes people want to know you. You can perform the Oozing Confidence stunt for 2 SP.</p>
+                                    <p><strong>Master</strong> When you need to, you can pull out all of the stops with a performance. When you attempt a social grand gesture, your success threshold for each shift is one less than it would normally be.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="attr_spec_thief" class="unhide-content invisible" value="1" />
+                        <div class="hidden-if-checked dynamic-content">
+                            <div class="black-bar">
+                                <input type="checkbox" name="attr_enable_spec_thief" class="unhide-content invisible" value="1" />
+                                <button type="action" name="act_select_spec_thief" class="hidden-if-unchecked white-text btn-invisible">Thief</button>
+                                <label class="hidden-if-checked white-text">Thief</label>
+                            </div>
+                            <div class="tiny-text blue-text aliceblue-bg justify">
+                                <p>You are adept at stealing things and avoiding getting caught.</p>
+                                <p><strong>Requirements</strong> Dexterity 2 or higher and the Dexterity (Sleight of Hand) and Dexterity (Stealth) focuses</p>
+                                <input type="checkbox" class="unhide-content styled-sibling" />
+                                <span>&plusmn; Show More</span>
+                                <div class="hidden-if-unchecked">
+                                    You’ve got a knack -- some might say a calling -- for taking things that don’t belong to you. You might work for a government agency, a corporation, or a criminal syndicate, or you may be a solo act motivated by greed, the thrill of the take, sticking it to the rich, or some other goal. Maybe you’re a thief because you always have been, or because someone has dirt on you and you don’t have a choice.
+                                    <p><strong>Novice</strong> The first thing a skilled thief perfects is the ability to work unnoticed. You add +1 to all tests made with the Dexterity (Stealth) or the Dexterity (Sleight of Hand) focuses. Choose which focus receives this benefit when you attain this degree.</p>
+                                    <p><strong>Expert</strong> When you make a Dexterity test to hide or steal an object, you can re-roll the test if you choose, but must keep the result of the second roll. You become an expert in avoiding suspicion. You may perform the It Wasn’t Me stunt for 2 SP.</p>
+                                    <p><strong>Master</strong> Add another +1 to tests using either Dexterity (Sleight of Hand) or Dexterity (Stealth), selecting the focus when you attain this degree.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -3200,7 +3834,7 @@
                                 </div>
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_disguise_total" class="invisible" value="@{focus_disguise} * (@{focus_disguise} + 1 + @{focus_disguise_improved} + @{focus_disguise_mod_1})" disabled="true" />
+                        <input type="number" name="attr_focus_disguise_total" class="invisible" value="@{focus_disguise} * (@{focus_disguise} + 1 + @{focus_disguise_improved} + (@{focus_disguise_mod_1}))" disabled="true" />
                     </div>
                     <div>
                         <input type="checkbox" name="attr_focus_etiquette" class="unhide-content invisible" value="1" />
@@ -3288,7 +3922,7 @@
                                 </div>
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_investigation_total" class="invisible" value="@{focus_investigation} * (@{focus_investigation} + 1 + @{focus_investigation_improved} + @{focus_investigation_mod_1})" disabled="true" />
+                        <input type="number" name="attr_focus_investigation_total" class="invisible" value="@{focus_investigation} * (@{focus_investigation} + 1 + @{focus_investigation_improved} + (@{focus_investigation_mod_1}))" disabled="true" />
                     </div>
                     <div>
                         <input type="checkbox" name="attr_focus_leadership" class="unhide-content invisible" value="1" />
@@ -3853,7 +4487,7 @@
                                 </div>
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_sleight_of_hand_total" class="invisible" value="@{focus_sleight_of_hand} * (@{focus_sleight_of_hand} + 1 + @{focus_sleight_of_hand_improved})" disabled="true" />
+                        <input type="number" name="attr_focus_sleight_of_hand_total" class="invisible" value="@{focus_sleight_of_hand} * (@{focus_sleight_of_hand} + 1 + @{focus_sleight_of_hand_improved} + (@{focus_sleight_of_hand_mod_1}))" disabled="true" />
                     </div>
                     <div>
                         <input type="checkbox" name="attr_focus_stealth" class="unhide-content invisible" value="1" />
@@ -3875,7 +4509,7 @@
                                 </div>
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_stealth_total" class="invisible" value="@{focus_stealth} * (@{focus_stealth} + 1 + @{focus_stealth_improved} + @{focus_stealth_mod_1})" disabled="true" />
+                        <input type="number" name="attr_focus_stealth_total" class="invisible" value="@{focus_stealth} * (@{focus_stealth} + 1 + @{focus_stealth_improved} + (@{focus_stealth_mod_1}) + (@{focus_stealth_mod_2}))" disabled="true" />
                     </div>
                 </div>
 
@@ -4225,7 +4859,7 @@
                                 </div>
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_cryptography_total" class="invisible" value="@{focus_cryptography} * (@{focus_cryptography} + 1 + @{focus_cryptography_improved} + @{focus_cryptography_mod_1})" disabled="true" />
+                        <input type="number" name="attr_focus_cryptography_total" class="invisible" value="@{focus_cryptography} * (@{focus_cryptography} + 1 + @{focus_cryptography_improved} + (@{focus_cryptography_mod_1}))" disabled="true" />
                     </div>
                     <div>
                         <input type="checkbox" name="attr_focus_current_affairs" class="unhide-content invisible" value="1" />
@@ -4445,7 +5079,7 @@
                                 </div>
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_security_total" class="invisible" value="@{focus_security} * (@{focus_security} + 1 + @{focus_security_improved} + @{focus_security_mod_1})" disabled="true" />
+                        <input type="number" name="attr_focus_security_total" class="invisible" value="@{focus_security} * (@{focus_security} + 1 + @{focus_security_improved} + (@{focus_security_mod_1}))" disabled="true" />
                     </div>
                     <div>
                         <input type="checkbox" name="attr_focus_tactics" class="unhide-content invisible" value="1" />
@@ -4489,7 +5123,7 @@
                                 </div>
                             </div>
                         </div>
-                        <input type="number" name="attr_focus_technology_total" class="invisible" value="@{focus_technology} * (@{focus_technology} + 1 + @{focus_technology_improved})" disabled="true" />
+                        <input type="number" name="attr_focus_technology_total" class="invisible" value="@{focus_technology} * (@{focus_technology} + 1 + @{focus_technology_improved} + (@{focus_technology_mod_1}))" disabled="true" />
                     </div>
                 </div>
 
@@ -5358,8 +5992,8 @@
 <script type="text/worker">
     // Check requirements for all Talents and Specializations
 
-    on("change:level change:accuracy change:communication change:constitution change:dexterity change:fighting change:intelligence change:perception change:strength change:willpower change:focus_acrobatics change:focus_research change:focus_piloting change:focus_crafting change:focus_expression change:focus_deception change:focus_empathy", (info) => {
-        getAttrs(['level', 'accuracy', 'communication', 'constitution', 'dexterity', 'fighting', 'intelligence', 'perception', 'strength', 'willpower', 'focus_acrobatics', 'focus_research', 'focus_piloting', 'focus_crafting', 'focus_expression', 'focus_deception', 'focus_empathy'], (values) => {
+    on("change:level change:accuracy change:communication change:constitution change:dexterity change:fighting change:intelligence change:perception change:strength change:willpower change:focus_acrobatics change:focus_research change:focus_driving change:focus_piloting change:focus_crafting change:focus_expression change:focus_deception change:focus_empathy change:focus_self_discipline change:focus_persuasion change:focus_security change:focus_technology change:focus_hearing change:focus_intuition change:focus_searching change:focus_seeing change:focus_smelling change:focus_survival change:focus_tasting change:focus_touching change:focus_tracking change:focus_rifles change:focus_performing change:focus_sleight_of_hand change:focus_stealth", (info) => {
+        getAttrs(['level', 'accuracy', 'communication', 'constitution', 'dexterity', 'fighting', 'intelligence', 'perception', 'strength', 'willpower', 'focus_acrobatics', 'focus_research', 'change:focus_driving', 'focus_piloting', 'focus_crafting', 'focus_expression', 'focus_deception', 'focus_empathy', 'focus_self_discipline', 'focus_persuasion', 'focus_security', 'focus_technology', 'focus_hearing', 'focus_intuition', 'focus_searching', 'focus_seeing', 'focus_smelling', 'focus_survival', 'focus_tasting', 'focus_touching', 'focus_tracking', 'focus_rifles', 'focus_performing', 'focus_sleight_of_hand', 'focus_stealth'], (values) => {
             if (values.level >= 11) {
                 setAttrs({improved_focus: 1})
             } else {
@@ -5473,6 +6107,37 @@
                 setAttrs({enable_talent_intrigue: 0})
             }
 
+            if (values.focus_driving > 0 || values.focus_piloting > 0) {
+                setAttrs({enable_talent_pilot: 1});
+            } else {
+                setAttrs({enable_talent_pilot: 0});
+            }
+
+            if (values.focus_persuasion > 0) {
+                setAttrs({enable_talent_oratory: 1})
+            } else {
+                setAttrs({enable_talent_oratory: 0})
+            }
+
+            if (values.focus_security > 0 && values.focus_technology > 0) {
+                setAttrs({enable_talent_hacking: 1});
+            } else {
+                setAttrs({enable_talent_hacking: 0});
+            }
+
+            if (values.focus_rifles > 0) {
+                setAttrs({enable_talent_rifle: 1});
+            } else {
+                setAttrs({enable_talent_rifle: 0});
+            }
+
+            if (values.focus_performing) {
+                setAttrs({enable_talent_performance: 1});
+            } else {
+                setAttrs({enable_talent_performance: 0});
+            }
+
+
             // All specializations require level 4 or higher
             if (values.level >= 4) {
                 if (values.intelligence >= 2 && values.focus_research > 0) {
@@ -5491,6 +6156,78 @@
                     setAttrs({enable_spec_agent: 1})
                 } else {
                     setAttrs({enable_spec_agent: 0})
+                }
+
+                if (values.constitution >= 2 && values.focus_self_discipline > 0) {
+                    setAttrs({enable_spec_commando: 1})
+                } else {
+                    setAttrs({enable_spec_commando: 0})
+                }
+
+                if (values.communication >= 2 && values.focus_persuasion > 0) {
+                    setAttrs({enable_spec_executive: 1})
+                } else {
+                    setAttrs({enable_spec_executive: 0})
+                }
+
+                if (values.accuracy >= 2 && values.dexterity >= 2) {
+                    setAttrs({enable_spec_gunfighter: 1})
+                } else {
+                    setAttrs({enable_spec_gunfighter: 0})
+                }
+
+                if (values.intelligence >= 2 && values.focus_technology > 0) {
+                    setAttrs({enable_spec_hacker: 1})
+                } else {
+                    setAttrs({enable_spec_hacker: 0})
+                }
+
+                if (values.intelligence >= 2 && values.perception >= 2 && (
+                    values.focus_empathy > 0 ||
+                    values.focus_hearing > 0 ||
+                    values.focus_intuition > 0 ||
+                    values.focus_searching > 0 ||
+                    values.focus_seeing > 0 ||
+                    values.focus_smelling > 0 ||
+                    values.focus_survival > 0 ||
+                    values.focus_tasting > 0 ||
+                    values.focus_touching > 0 ||
+                    values.focus_tracking > 0
+                )) {
+                    setAttrs({enable_spec_investigator: 1})
+                } else {
+                    setAttrs({enable_spec_investigator: 0})
+                }
+
+                // Also needs a close combat talent, but that can be up to the GM so we won't codify it here
+                if (values.fighting >= 2) {
+                    setAttrs({enable_spec_martial_artist: 1})
+                } else {
+                    setAttrs({enable_spec_martial_artist: 0})
+                }
+
+                if (values.accuracy >= 3 && values.focus_rifles > 0) {
+                    setAttrs({enable_spec_sniper: 1})
+                } else {
+                    setAttrs({enable_spec_sniper: 0})
+                }
+
+                if (values.communication >= 2 && values.perception >= 2) {
+                    setAttrs({enable_spec_socialite: 1})
+                } else {
+                    setAttrs({enable_spec_socialite: 0})
+                }
+
+                if (values.communication >= 2 && values.focus_performing > 0) {
+                    setAttrs({enable_spec_star: 1})
+                } else {
+                    setAttrs({enable_spec_star: 0})
+                }
+
+                if (values.dexterity >= 2 && values.focus_sleight_of_hand >0  && values.focus_stealth >0 ) {
+                    setAttrs({enable_spec_thief: 1})
+                } else {
+                    setAttrs({enable_spec_thief: 0})
                 }
             }
         })
@@ -5524,16 +6261,6 @@
         })
     })
 
-    on("change:focus_persuasion", (info) => {
-        getAttrs(['focus_persuasion'], (values) => {
-            if (values.focus_persuasion > 0) {
-                setAttrs({enable_talent_oratory: 1})
-            } else {
-                setAttrs({enable_talent_oratory: 0})
-            }
-        })
-    })
-
     on("change:focus_medicine", (info) => {
         if (info.newValue > 0) {
             setAttrs({enable_talent_doctor: 1});
@@ -5548,42 +6275,6 @@
         } else {
             setAttrs({enable_talent_pistol: 0});
         }
-    });
-
-    on("change:focus_rifles", (info) => {
-        if (info.newValue > 0) {
-            setAttrs({enable_talent_rifle: 1});
-        } else {
-            setAttrs({enable_talent_rifle: 0});
-        }
-    });
-
-    on("change:focus_performing", (info) => {
-        if (info.newValue > 0) {
-            setAttrs({enable_talent_performance: 1});
-        } else {
-            setAttrs({enable_talent_performance: 0});
-        }
-    });
-
-    on("change:focus_security change:focus_technology", (info) => {
-        getAttrs(['focus_security', 'focus_technology'], (values) => {
-            if (values.focus_security > 0 && values.focus_technology > 0) {
-                setAttrs({enable_talent_hacking: 1});
-            } else {
-                setAttrs({enable_talent_hacking: 0});
-            }
-        })
-    });
-
-    on("change:focus_driving change:focus_piloting", (info) => {
-        getAttrs(['focus_driving', 'focus_piloting'], (values) => {
-            if (values.focus_driving > 0 || values.focus_piloting > 0) {
-                setAttrs({enable_talent_pilot: 1});
-            } else {
-                setAttrs({enable_talent_pilot: 0});
-            }
-        })
     });
 
     // Show/hide selected talents and focuses via attributes
@@ -6654,6 +7345,106 @@
                 setAttrs({spec_agent: 0})
             } else {
                 setAttrs({spec_agent: 1})
+            }
+        })
+    })
+
+    on("clicked:select_spec_commando", () => {
+        getAttrs(['spec_commando'], (values) => {
+            if (values.spec_commando) {
+                setAttrs({spec_commando: 0})
+            } else {
+                setAttrs({spec_commando: 1})
+            }
+        })
+    })
+
+    on("clicked:select_spec_executive", () => {
+        getAttrs(['spec_executive'], (values) => {
+            if (values.spec_executive) {
+                setAttrs({spec_executive: 0})
+            } else {
+                setAttrs({spec_executive: 1})
+            }
+        })
+    })
+
+    on("clicked:select_spec_gunfighter", () => {
+        getAttrs(['spec_gunfighter'], (values) => {
+            if (values.spec_gunfighter) {
+                setAttrs({spec_gunfighter: 0})
+            } else {
+                setAttrs({spec_gunfighter: 1})
+            }
+        })
+    })
+
+    on("clicked:select_spec_hacker", () => {
+        getAttrs(['spec_hacker'], (values) => {
+            if (values.spec_hacker) {
+                setAttrs({spec_hacker: 0})
+            } else {
+                setAttrs({spec_hacker: 1})
+            }
+        })
+    })
+
+    on("clicked:select_spec_investigator", () => {
+        getAttrs(['spec_investigator'], (values) => {
+            if (values.spec_investigator) {
+                setAttrs({spec_investigator: 0})
+            } else {
+                setAttrs({spec_investigator: 1})
+            }
+        })
+    })
+
+    on("clicked:select_spec_martial_artist", () => {
+        getAttrs(['spec_martial_artist'], (values) => {
+            if (values.spec_martial_artist) {
+                setAttrs({spec_martial_artist: 0})
+            } else {
+                setAttrs({spec_martial_artist: 1})
+            }
+        })
+    })
+
+    on("clicked:select_spec_sniper", () => {
+        getAttrs(['spec_sniper'], (values) => {
+            if (values.spec_sniper) {
+                setAttrs({spec_sniper: 0})
+            } else {
+                setAttrs({spec_sniper: 1})
+            }
+        })
+    })
+
+    on("clicked:select_spec_socialite", () => {
+        getAttrs(['spec_socialite'], (values) => {
+            if (values.spec_socialite) {
+                setAttrs({spec_socialite: 0})
+            } else {
+                setAttrs({spec_socialite: 1})
+            }
+        })
+    })
+
+    on("clicked:select_spec_star", () => {
+        getAttrs(['spec_star'], (values) => {
+            if (values.spec_star) {
+                setAttrs({spec_star: 0})
+            } else {
+                setAttrs({spec_star: 1})
+            }
+        })
+    })
+
+    on("clicked:select_spec_thief", () => {
+        getAttrs(['spec_thief'], (values) => {
+            if (values.spec_thief) {
+                setAttrs({spec_thief: 0})
+            } else {
+                setAttrs({spec_thief: 1})
             }
         })
     })
