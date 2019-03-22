@@ -291,3 +291,7 @@ input[type=checkbox]:checked + label.sheet-checked-glow,
     margin-top: -3px;
     margin-bottom: 8px;
 }
+
+.sheet-relationships {
+    font-style: normal;
+}
