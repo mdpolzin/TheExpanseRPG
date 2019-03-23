@@ -285,7 +285,7 @@
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
-                                    <p><strong>Novice</strong> You are a skilled and capable leader.</p>
+                                    <p><strong>Novice</strong> Your presence inspires allies. If you take a major action to offer guidance, your allies gain a +1 bonus to Willpower (Courage) and Willpower (Morale) tests for the rest of the encounter. You can do this once per encounter.</p>
                                     <p><strong>Expert</strong> Your allies follow your lead. Any NPCs you lead gain a +1 bonus when rolling for initiative.</p>
                                     <p><strong>Master</strong> When you stand firm, your allies stand with you. When you lead NPCs in an encounter, they do not have to make a Willpower (Morale) test until more than two-thirds of your side’s combatants are out of the fight (dead or incapacitated). If you leave the fight or are taken out, this benefit is lost.</p>
                                 </div>
@@ -1784,8 +1784,7 @@
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
-                                    <p><strong>Novice</strong> You are a skilled and capable leader.</p>
-                                    <p><strong>Expert</strong> Your allies follow your lead. Any NPCs you lead gain a +1 bonus when rolling for initiative.</p>
+<p><strong>Novice</strong> Your presence inspires allies. If you take a major action to offer guidance, your allies gain a +1 bonus to Willpower (Courage) and Willpower (Morale) tests for the rest of the encounter. You can do this once per encounter.</p>                                    <p><strong>Expert</strong> Your allies follow your lead. Any NPCs you lead gain a +1 bonus when rolling for initiative.</p>
                                     <p><strong>Master</strong> When you stand firm, your allies stand with you. When you lead NPCs in an encounter, they do not have to make a Willpower (Morale) test until more than two-thirds of your side’s combatants are out of the fight (dead or incapacitated). If you leave the fight or are taken out, this benefit is lost.</p>
                                 </div>
                             </div>
@@ -2887,7 +2886,7 @@
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
                                     For some, computers are opaque, just appliances, but to you they speak a language you understand intimately. For you, code is intuitive, almost lyrical, and you know how to make it sing your own compositions. You might be a digital Robin Hood, breaking into systems to share the secrets of the powerful with desperate people. You could be a security professional instead, keeping other hackers out whether you work for the police or organized crime, or a government “cyber-soldier” specializing in a unique kind of warfare.
-                                    <p><strong>Novice</strong> You are skilled in navigating computer systems. Add +1 to Intelligence (Technology) tests.</p>
+                                    <p><strong>Novice</strong> You are skilled in navigating computer systems. Add +1 to Intelligence (Technology) tests (Bonus automatically applied).</p>
                                     <p><strong>Expert</strong> When things go wrong or don’t work quite how you want them to, you’re skilled in finding backdoors and loopholes. You can perform the High Tech Hustle stunt for 2 SP. In advanced tests involving computer systems, add +1 to your Drama Die roll. This increases your total test result and allows you to complete advanced tests faster.</p>
                                     <p><strong>Master</strong> Breaking into a system is one thing, but getting in and then out without getting caught is another. While using a computer system, you may perform the Cover Your Tracks stunt for 1 SP. Add another +1 to your Drama Die result while performing advanced tests for a total of +2, otherwise the same as the Expert degree benefit.</p>
                                 </div>
@@ -2897,7 +2896,7 @@
                                 <span>
                                     <input type="checkbox" name="attr_spec_hacker_novice" class="styled-sibling" value="1" checked/>
                                     <span>&plusmn; Novice</span>
-                                    <input type="number" name="attr_focus_technology_mod_1" class="invisible" value="@{spec_hacker} * @{spec_hacker_novice}" />
+                                    <input type="number" disabled="true" name="attr_focus_technology_mod_1" class="invisible" value="@{spec_hacker} * @{spec_hacker_novice}" />
                                 </span>
                                 &nbsp;
                                 <span>
