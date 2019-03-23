@@ -24,7 +24,7 @@ label {
 
 input {
 	display: inline-block;
-	/*width: 165px;*/
+	width: inherit;
 }
 
 img {
@@ -36,7 +36,6 @@ textarea {
     resize: none;
 	overflow-y: scroll;
 	width: 90%;
-	height: 85%;
 }
 
 select {
@@ -108,21 +107,21 @@ input[type=checkbox].sheet-styled-sibling-floated {
     z-index: 1;
 }
 
-[type=checkbox].sheet-styled-sibling-floated:checked + span,
-[type=checkbox].sheet-styled-sibling-floated:hover + span,
-[type=checkbox].sheet-styled-sibling:checked + span,
-[type=checkbox].sheet-styled-sibling:hover + span {
+input[type=checkbox].sheet-styled-sibling-floated:checked + span,
+input[type=checkbox].sheet-styled-sibling-floated:hover + span,
+input[type=checkbox].sheet-styled-sibling:checked + span,
+input[type=checkbox].sheet-styled-sibling:hover + span {
     color: orange;
 }
 
-[type=checkbox].sheet-styled-sibling-floated + span,
-[type=checkbox].sheet-styled-sibling + span{
+input[type=checkbox].sheet-styled-sibling-floated + span,
+input[type=checkbox].sheet-styled-sibling + span{
     font-size: 1.2em;
     font-weight: bold;
     text-transform: uppercase;
 }
 
-[type=checkbox].sheet-styled-sibling-floated + span {
+input[type=checkbox].sheet-styled-sibling-floated + span {
     padding-right: 10px;
     margin-top: -3px;
 }
@@ -308,8 +307,8 @@ input[type=checkbox]:checked + label.sheet-checked-glow,
 }
 
 .sheet-textarea {
-    height: 75px;
     background-color: #eee;
+    display: inline;
 }
 
 .sheet-clearfix:after {
