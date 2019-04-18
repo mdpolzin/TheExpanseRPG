@@ -10,6 +10,9 @@
         <button type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Dexterity(Initiative)|||@{dexterity}|||@{focus_initiative_total}|||?{Additional Modifiers|0}|||???'>
             Roll for Initiative
         </button>
+		<button type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Simple Check|||0|||0|||?{Additional Modifiers|0}|||???'>
+			Simple Check
+		</button>
     </div>
     <div class="col black-bar">
         <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Income|||@{income_total}|||0|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
@@ -6090,6 +6093,76 @@
                 </div>
             </div>
         </div>
+		<div>
+			<div class="black-bar" style="text-align: center;">
+				<label class="sheet-white-text">Spaceship Statistics</label>
+			</div>
+			<div>
+				<div class="sheet-black-bar sheet-margin-5">
+					<label class="sheet-white-text">Name</label><input type="text" name="attr_ship_name" class="sheet-float-right" style="width: 75%" value="">
+				</div>
+				<div class="sheet-black-bar sheet-margin-5">
+					<label class="sheet-white-text">Type</label><input type="text" name="attr_ship_type" class="sheet-float-right" style="width: 75%" value="">
+				</div>
+				<div class="sheet-black-bar sheet-margin-5">
+					<label class="sheet-white-text">Drive</label><input type="text" name="attr_ship_drive" class="sheet-float-right" style="width: 75%" value="">
+				</div>
+				<div class="sheet-black-bar sheet-margin-5">
+					<label class="sheet-white-text">Sensors</label><input type="text" name="attr_ship_sensors" class="sheet-float-right" style="width: 75%" value="">
+				</div>
+				<div class="sheet-black-bar sheet-margin-5">
+					<label class="sheet-white-text">Hull</label><input type="text" name="attr_ship_hull" class="sheet-float-right" style="width: 75%" value="">
+				</div>
+				<div class="sheet-black-bar sheet-margin-5">
+					<label class="sheet-white-text">Crew</label><input type="text" name="attr_ship_crew" class="sheet-float-right" style="width: 75%" value="">
+				</div>
+				<div class="sheet-black-bar sheet-margin-5" style="text-align: center;">
+					<label class="sheet-white-text">Weapons</label>
+					<div class="sheet-black-bar sheet-margin-5" style="text-align: left;">
+						<label class="sheet-white-text">PDC</label>
+						<span class="sheet-subsection">
+							<input type="text" name="attr_ship_weapon_pdc"  class="sheet-float-right" value="">
+							<input type="number" name="attr_ship_weapon_pdc_count" class="sheet-short sheet-float-right" value="0" min="0">
+						</span>
+					</div>
+					<div class="sheet-black-bar sheet-margin-5" style="text-align: left;">
+						<label class="sheet-white-text">Rail</label>
+						<span class="sheet-subsection">
+							<input type="text" name="attr_ship_weapon_rail"  class="sheet-float-right" value="">
+							<input type="number" name="attr_ship_weapon_rail_count" class="sheet-short sheet-float-right" value="0" min="0">
+						</span>
+					</div>
+					<div class="sheet-black-bar sheet-margin-5" style="text-align: left;">
+						<label class="sheet-white-text">Torp</label>
+						<span class="sheet-subsection">
+							<input type="text" name="attr_ship_weapon_torpedo"  class="sheet-float-right" value="">
+							<input type="number" name="attr_ship_weapon_torpedo_count" class="sheet-short sheet-float-right" value="0" min="0">
+						</span>
+					</div>
+					<div>&nbsp;</div>
+				</div>
+				<div class="sheet-black-bar sheet-margin-5">
+					<label class="sheet-white-text">Qualities</label>
+					<div class="sheet-black-bar sheet-margin-5">
+						<input type="text" name="attr_ship_qualities" style="width: 100%;" class="sheet-float-right" value="">
+						&nbsp;
+					</div>
+				</div>
+				<div class="sheet-black-bar sheet-margin-5">
+					<label class="sheet-white-text">Flaws</label>
+					<div class="sheet-black-bar sheet-margin-5">
+						<input type="text" name="attr_ship_flaws" style="width: 100%;" class="sheet-float-right" value="">
+						&nbsp;
+					</div>
+				</div>
+				<div class="sheet-black-bar sheet-margin-5">
+					<label class="sheet-white-text">Crew Role</label><input type="text" name="attr_ship_role" class="sheet-float-right" style="width: 70%" value="">
+				</div>
+				<div class="sheet-black-bar sheet-margin-5">
+					<label class="sheet-white-text">Role Test</label><input type="text" name="attr_ship_test" class="sheet-float-right" style="width: 70%" value="">
+				</div>
+			</div>
+		</div>
     </div>
 
 	<!--<div class="col">-->
