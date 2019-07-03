@@ -21,7 +21,7 @@ In order to use this custom character sheets you must have a PRO account with Ro
 
 ## Installing PowerCards and TheExpanseAPI
 1) From your campaign's main page go to Settings >  API Scripts
-1) Under the `Script Library` tab, select PowerCards in the dropdown. (Typing in "PowerCards" in the dropdown filter should find it fairly easily
+1) Under the `Script Library` tab, select PowerCards in the dropdown. (Typing in "PowerCards" in the dropdown filter should find it fairly easily). Add it.
 1) Select `New Script`
 1) Copy the code from `lib/TheExpanseAPI.js` into the code window shown
 1) (optional) Rename the file from untitled.js to TheExpanseAPI.js
